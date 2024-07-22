@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4A214966-E315-473F-BAE8-C33A60EC121C}|UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A214966-E315-473F-BAE8-C33A60EC121C}|UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj|solutionrelative:usermanagementapi.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "UserManagementAPI.Domain\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\Entities\\User.cs",
+              "RelativeToolTip": "UserManagementAPI.Domain\\Entities\\User.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAxwAwAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T11:27:05.094Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
