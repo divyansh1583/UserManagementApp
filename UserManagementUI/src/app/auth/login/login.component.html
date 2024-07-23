@@ -1,38 +1,54 @@
 <div class="container-fluid">
-    <div class="row">
-      <!-- Left side with illustration -->
-      <div class="col-md-6 illustration-column">
-        <div class="illustration-content">
-          <!-- You would replace this with an actual SVG or image -->
-          <div class="placeholder-image"></div>
-        </div>
+  <div class="row">
+    <!-- Left side with illustration -->
+    <div class="col-md-6 illustration-column">
+      <div class="illustration-content">
+        <!-- You would replace this with an actual SVG or image -->
+        <img src="../../../assets/Images/Group.png" alt="Image 1">
+        <img src="../../../assets/Images/login.png" alt="Image 2" style="position: absolute; top: 0; left: 0;">
       </div>
-      
-      <!-- Right side with login form -->
-      <div class="col-md-6 login-column">
-        <div class="login-form-container">
-          <h2 class="logo">Logo</h2>
-          <h3 class="sign-in-header">Sign In</h3>
+    </div>
+
+    <!-- Right side with login form -->
+    <div class="col-md-6 login-column">
+      <div class="login-form-container">
+        <h6 class="logo text-center">Logo</h6>
+        <div class="card shadow-sm p-4">
+          <h2 class="card-title mb-3">Sign In</h2>
           <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <div class="mb-3">
               <label for="email" class="form-label">Enter your email address</label>
-              <input type="email" class="form-control" id="email" formControlName="email" placeholder="Enter Email">
+              <input class="form-control form-control-lg" type="email" class="form-control" id="email"
+                formControlName="email" placeholder="Enter Email">
+              <div *ngIf="email?.touched && email?.invalid" class="text-danger">
+                <div class="invalid-feedback" *ngIf="email?.errors?.['required']">Email is required.</div>
+                <small *ngIf="email?.errors?.['required']">Email is required.</small>
+                <small *ngIf="email?.errors?.['email']">Invalid email address.</small>
+              </div>
             </div>
             <div class="mb-3">
               <label for="password" class="form-label">Enter your password</label>
               <div class="password-input-group">
-                <input type="password" class="form-control" id="password" formControlName="password" placeholder="Password">
+                <input [type]="passwordVisible ? 'text' : 'password'" class="form-control" id="password"
+                  formControlName="password" placeholder="Password">
                 <span class="password-toggle">
-                  <i class="bi bi-eye"></i>
+                  <i [ngClass]="passwordVisible ? 'bi-eye-slash' : 'bi-eye'"
+                    (click)="passwordVisible = !passwordVisible"></i>
                 </span>
+              </div>
+              <div *ngIf="password?.touched && password?.invalid" class="text-danger">
+                <small *ngIf="password?.errors?.['required']">Password is required.</small>
+                <small *ngIf="password?.errors?.['minlength']">Password must be at least 6 characters long.</small>
               </div>
             </div>
             <button type="submit" class="btn btn-primary w-100">Sign in</button>
           </form>
-          <div class="mt-3 text-center">
-            <a routerLink="/forgot-password" class="forgot-password-link">Forgot Password?</a>
-          </div>
+
+        </div>
+        <div class="mt-3 text-center">
+          <a routerLink="/forgot-password" class="forgot-password-link">Forgot Password?</a>
         </div>
       </div>
     </div>
   </div>
+</div>
