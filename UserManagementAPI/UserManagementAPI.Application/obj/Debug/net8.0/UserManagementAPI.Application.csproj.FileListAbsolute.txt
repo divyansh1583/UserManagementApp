@@ -1,0 +1,16 @@
+C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI.Application\bin\Debug\net8.0\UserManagementAPI.Application.deps.json
+C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI.Application\bin\Debug\net8.0\UserManagementAPI.Application.dll
+C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI.Application\bin\Debug\net8.0\UserManagementAPI.Application.pdb
+C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI.Application\obj\Debug\net8.0\UserManagementAPI.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI.Application\obj\Debug\net8.0\UserManagementAPI.Application.AssemblyInfoInputs.cache
+C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI.Application\obj\Debug\net8.0\UserManagementAPI.Application.AssemblyInfo.cs
+C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI.Application\obj\Debug\net8.0\UserManagementAPI.Application.csproj.CoreCompileInputs.cache
+C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI.Application\obj\Debug\net8.0\UserManagementAPI.Application.sourcelink.json
+C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI.Application\obj\Debug\net8.0\UserManagementAPI.Application.dll
+C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI.Application\obj\Debug\net8.0\refint\UserManagementAPI.Application.dll
+C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI.Application\obj\Debug\net8.0\UserManagementAPI.Application.pdb
+C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI.Application\obj\Debug\net8.0\ref\UserManagementAPI.Application.dll
+C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI.Application\bin\Debug\net8.0\UserManagementAPI.Domain.dll
+C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI.Application\bin\Debug\net8.0\UserManagementAPI.Domain.pdb
+C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI.Application\obj\Debug\net8.0\UserManagementAPI.Application.csproj.AssemblyReference.cache
+C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI.Application\obj\Debug\net8.0\UserMana.0D98F122.Up2Date

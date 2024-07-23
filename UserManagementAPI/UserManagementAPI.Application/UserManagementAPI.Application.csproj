@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
+    <ProjectReference Include="..\UserManagementAPI.Domain\UserManagementAPI.Domain.csproj" />
   </ItemGroup>
 
 </Project>

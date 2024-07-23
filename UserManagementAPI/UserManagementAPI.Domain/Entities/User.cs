@@ -23,11 +23,11 @@ namespace UserManagementAPI.Domain.Entities
         public string State1 { get; set; }
         public string Country1 { get; set; }
         public string ZipCode1 { get; set; }
-        public string Address2 { get; set; }
-        public string City2 { get; set; }
-        public string State2 { get; set; }
-        public string Country2 { get; set; }
-        public string ZipCode2 { get; set; }
+        public string? Address2 { get; set; }
+        public string? City2 { get; set; }
+        public string? State2 { get; set; }
+        public string? Country2 { get; set; }
+        public string? ZipCode2 { get; set; }
         public bool IsActive { get; set; }
         public string Password { get; set; }
         public DateTime CreatedAt { get; set; }

@@ -13,6 +13,7 @@ Email VARBINARY(MAX) NOT NULL,
 Phone VARBINARY(MAX) NOT NULL,
 AlternatePhone VARBINARY(MAX),
 ImagePath VARCHAR(255),
+Password VARCHAR(100) NOT NULL,
 
 CreatedBy VARCHAR(50),
 CreatedDate DATETIME DEFAULT GETDATE(),
@@ -26,7 +27,9 @@ CREATE TABLE DC_AddressTypes (
     AddressTypeID INT PRIMARY KEY IDENTITY(1,1),
     AddressTypeName VARCHAR(20) NOT NULL UNIQUE
 );
+
 INSERT INTO DC_AddressTypes (AddressTypeName) VALUES ('Primary'), ('Secondary');
+
 CREATE TABLE DC_UserAddresses(
 AddressId INT IDENTITY(1,1) PRIMARY KEY,
 Address VARCHAR(100),

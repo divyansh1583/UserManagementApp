@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "UserManagementAPI.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/UserManagementAPI.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UserManagementAPI.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "UserManagementAPI.Domain/1.0.0": {
+      "type": "project",
+      "path": "../UserManagementAPI.Domain/UserManagementAPI.Domain.csproj",
+      "msbuildProject": "../UserManagementAPI.Domain/UserManagementAPI.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "UserManagementAPI.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\divyansh.chauhan\\.nuget\\packages\\": {},
@@ -39,7 +58,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj": {
+              "projectPath": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

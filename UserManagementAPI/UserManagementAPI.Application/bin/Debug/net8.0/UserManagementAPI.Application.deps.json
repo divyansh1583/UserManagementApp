@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "UserManagementAPI.Application/1.0.0": {
+        "dependencies": {
+          "UserManagementAPI.Domain": "1.0.0"
+        },
+        "runtime": {
+          "UserManagementAPI.Application.dll": {}
+        }
+      },
+      "UserManagementAPI.Domain/1.0.0": {
+        "runtime": {
+          "UserManagementAPI.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "UserManagementAPI.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UserManagementAPI.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

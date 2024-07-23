@@ -20,7 +20,8 @@ CREATE OR ALTER PROCEDURE DC_AddUser
     @SecondaryCity VARCHAR(50) = NULL,
     @SecondaryState VARCHAR(50) = NULL,
     @SecondaryCountry VARCHAR(50) = NULL,
-    @SecondaryZipCode VARCHAR(20) = NULL
+    @SecondaryZipCode VARCHAR(20) = NULL,
+	@Password VARCHAR(100)
 AS
 BEGIN
     DECLARE @UserId INT;
@@ -32,14 +33,14 @@ BEGIN
 			 INSERT INTO DC_Users (
 				FirstName, LastName, MiddleName, Gender, DateOfJoining, DateOfBirth, 
 				Email, Phone, AlternatePhone, 
-				ImagePath, CreatedBy, IsActive
+				ImagePath, CreatedBy, IsActive,Password
 				)
 			 VALUES (
 				@FirstName, @LastName, @MiddleName, @Gender, @DateOfJoining, @DateOfBirth, 
 				ENCRYPTBYPASSPHRASE('YourSecretKey', @Email), 
 				ENCRYPTBYPASSPHRASE('YourSecretKey', @Phone),
 				ENCRYPTBYPASSPHRASE('YourSecretKey', @AlternatePhone),
-				@ImagePath, @CreatedBy, @IsActive
+				@ImagePath, @CreatedBy, @IsActive, @Password
 				);
 
 
@@ -69,34 +70,45 @@ BEGIN
 END
 
 	EXEC DC_AddUser
-		@FirstName = 'John',
-		@LastName = 'Doe',
-		@MiddleName = 'Michael',
+		@FirstName = 'Divyansh',
+		@LastName = 'Chauhan',
+		@MiddleName = 'S',
 		@Gender = 'Male',
 		@DateOfJoining = '2024-07-22',
-		@DateOfBirth = '1990-01-01',
-		@Email = 'john.doe@example.com',
+		@DateOfBirth = '2002-11-14',
+		@Email = 'dc@gmail.com',
 		@Phone = '1234567890',
 		@AlternatePhone = NULL,
 		@ImagePath = '/images/john_doe.jpg',
 		@CreatedBy = 'Admin',
 		@IsActive = 1,
 		@PrimaryAddress = '123 Main St',
-		@PrimaryCity = 'Anytown',
-		@PrimaryState = 'State',
-		@PrimaryCountry = 'Country',
+		@PrimaryCity = 'New York',
+		@PrimaryState = 'NY',
+		@PrimaryCountry = 'USA',
 		@PrimaryZipCode = '12345',
 		@SecondaryAddress = '456 Oak Ave',
 		@SecondaryCity = 'OtherTown',
 		@SecondaryState = 'State',
 		@SecondaryCountry = 'Country',
-		@SecondaryZipCode = '67890'
+		@SecondaryZipCode = '67890',
+		@Password = '123@Dc';
 
 		SELECT * FROM DC_Users
 		SELECT * FROM DC_AddressTypes
 		SELECT * FROM DC_UserAddresses
 
 
+		DROP TABLE DC_UserAddresses
 		DROP TABLE DC_Users
 		DROP TABLE DC_AddressTypes
-		DROP TABLE DC_UserAddresses
+
+		SELECT 
+    FirstName,
+    LastName,
+    CONVERT(VARCHAR(100), DECRYPTBYPASSPHRASE('YourSecretKey', Email)) AS DecryptedEmail
+FROM DC_Users;
+
+SELECT * 
+FROM DC_Users 
+WHERE CONVERT(VARCHAR(100), DECRYPTBYPASSPHRASE('YourSecretKey', Email)) = 'dc@gmail.' 
