@@ -1,4 +1,4 @@
-﻿using CollegeManagementAPI.Domain.Entities;
+﻿
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using UserManagementAPI.Application.Services;
@@ -6,7 +6,7 @@ using UserManagementAPI.Domain.Entities;
 
 namespace UserManagementAPI.Controllers
 {
-    [Route("api/[controller]")]
+
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -16,13 +16,13 @@ namespace UserManagementAPI.Controllers
         {
             _userService = userService;
         }
-        [HttpGet]
+        [HttpGet("getAllUsers")]
         public async Task<IActionResult> GetAllUsers()
         {
             var users = await _userService.GetAllUsersAsync();
             return Ok(users);
         }
-        [HttpPost]
+        [HttpPost("add")]
         public async Task<IActionResult> AddUser([FromBody] User user)
         {
             try

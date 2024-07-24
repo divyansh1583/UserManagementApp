@@ -1,5 +1,9 @@
 
+using CollegeManagementAPI.Infrastructure.Implementation.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using UserManagementAPI.Application.Repositories;
 using UserManagementAPI.Application.Services;
 using UserManagementAPI.Infrastructure.Data;
@@ -24,11 +28,28 @@ namespace UserManagementAPI
             builder.Services.AddDbContext<UserManagementContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                        ValidAudience = builder.Configuration["Jwt:Audience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+                    };
+                });
+
             // Add repositories
             builder.Services.AddScoped<IUserRepository, UserRepository>();
 
             // Add services
             builder.Services.AddScoped<IUserService, UserService>();
+
+            builder.Services.AddTransient<TokenService>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -39,6 +60,7 @@ namespace UserManagementAPI
             }
 
             app.UseHttpsRedirection();
+            app.UseCors(policy => policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
             app.UseAuthorization();
 

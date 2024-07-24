@@ -1,12 +1,8 @@
-﻿using CollegeManagementAPI.Domain.Common_Models;
-using CollegeManagementAPI.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using CollegeManagementAPI.Infrastructure.Implementation.Services;
 using UserManagementAPI.Application.Repositories;
 using UserManagementAPI.Application.Services;
+using UserManagementAPI.Domain.Common_Models;
 using UserManagementAPI.Domain.Entities;
 
 namespace UserManagementAPI.Infrastructure.Services
@@ -14,18 +10,39 @@ namespace UserManagementAPI.Infrastructure.Services
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
+        private readonly TokenService _tokenService;
 
-        public UserService(IUserRepository userRepository)
+        public UserService(IUserRepository userRepository, TokenService tokenService)
         {
             _userRepository = userRepository;
+            _tokenService = tokenService;
         }
+
+        // Service GetAll
         public async Task<IEnumerable<User>> GetAllUsersAsync()
         {
             return await _userRepository.GetAllAsync();
         }
         public async Task<ResponseModel> LoginUserAsync(LoginDetails loginDetails)
         {
-            return await _userRepository.LoginAsync(loginDetails);
+            var user = await _userRepository.GetUserByEmailAsync(loginDetails.Email);
+
+            if (user != null)
+            {
+                if (user.Password == loginDetails.Password)
+                {
+                    var jwtToken = _tokenService.GenerateToken(loginDetails);
+                    return new ResponseModel { StatusCode = 200, Data = new { user = loginDetails, token = jwtToken }, Message = ResponseMessages.UserFound };
+                }
+                else
+                {
+                    return new ResponseModel { StatusCode = 401, Data = null, Message = ResponseMessages.InvaildPassword };
+                }
+            }
+            else
+            {
+                return new ResponseModel { StatusCode = 404, Data = null, Message = ResponseMessages.UserNotFound };
+            }
         }
 
         public async Task<int> AddUserAsync(User user)

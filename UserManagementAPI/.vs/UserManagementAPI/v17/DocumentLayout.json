@@ -3,52 +3,68 @@
   "WorkspaceRootPath": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0C69D1BC-8673-42E0-89B4-63658E7BB784}|UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi.infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C69D1BC-8673-42E0-89B4-63658E7BB784}|UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj|solutionrelative:usermanagementapi.infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4A214966-E315-473F-BAE8-C33A60EC121C}|UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi.domain\\entities\\dcuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A214966-E315-473F-BAE8-C33A60EC121C}|UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj|solutionrelative:usermanagementapi.domain\\entities\\dcuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3CFB5C7F-3350-434C-8344-E5502E0486C0}|UserManagementAPI\\UserManagementAPI.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3CFB5C7F-3350-434C-8344-E5502E0486C0}|UserManagementAPI\\UserManagementAPI.csproj|solutionrelative:usermanagementapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4A214966-E315-473F-BAE8-C33A60EC121C}|UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi.domain\\entities\\dcuseraddress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A214966-E315-473F-BAE8-C33A60EC121C}|UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj|solutionrelative:usermanagementapi.domain\\entities\\dcuseraddress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{926C61A9-B683-457F-9A94-4026DF202275}|UserManagementAPI.Application\\UserManagementAPI.Application.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi.application\\irepositories\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{926C61A9-B683-457F-9A94-4026DF202275}|UserManagementAPI.Application\\UserManagementAPI.Application.csproj|solutionrelative:usermanagementapi.application\\irepositories\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4A214966-E315-473F-BAE8-C33A60EC121C}|UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi.domain\\entities\\dcaddresstype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A214966-E315-473F-BAE8-C33A60EC121C}|UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj|solutionrelative:usermanagementapi.domain\\entities\\dcaddresstype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0C69D1BC-8673-42E0-89B4-63658E7BB784}|UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi.infrastructure\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0C69D1BC-8673-42E0-89B4-63658E7BB784}|UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj|solutionrelative:usermanagementapi.infrastructure\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{3CFB5C7F-3350-434C-8344-E5502E0486C0}|UserManagementAPI\\UserManagementAPI.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CFB5C7F-3350-434C-8344-E5502E0486C0}|UserManagementAPI\\UserManagementAPI.csproj|solutionrelative:usermanagementapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CFB5C7F-3350-434C-8344-E5502E0486C0}|UserManagementAPI\\UserManagementAPI.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3CFB5C7F-3350-434C-8344-E5502E0486C0}|UserManagementAPI\\UserManagementAPI.csproj|solutionrelative:usermanagementapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C69D1BC-8673-42E0-89B4-63658E7BB784}|UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi.infrastructure\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C69D1BC-8673-42E0-89B4-63658E7BB784}|UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj|solutionrelative:usermanagementapi.infrastructure\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CFB5C7F-3350-434C-8344-E5502E0486C0}|UserManagementAPI\\UserManagementAPI.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CFB5C7F-3350-434C-8344-E5502E0486C0}|UserManagementAPI\\UserManagementAPI.csproj|solutionrelative:usermanagementapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{926C61A9-B683-457F-9A94-4026DF202275}|UserManagementAPI.Application\\UserManagementAPI.Application.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi.application\\iservices\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{926C61A9-B683-457F-9A94-4026DF202275}|UserManagementAPI.Application\\UserManagementAPI.Application.csproj|solutionrelative:usermanagementapi.application\\iservices\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C69D1BC-8673-42E0-89B4-63658E7BB784}|UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi.infrastructure\\data\\usermanagementcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C69D1BC-8673-42E0-89B4-63658E7BB784}|UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj|solutionrelative:usermanagementapi.infrastructure\\data\\usermanagementcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{926C61A9-B683-457F-9A94-4026DF202275}|UserManagementAPI.Application\\UserManagementAPI.Application.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi.application\\irepositories\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{926C61A9-B683-457F-9A94-4026DF202275}|UserManagementAPI.Application\\UserManagementAPI.Application.csproj|solutionrelative:usermanagementapi.application\\irepositories\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C69D1BC-8673-42E0-89B4-63658E7BB784}|UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi.infrastructure\\data\\dcuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C69D1BC-8673-42E0-89B4-63658E7BB784}|UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj|solutionrelative:usermanagementapi.infrastructure\\data\\dcuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0C69D1BC-8673-42E0-89B4-63658E7BB784}|UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi.infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C69D1BC-8673-42E0-89B4-63658E7BB784}|UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj|solutionrelative:usermanagementapi.infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4A214966-E315-473F-BAE8-C33A60EC121C}|UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A214966-E315-473F-BAE8-C33A60EC121C}|UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj|solutionrelative:usermanagementapi.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4A214966-E315-473F-BAE8-C33A60EC121C}|UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi.domain\\common models\\responsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A214966-E315-473F-BAE8-C33A60EC121C}|UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj|solutionrelative:usermanagementapi.domain\\common models\\responsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4A214966-E315-473F-BAE8-C33A60EC121C}|UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi.domain\\entities\\logindetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4A214966-E315-473F-BAE8-C33A60EC121C}|UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj|solutionrelative:usermanagementapi.domain\\entities\\logindetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C69D1BC-8673-42E0-89B4-63658E7BB784}|UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi.infrastructure\\data\\dcuseraddress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C69D1BC-8673-42E0-89B4-63658E7BB784}|UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj|solutionrelative:usermanagementapi.infrastructure\\data\\dcuseraddress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4A214966-E315-473F-BAE8-C33A60EC121C}|UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi.domain\\common models\\responsemessages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A214966-E315-473F-BAE8-C33A60EC121C}|UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj|solutionrelative:usermanagementapi.domain\\common models\\responsemessages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3CFB5C7F-3350-434C-8344-E5502E0486C0}|UserManagementAPI\\UserManagementAPI.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3CFB5C7F-3350-434C-8344-E5502E0486C0}|UserManagementAPI\\UserManagementAPI.csproj|solutionrelative:usermanagementapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4A214966-E315-473F-BAE8-C33A60EC121C}|UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A214966-E315-473F-BAE8-C33A60EC121C}|UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj|solutionrelative:usermanagementapi.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C69D1BC-8673-42E0-89B4-63658E7BB784}|UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi.infrastructure\\data\\dcaddresstype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C69D1BC-8673-42E0-89B4-63658E7BB784}|UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj|solutionrelative:usermanagementapi.infrastructure\\data\\dcaddresstype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0C69D1BC-8673-42E0-89B4-63658E7BB784}|UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi.infrastructure\\data\\usermanagementcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C69D1BC-8673-42E0-89B4-63658E7BB784}|UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj|solutionrelative:usermanagementapi.infrastructure\\data\\usermanagementcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,121 +74,173 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
+              "Title": "TokenService.cs",
+              "DocumentMoniker": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Infrastructure\\Services\\TokenService.cs",
+              "RelativeDocumentMoniker": "UserManagementAPI.Infrastructure\\Services\\TokenService.cs",
+              "ToolTip": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Infrastructure\\Services\\TokenService.cs",
+              "RelativeToolTip": "UserManagementAPI.Infrastructure\\Services\\TokenService.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAmwBYAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T14:09:26.651Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DcAddressType.cs",
+              "DocumentMoniker": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\Entities\\DcAddressType.cs",
+              "RelativeDocumentMoniker": "UserManagementAPI.Domain\\Entities\\DcAddressType.cs",
+              "ToolTip": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\Entities\\DcAddressType.cs",
+              "RelativeToolTip": "UserManagementAPI.Domain\\Entities\\DcAddressType.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T14:00:15.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ResponseMessages.cs",
+              "DocumentMoniker": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\Common Models\\ResponseMessages.cs",
+              "RelativeDocumentMoniker": "UserManagementAPI.Domain\\Common Models\\ResponseMessages.cs",
+              "ToolTip": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\Common Models\\ResponseMessages.cs",
+              "RelativeToolTip": "UserManagementAPI.Domain\\Common Models\\ResponseMessages.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T13:57:52.11Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DcUserAddress.cs",
+              "DocumentMoniker": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\Entities\\DcUserAddress.cs",
+              "RelativeDocumentMoniker": "UserManagementAPI.Domain\\Entities\\DcUserAddress.cs",
+              "ToolTip": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\Entities\\DcUserAddress.cs",
+              "RelativeToolTip": "UserManagementAPI.Domain\\Entities\\DcUserAddress.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAcwAMAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T13:55:39.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DcUser.cs",
+              "DocumentMoniker": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\Entities\\DcUser.cs",
+              "RelativeDocumentMoniker": "UserManagementAPI.Domain\\Entities\\DcUser.cs",
+              "ToolTip": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\Entities\\DcUser.cs",
+              "RelativeToolTip": "UserManagementAPI.Domain\\Entities\\DcUser.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAywAMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T13:49:24.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ResponseModel.cs",
+              "DocumentMoniker": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\Common Models\\ResponseModel.cs",
+              "RelativeDocumentMoniker": "UserManagementAPI.Domain\\Common Models\\ResponseModel.cs",
+              "ToolTip": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\Common Models\\ResponseModel.cs",
+              "RelativeToolTip": "UserManagementAPI.Domain\\Common Models\\ResponseModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T09:11:31.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "UserManagementAPI\\appsettings.json",
+              "ToolTip": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\appsettings.json",
+              "RelativeToolTip": "UserManagementAPI\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-24T06:41:19.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "LoginDetails.cs",
               "DocumentMoniker": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\Entities\\LoginDetails.cs",
               "RelativeDocumentMoniker": "UserManagementAPI.Domain\\Entities\\LoginDetails.cs",
               "ToolTip": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\Entities\\LoginDetails.cs",
               "RelativeToolTip": "UserManagementAPI.Domain\\Entities\\LoginDetails.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-23T11:13:32.676Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "DcUserAddress.cs",
-              "DocumentMoniker": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Infrastructure\\Data\\DcUserAddress.cs",
-              "RelativeDocumentMoniker": "UserManagementAPI.Infrastructure\\Data\\DcUserAddress.cs",
-              "ToolTip": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Infrastructure\\Data\\DcUserAddress.cs",
-              "RelativeToolTip": "UserManagementAPI.Infrastructure\\Data\\DcUserAddress.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T10:36:11.264Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "UserManagementAPI\\Controllers\\UserController.cs",
               "ToolTip": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\Controllers\\UserController.cs",
               "RelativeToolTip": "UserManagementAPI\\Controllers\\UserController.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAwwCkAAAAAAAAA",
+              "ViewState": "AQIAACoAAAAAAAAAAAAmwDEAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-23T10:10:48.114Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 15,
               "Title": "UserManagementContext.cs",
               "DocumentMoniker": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Infrastructure\\Data\\UserManagementContext.cs",
               "RelativeDocumentMoniker": "UserManagementAPI.Infrastructure\\Data\\UserManagementContext.cs",
               "ToolTip": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Infrastructure\\Data\\UserManagementContext.cs",
               "RelativeToolTip": "UserManagementAPI.Infrastructure\\Data\\UserManagementContext.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAA5wAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-23T10:09:08.917Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DcUser.cs",
-              "DocumentMoniker": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Infrastructure\\Data\\DcUser.cs",
-              "RelativeDocumentMoniker": "UserManagementAPI.Infrastructure\\Data\\DcUser.cs",
-              "ToolTip": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Infrastructure\\Data\\DcUser.cs",
-              "RelativeToolTip": "UserManagementAPI.Infrastructure\\Data\\DcUser.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAA9wBsAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T10:09:04.407Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "DcAddressType.cs",
-              "DocumentMoniker": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Infrastructure\\Data\\DcAddressType.cs",
-              "RelativeDocumentMoniker": "UserManagementAPI.Infrastructure\\Data\\DcAddressType.cs",
-              "ToolTip": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Infrastructure\\Data\\DcAddressType.cs",
-              "RelativeToolTip": "UserManagementAPI.Infrastructure\\Data\\DcAddressType.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T10:09:01.068Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 14,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\Entities\\User.cs",
               "RelativeDocumentMoniker": "UserManagementAPI.Domain\\Entities\\User.cs",
               "ToolTip": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\Entities\\User.cs",
               "RelativeToolTip": "UserManagementAPI.Domain\\Entities\\User.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAowA8AAAAXAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-23T10:08:53.541Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "IUserService.cs",
               "DocumentMoniker": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Application\\IServices\\IUserService.cs",
               "RelativeDocumentMoniker": "UserManagementAPI.Application\\IServices\\IUserService.cs",
               "ToolTip": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Application\\IServices\\IUserService.cs",
               "RelativeToolTip": "UserManagementAPI.Application\\IServices\\IUserService.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAMwA4AAAASAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAA8AAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-23T10:08:48.02Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\Program.cs",
               "RelativeDocumentMoniker": "UserManagementAPI\\Program.cs",
               "ToolTip": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\Program.cs",
               "RelativeToolTip": "UserManagementAPI\\Program.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAQwB4AAABEAAAA",
+              "ViewState": "AQIAACEAAAAAAAAAAAAowCkAAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-23T10:07:47.195Z",
               "EditorCaption": ""
@@ -185,33 +253,33 @@
               "RelativeDocumentMoniker": "UserManagementAPI.Infrastructure\\Services\\UserService.cs",
               "ToolTip": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Infrastructure\\Services\\UserService.cs",
               "RelativeToolTip": "UserManagementAPI.Infrastructure\\Services\\UserService.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAvwDAAAAA1AAAA",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwCIAAABzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-23T10:07:21.549Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Application\\IRepositories\\IUserRepository.cs",
               "RelativeDocumentMoniker": "UserManagementAPI.Application\\IRepositories\\IUserRepository.cs",
               "ToolTip": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Application\\IRepositories\\IUserRepository.cs",
               "RelativeToolTip": "UserManagementAPI.Application\\IRepositories\\IUserRepository.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAIAwwA8AAAASAAAA",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAmwA8AAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-23T10:01:53.035Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 10,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Infrastructure\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "UserManagementAPI.Infrastructure\\Repositories\\UserRepository.cs",
               "ToolTip": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Infrastructure\\Repositories\\UserRepository.cs",
               "RelativeToolTip": "UserManagementAPI.Infrastructure\\Repositories\\UserRepository.cs",
-              "ViewState": "AQIAADIAAAAAAAAAAAAIwDwAAAArAAAA",
+              "ViewState": "AQIAAFYAAAAAAAAAAADwv2kAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-23T10:01:15.815Z",
               "EditorCaption": ""

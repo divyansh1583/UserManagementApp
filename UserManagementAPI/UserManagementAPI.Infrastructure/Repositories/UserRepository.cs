@@ -1,9 +1,8 @@
-﻿using CollegeManagementAPI.Domain.Common_Models;
-using CollegeManagementAPI.Domain.Entities;
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
 using UserManagementAPI.Application.Repositories;
+using UserManagementAPI.Domain.Common_Models;
 using UserManagementAPI.Domain.Entities;
 using UserManagementAPI.Infrastructure.Data;
 
@@ -18,14 +17,24 @@ namespace UserManagementAPI.Infrastructure.Repositories
             _context = context;
         }
 
-        Task<IEnumerable<User>> IUserRepository.GetAllAsync()
+        public async Task<IEnumerable<User>> GetAllAsync()
         {
             throw new NotImplementedException();
         }
 
-        Task<User> IUserRepository.GetUserByEmailAsync(string email)
+        public async Task<DcUser> GetUserByEmailAsync(string email)
         {
-            throw new NotImplementedException();
+            var parameters = new[]
+            {
+            new SqlParameter("@Email", email),
+            };
+            var user = await _context.DcUsers.FromSqlRaw(
+                "SELECT * FROM DC_Users WHERE CONVERT(VARCHAR(100), DECRYPTBYPASSPHRASE('YourSecretKey', Email)) = @Email",
+                parameters
+            ).FirstOrDefaultAsync();
+
+            return user;
+
         }
 
 
@@ -65,15 +74,15 @@ namespace UserManagementAPI.Infrastructure.Repositories
         }
 
 
+
         //Login
         public async Task<ResponseModel> LoginAsync(LoginDetails loginDetails)
         {
             var parameters = new[]
             {
-            new SqlParameter("@Email", loginDetails.Email){
-            },
+            new SqlParameter("@Email", loginDetails.Email),
             new SqlParameter("@Password", loginDetails.Password)
-        };
+            };
 
             var user = await _context.DcUsers.FromSqlRaw(
                 "SELECT * FROM DC_Users WHERE CONVERT(VARCHAR(100), DECRYPTBYPASSPHRASE('YourSecretKey', Email)) = @Email",
@@ -84,7 +93,7 @@ namespace UserManagementAPI.Infrastructure.Repositories
             {
                 if (user.Password == loginDetails.Password)
                 {
-                    return new ResponseModel { StatusCode = 200, Data = loginDetails, Message = ResponseMessages.UserFound };
+                    return new ResponseModel { StatusCode = 200, Data = new { user = loginDetails, token = "" }, Message = ResponseMessages.UserFound };
                 }
                 else
                 {

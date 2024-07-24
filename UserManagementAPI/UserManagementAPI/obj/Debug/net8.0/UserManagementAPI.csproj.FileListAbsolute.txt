@@ -142,3 +142,4 @@ C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserMa
 C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI\bin\Debug\net8.0\UserManagementAPI.Domain.dll
 C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI\bin\Debug\net8.0\UserManagementAPI.Application.pdb
 C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI\bin\Debug\net8.0\UserManagementAPI.Domain.pdb
+C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

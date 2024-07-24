@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace UserManagementAPI.Infrastructure.Data;
+namespace UserManagementAPI.Domain.Entities;
 
 public partial class DcAddressType
 {

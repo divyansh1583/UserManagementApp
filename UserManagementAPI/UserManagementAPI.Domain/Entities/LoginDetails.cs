@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CollegeManagementAPI.Domain.Entities
+namespace UserManagementAPI.Domain.Entities
 {
     public class LoginDetails
     {

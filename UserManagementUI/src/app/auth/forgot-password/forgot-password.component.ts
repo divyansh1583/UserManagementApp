@@ -8,17 +8,21 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class ForgotPasswordComponent {
   forgotPasswordForm: FormGroup;
+  isEmailSent=false;
 
   constructor(private fb: FormBuilder) {
     this.forgotPasswordForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]]
     });
   }
-
+  get email() {
+    return this.forgotPasswordForm.get('email');
+  }
   onSubmit() {
     if (this.forgotPasswordForm.valid) {
       console.log(this.forgotPasswordForm.value);
       // Add your password reset logic here
+      this.isEmailSent=true;
     }
   }
 }

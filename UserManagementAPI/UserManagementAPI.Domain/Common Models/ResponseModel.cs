@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CollegeManagementAPI.Domain.Common_Models
+namespace UserManagementAPI.Domain.Common_Models
+
 {
     public class ResponseModel
     {
