@@ -93,7 +93,7 @@ END
 		@SecondaryCountry = 'Country',
 		@SecondaryZipCode = '67890',
 		@Password = '123@Dc';
-
+		use test
 		SELECT * FROM DC_Users
 		SELECT * FROM DC_AddressTypes
 		SELECT * FROM DC_UserAddresses
@@ -112,3 +112,8 @@ FROM DC_Users;
 SELECT * 
 FROM DC_Users 
 WHERE CONVERT(VARCHAR(100), DECRYPTBYPASSPHRASE('YourSecretKey', Email)) = 'dc@gmail.' 
+
+DELETE
+		FROM DELETE
+		FROM DC_LoginCredentials
+		WHERE UserId = 3;

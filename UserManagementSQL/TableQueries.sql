@@ -16,7 +16,7 @@ ImagePath VARCHAR(255),
 Password VARCHAR(100) NOT NULL,
 
 CreatedBy VARCHAR(50),
-CreatedDate DATETIME DEFAULT GETDATE(),
+	,
 UpdatedBy VARCHAR(50),
 UpdatedDate DATETIME,
 IsActive BIT DEFAULT 0, 
