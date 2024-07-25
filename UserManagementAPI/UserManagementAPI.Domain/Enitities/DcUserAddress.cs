@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 
 namespace UserManagementAPI.Domain.Entities;
+
 public partial class DcUserAddress
 {
     public int AddressId { get; set; }
 
     public string? Address { get; set; }
 
-    public string? City { get; set; }
+    public int CityId { get; set; }
 
-    public string? State { get; set; }
+    public int StateId { get; set; }
 
-    public string? Country { get; set; }
+    public int CountryId { get; set; }
 
     public string? ZipCode { get; set; }
 
@@ -20,7 +21,13 @@ public partial class DcUserAddress
 
     public int UserId { get; set; }
 
-    public virtual DcAddressType AddressType { get; set; } = null!;
+    public virtual DcUserAddressType AddressType { get; set; } = null!;
+
+    public virtual DcCity City { get; set; } = null!;
+
+    public virtual DcCountry Country { get; set; } = null!;
+
+    public virtual DcState State { get; set; } = null!;
 
     public virtual DcUser User { get; set; } = null!;
 }

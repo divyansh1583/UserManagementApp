@@ -1,7 +1,9 @@
 ﻿
+using AutoMapper;
 using CollegeManagementAPI.Infrastructure.Implementation.Services;
-using UserManagementAPI.Application.Repositories;
-using UserManagementAPI.Application.Services;
+using UserManagementAPI.Application.DTOs;
+using UserManagementAPI.Application.Interfaces.Repositories;
+using UserManagementAPI.Application.Interfaces.Services;
 using UserManagementAPI.Domain.Common_Models;
 using UserManagementAPI.Domain.Entities;
 
@@ -10,62 +12,35 @@ namespace UserManagementAPI.Infrastructure.Services
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
-        private readonly TokenService _tokenService;
+        private readonly IMapper _mapper;
+        private readonly IEncryptionService _encryptionService;
 
-        public UserService(IUserRepository userRepository, TokenService tokenService)
+        public UserService(IUserRepository userRepository, IMapper mapper, IEncryptionService encryptionService)
         {
             _userRepository = userRepository;
-            _tokenService = tokenService;
+            _mapper = mapper;
+            _encryptionService = encryptionService;
         }
 
-        // Service GetAll
-        public async Task<IEnumerable<User>> GetAllUsersAsync()
+        public async Task<UserDto> GetUserByIdAsync(int id)
         {
-            return await _userRepository.GetAllAsync();
+            var user = await _userRepository.GetByIdAsync(id);
+            return _mapper.Map<UserDto>(user);
         }
-        public async Task<ResponseModel> LoginUserAsync(LoginDetails loginDetails)
+
+        public async Task<int> AddUserAsync(DcUser userDto)
         {
-            var user = await _userRepository.GetUserByEmailAsync(loginDetails.Email);
+            //DcUser user = _mapper.Map<DcUser>(userDto);
 
-            if (user != null)
-            {
-                if (user.Password == loginDetails.Password)
-                {
-                    var jwtToken = _tokenService.GenerateToken(loginDetails);
-                    return new ResponseModel { StatusCode = 200, Data = new { user = loginDetails, token = jwtToken }, Message = ResponseMessages.UserFound };
-                }
-                else
-                {
-                    return new ResponseModel { StatusCode = 401, Data = null, Message = ResponseMessages.InvaildPassword };
-                }
-            }
-            else
-            {
-                return new ResponseModel { StatusCode = 404, Data = null, Message = ResponseMessages.UserNotFound };
-            }
+            ////Encrypting Email,Phone, AlternatePhone 
+            //user.Email = _encryptionService.Encrypt(userDto.Email);
+            //user.Phone = _encryptionService.Encrypt(userDto.Phone);
+            //user.AlternatePhone = _encryptionService.Encrypt(userDto.AlternatePhone);
+
+            ////Hashing Password
+            //user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
+
+            return await _userRepository.AddAsync(userDto);
         }
-
-        public async Task<int> AddUserAsync(User user)
-        {
-            // Here we can add business logic, validation, etc.
-            if (string.IsNullOrWhiteSpace(user.Email))
-            {
-                throw new ArgumentException("Email is required");
-            }
-
-            if (string.IsNullOrWhiteSpace(user.Password))
-            {
-                throw new ArgumentException("Password is required");
-            }
-
-            // You might want to add more validations here
-
-            // You could also hash the password here before saving
-            // user.Password = HashPassword(user.Password);
-
-            return await _userRepository.AddUserAsync(user);
-        }
-
-        // Add more methods as needed
     }
 }

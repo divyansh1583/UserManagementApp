@@ -4,9 +4,11 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using UserManagementAPI.Application.Repositories;
-using UserManagementAPI.Application.Services;
+using UserManagementAPI.Application.Interfaces.Repositories;
+using UserManagementAPI.Application.Interfaces.Services;
+using UserManagementAPI.Domain;
 using UserManagementAPI.Infrastructure.Data;
+using UserManagementAPI.Infrastructure.Data.Configurations;
 using UserManagementAPI.Infrastructure.Repositories;
 using UserManagementAPI.Infrastructure.Services;
 
@@ -21,11 +23,12 @@ namespace UserManagementAPI
             // Add services to the container.
 
             builder.Services.AddControllers();
+            builder.Services.AddControllers().AddNewtonsoftJson();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             // Add DbContext
-            builder.Services.AddDbContext<UserManagementContext>(options =>
+            builder.Services.AddDbContext<UserDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -48,8 +51,10 @@ namespace UserManagementAPI
 
             // Add services
             builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<IEncryptionService, EncryptionService>();
 
             builder.Services.AddTransient<TokenService>();
+            builder.Services.AddAutoMapper(typeof(MappingProfile));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

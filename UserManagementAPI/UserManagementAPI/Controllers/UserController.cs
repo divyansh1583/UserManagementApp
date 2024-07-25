@@ -1,53 +1,44 @@
 ﻿
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using UserManagementAPI.Application.Services;
+using UserManagementAPI.Application.DTOs;
+using UserManagementAPI.Application.Interfaces.Services;
 using UserManagementAPI.Domain.Entities;
 
 namespace UserManagementAPI.Controllers
 {
 
     [ApiController]
-    public class UserController : ControllerBase
+    public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
 
-        public UserController(IUserService userService)
+        public UsersController(IUserService userService)
         {
             _userService = userService;
         }
-        [HttpGet("getAllUsers")]
-        public async Task<IActionResult> GetAllUsers()
+
+        [HttpGet("Get")]
+        public async Task<ActionResult<UserDto>> GetUser([FromBody] int id)
         {
-            var users = await _userService.GetAllUsersAsync();
-            return Ok(users);
-        }
-        [HttpPost("add")]
-        public async Task<IActionResult> AddUser([FromBody] User user)
-        {
-            try
+            var user = await _userService.GetUserByIdAsync(id);
+            if (user == null)
             {
-                var userId = await _userService.AddUserAsync(user);
-                return Ok(new { UserId = userId });
+                return NotFound();
             }
-            catch (ArgumentException ex)
-            {
-                return BadRequest(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, ex.Message);
-            }
+            return Ok(user);
         }
 
-        [HttpPost("login")]
-        public async Task<IActionResult> LoginAsync([FromBody] LoginDetails loginDetails)
+        [HttpPost("Add")]
+        public async Task<ActionResult<int>> AddUser(DcUser userDto)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            return Ok(await _userService.LoginUserAsync(loginDetails));
+
+            var userId = await _userService.AddUserAsync(userDto);
+            return CreatedAtAction(nameof(GetUser), new { id = userId }, userId);
         }
     }
 }

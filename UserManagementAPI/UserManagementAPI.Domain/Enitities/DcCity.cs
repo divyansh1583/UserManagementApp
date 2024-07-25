@@ -3,11 +3,15 @@ using System.Collections.Generic;
 
 namespace UserManagementAPI.Domain.Entities;
 
-public partial class DcAddressType
+public partial class DcCity
 {
-    public int AddressTypeId { get; set; }
+    public int CityId { get; set; }
 
-    public string AddressTypeName { get; set; } = null!;
+    public int StateId { get; set; }
+
+    public string CityName { get; set; } = null!;
 
     public virtual ICollection<DcUserAddress> DcUserAddresses { get; set; } = new List<DcUserAddress>();
+
+    public virtual DcState State { get; set; } = null!;
 }

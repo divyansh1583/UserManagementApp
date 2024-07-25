@@ -93,24 +93,18 @@ END
 		@SecondaryCountry = 'Country',
 		@SecondaryZipCode = '67890',
 		@Password = '123@Dc';
+
 		use test
-		SELECT * FROM DC_Users
-		SELECT * FROM DC_AddressTypes
-		SELECT * FROM DC_UserAddresses
+x
 
-
-		DROP TABLE DC_UserAddresses
-		DROP TABLE DC_Users
-		DROP TABLE DC_AddressTypes
-
-		SELECT 
+	SELECT 
     FirstName,
     LastName,
     CONVERT(VARCHAR(100), DECRYPTBYPASSPHRASE('YourSecretKey', Email)) AS DecryptedEmail
 FROM DC_Users;
 
 SELECT * 
-FROM DC_Users 
+FROM DC_User 
 WHERE CONVERT(VARCHAR(100), DECRYPTBYPASSPHRASE('YourSecretKey', Email)) = 'dc@gmail.' 
 
 DELETE

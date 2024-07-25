@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace UserManagementAPI.Domain.Entities;
 
-public class DcUser
+public partial class DcUser
 {
     public int UserId { get; set; }
 
@@ -26,12 +26,18 @@ public class DcUser
     public byte[]? AlternatePhone { get; set; }
 
     public string? ImagePath { get; set; }
+
     public string Password { get; set; } = null!;
+
+    public string? PasswordResetToken { get; set; }
+
+    public DateTime? PasswordResetTokenExpiry { get; set; }
+
     public string? CreatedBy { get; set; }
 
-    public DateTime? CreatedDate { get; set; }
-
     public string? UpdatedBy { get; set; }
+
+    public DateTime? CreatedDate { get; set; }
 
     public DateTime? UpdatedDate { get; set; }
 
