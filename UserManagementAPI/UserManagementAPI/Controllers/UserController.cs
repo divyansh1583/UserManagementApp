@@ -30,7 +30,7 @@ namespace UserManagementAPI.Controllers
         }
 
         [HttpPost("Add")]
-        public async Task<ActionResult<int>> AddUser(DcUser userDto)
+        public async Task<ActionResult<int>> AddUser(UserDto userDto)
         {
             if (!ModelState.IsValid)
             {

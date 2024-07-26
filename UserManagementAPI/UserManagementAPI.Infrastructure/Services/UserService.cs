@@ -28,19 +28,19 @@ namespace UserManagementAPI.Infrastructure.Services
             return _mapper.Map<UserDto>(user);
         }
 
-        public async Task<int> AddUserAsync(DcUser userDto)
+        public async Task<int> AddUserAsync(UserDto userDto)
         {
-            //DcUser user = _mapper.Map<DcUser>(userDto);
+            DcUser user = _mapper.Map<DcUser>(userDto);
 
-            ////Encrypting Email,Phone, AlternatePhone 
-            //user.Email = _encryptionService.Encrypt(userDto.Email);
-            //user.Phone = _encryptionService.Encrypt(userDto.Phone);
-            //user.AlternatePhone = _encryptionService.Encrypt(userDto.AlternatePhone);
+            //Encrypting Email,Phone, AlternatePhone 
+            user.Email = _encryptionService.Encrypt(userDto.Email);
+            user.Phone = _encryptionService.Encrypt(userDto.Phone);
+            user.AlternatePhone = _encryptionService.Encrypt(userDto.AlternatePhone);
 
-            ////Hashing Password
-            //user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
+            //Hashing Password
+            user.Password = BCrypt.Net.BCrypt.HashPassword(userDto.Password);
 
-            return await _userRepository.AddAsync(userDto);
+            return await _userRepository.AddAsync(user);
         }
     }
 }

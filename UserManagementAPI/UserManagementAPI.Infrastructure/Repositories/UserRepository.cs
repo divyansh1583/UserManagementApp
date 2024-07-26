@@ -21,11 +21,11 @@ namespace UserManagementAPI.Infrastructure.Repositories
 
         public async Task<DcUser> GetByIdAsync(int id)
         {
-            //return await _context.DcUsers
-            //    .Include(u => u.PrimaryAddress)
-            //    .Include(u => u.SecondaryAddress)
+            var user = await _context.DcUsers.FindAsync(id);
+            return user;
+            //await _context.DcUsers
+            //    .Include(u => u.DcUserAddresses)
             //    .FirstOrDefaultAsync(u => u.UserId == id);
-            throw new NotImplementedException();
         }
 
         public async Task<int> AddAsync(DcUser user)

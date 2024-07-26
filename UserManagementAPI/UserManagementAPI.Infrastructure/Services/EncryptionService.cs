@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using UserManagementAPI.Application.Interfaces.Services;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace UserManagementAPI.Infrastructure.Services
 {
@@ -16,8 +17,18 @@ namespace UserManagementAPI.Infrastructure.Services
 
         public EncryptionService(IConfiguration configuration)
         {
-            _key = Encoding.UTF8.GetBytes(configuration["Encryption:Key"]);
-            _iv = Encoding.UTF8.GetBytes(configuration["Encryption:IV"]);
+            string keyString = configuration["Encryption:Key"];
+            string ivString = configuration["Encryption:IV"];
+
+            // Ensure the key is exactly 32 bytes (256 bits)
+            _key = new byte[32];
+            byte[] keyBytes = Encoding.UTF8.GetBytes(keyString);
+            Array.Copy(keyBytes, _key, Math.Min(keyBytes.Length, 32));
+
+            // Ensure the IV is exactly 16 bytes (128 bits)
+            _iv = new byte[16];
+            byte[] ivBytes = Encoding.UTF8.GetBytes(ivString);
+            Array.Copy(ivBytes, _iv, Math.Min(ivBytes.Length, 16));
         }
 
         public byte[] Encrypt(string data)
