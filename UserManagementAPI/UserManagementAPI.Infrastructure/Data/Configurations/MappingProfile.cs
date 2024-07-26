@@ -25,16 +25,14 @@ namespace UserManagementAPI.Infrastructure.Data.Configurations
         //}
         public MappingProfile()
         {
-
-                CreateMap<DcUser, UserDto>()
+            CreateMap<DcUser, UserDto>()
                 // Forward mapping from DcUser to UserDto
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => Encoding.UTF8.GetString(src.Email)))
                 .ForMember(dest => dest.Phone, opt => opt.MapFrom(src => Encoding.UTF8.GetString(src.Phone)))
                 .ForMember(dest => dest.AlternatePhone, opt => opt.MapFrom(src => src.AlternatePhone != null ? Encoding.UTF8.GetString(src.AlternatePhone) : null))
                 .ForMember(dest => dest.DateOfJoining, opt => opt.MapFrom(src => src.DateOfJoining.HasValue ? src.DateOfJoining.Value.ToDateTime(TimeOnly.MinValue) : (DateTime?)null))
                 .ForMember(dest => dest.DateOfBirth, opt => opt.MapFrom(src => src.DateOfBirth.HasValue ? src.DateOfBirth.Value.ToDateTime(TimeOnly.MinValue) : (DateTime?)null))
-                .ForMember(dest => dest.PrimaryAddress, opt => opt.MapFrom(src => src.DcUserAddresses.FirstOrDefault(a => a.AddressTypeId == 1)))
-                .ForMember(dest => dest.SecondaryAddress, opt => opt.MapFrom(src => src.DcUserAddresses.FirstOrDefault(a => a.AddressTypeId == 2)))
+                .ForMember(dest => dest.Addresses, opt => opt.MapFrom(src => src.DcUserAddresses))
                 // Reverse mapping from UserDto to DcUser
                 .ReverseMap()
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => Encoding.UTF8.GetBytes(src.Email)))
@@ -42,15 +40,10 @@ namespace UserManagementAPI.Infrastructure.Data.Configurations
                 .ForMember(dest => dest.AlternatePhone, opt => opt.MapFrom(src => src.AlternatePhone != null ? Encoding.UTF8.GetBytes(src.AlternatePhone) : null))
                 .ForMember(dest => dest.DateOfJoining, opt => opt.MapFrom(src => src.DateOfJoining.HasValue ? DateOnly.FromDateTime(src.DateOfJoining.Value) : (DateOnly?)null))
                 .ForMember(dest => dest.DateOfBirth, opt => opt.MapFrom(src => src.DateOfBirth.HasValue ? DateOnly.FromDateTime(src.DateOfBirth.Value) : (DateOnly?)null))
-                .ForMember(dest => dest.DcUserAddresses, opt => opt.Ignore());
-
+                .ForMember(dest => dest.DcUserAddresses, opt => opt.MapFrom(src => src.Addresses));
 
             CreateMap<DcUserAddress, AddressDto>()
-                .ForMember(dest => dest.AddressTypeName, opt => opt.MapFrom(src => src.AddressType.AddressTypeName))
-                .ReverseMap()
-                .ForMember(dest => dest.AddressType, opt => opt.Ignore());
-
-
+                .ReverseMap();
         }
     }
 }

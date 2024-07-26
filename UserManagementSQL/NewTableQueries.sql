@@ -26,7 +26,7 @@ CREATE TABLE DC_User (
 CREATE TABLE DC_UserAddressType (
     AddressTypeId INT PRIMARY KEY IDENTITY(1,1),
     AddressTypeName VARCHAR(20) NOT NULL UNIQUE
-);
+);	
 
 -- User Address table
 CREATE TABLE DC_UserAddress (
@@ -44,14 +44,18 @@ CREATE TABLE DC_UserAddress (
     FOREIGN KEY (AddressTypeId) REFERENCES DC_UserAddressType(AddressTypeId),
     FOREIGN KEY (UserId) REFERENCES DC_User(UserId)
 );
-
 -- Insert address types
 INSERT INTO DC_UserAddressType (AddressTypeName) VALUES ('Primary'), ('Secondary');
 
-SELECT * FROM DC_User
+use test
+SELECT * FROM DC_User	
 SELECT * FROM DC_UserAddress
 SELECT * FROM DC_UserAddressType
 
 DROP TABLE DC_User
 DROP TABLE DC_UserAddress
 DROP TABLE DC_UserAddressType
+
+
+TRUNCATE TABLE DC_UserAddress;
+TRUNCATE TABLE DC_User;

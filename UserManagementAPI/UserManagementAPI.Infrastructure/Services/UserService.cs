@@ -21,6 +21,11 @@ namespace UserManagementAPI.Infrastructure.Services
             _mapper = mapper;
             _encryptionService = encryptionService;
         }
+        public async Task<List<UserDto>> GetAllUsersAsync()
+        {
+            var users = await _userRepository.GetAllAsync();
+            return _mapper.Map<List<UserDto>>(users);
+        }
 
         public async Task<UserDto> GetUserByIdAsync(int id)
         {
@@ -40,7 +45,20 @@ namespace UserManagementAPI.Infrastructure.Services
             //Hashing Password
             user.Password = BCrypt.Net.BCrypt.HashPassword(userDto.Password);
 
-            return await _userRepository.AddAsync(user);
+            var userId = await _userRepository.AddAsync(user);
+
+            return userId;
+        }
+
+
+        public Task<bool> UpdateUserAsync(UserDto userDto)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> DeleteUserAsync(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

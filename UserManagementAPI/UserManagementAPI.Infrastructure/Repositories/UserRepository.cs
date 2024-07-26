@@ -21,19 +21,26 @@ namespace UserManagementAPI.Infrastructure.Repositories
 
         public async Task<DcUser> GetByIdAsync(int id)
         {
-            var user = await _context.DcUsers.FindAsync(id);
+            var user = await _context.DcUsers
+                .Include(u => u.DcUserAddresses)
+                .FirstOrDefaultAsync(u => u.UserId == id);
             return user;
-            //await _context.DcUsers
-            //    .Include(u => u.DcUserAddresses)
-            //    .FirstOrDefaultAsync(u => u.UserId == id);
         }
 
         public async Task<int> AddAsync(DcUser user)
         {
-
             await _context.DcUsers.AddAsync(user);
-            await _context.SaveChangesAsync();
-            return user.UserId;
+            await _context.DcUserAddresses.AddRangeAsync(user.DcUserAddresses);
+            var users=await _context.SaveChangesAsync();
+
+            return users;
         }
+
+        public async Task<List<DcUser>> GetAllAsync()
+        {
+            var users = await _context.DcUsers.ToListAsync();
+            return users;
+        }
+
     }
 }
