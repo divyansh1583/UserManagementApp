@@ -12,3 +12,19 @@ C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserMa
 C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI.Domain\obj\Debug\net8.0\ref\UserManagementAPI.Domain.dll
 C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI.Domain\bin\Debug\net8.0\UserManagementAPI.Domain.runtimeconfig.json
 C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI.Domain\obj\Debug\net8.0\UserManagementAPI.Domain.genruntimeconfig.cache
+C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI.Domain\obj\Debug\net8.0\UserManagementAPI.Domain.csproj.AssemblyReference.cache
+C:\Users\divya\OneDrive\Desktop\Projects\Angular Projects\Assignments\UserManagementApp\UserManagementAPI\UserManagementAPI.Domain\bin\Debug\net8.0\UserManagementAPI.Domain.deps.json
+C:\Users\divya\OneDrive\Desktop\Projects\Angular Projects\Assignments\UserManagementApp\UserManagementAPI\UserManagementAPI.Domain\bin\Debug\net8.0\UserManagementAPI.Domain.runtimeconfig.json
+C:\Users\divya\OneDrive\Desktop\Projects\Angular Projects\Assignments\UserManagementApp\UserManagementAPI\UserManagementAPI.Domain\bin\Debug\net8.0\UserManagementAPI.Domain.dll
+C:\Users\divya\OneDrive\Desktop\Projects\Angular Projects\Assignments\UserManagementApp\UserManagementAPI\UserManagementAPI.Domain\bin\Debug\net8.0\UserManagementAPI.Domain.pdb
+C:\Users\divya\OneDrive\Desktop\Projects\Angular Projects\Assignments\UserManagementApp\UserManagementAPI\UserManagementAPI.Domain\obj\Debug\net8.0\UserManagementAPI.Domain.csproj.AssemblyReference.cache
+C:\Users\divya\OneDrive\Desktop\Projects\Angular Projects\Assignments\UserManagementApp\UserManagementAPI\UserManagementAPI.Domain\obj\Debug\net8.0\UserManagementAPI.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\divya\OneDrive\Desktop\Projects\Angular Projects\Assignments\UserManagementApp\UserManagementAPI\UserManagementAPI.Domain\obj\Debug\net8.0\UserManagementAPI.Domain.AssemblyInfoInputs.cache
+C:\Users\divya\OneDrive\Desktop\Projects\Angular Projects\Assignments\UserManagementApp\UserManagementAPI\UserManagementAPI.Domain\obj\Debug\net8.0\UserManagementAPI.Domain.AssemblyInfo.cs
+C:\Users\divya\OneDrive\Desktop\Projects\Angular Projects\Assignments\UserManagementApp\UserManagementAPI\UserManagementAPI.Domain\obj\Debug\net8.0\UserManagementAPI.Domain.csproj.CoreCompileInputs.cache
+C:\Users\divya\OneDrive\Desktop\Projects\Angular Projects\Assignments\UserManagementApp\UserManagementAPI\UserManagementAPI.Domain\obj\Debug\net8.0\UserManagementAPI.Domain.sourcelink.json
+C:\Users\divya\OneDrive\Desktop\Projects\Angular Projects\Assignments\UserManagementApp\UserManagementAPI\UserManagementAPI.Domain\obj\Debug\net8.0\UserManagementAPI.Domain.dll
+C:\Users\divya\OneDrive\Desktop\Projects\Angular Projects\Assignments\UserManagementApp\UserManagementAPI\UserManagementAPI.Domain\obj\Debug\net8.0\refint\UserManagementAPI.Domain.dll
+C:\Users\divya\OneDrive\Desktop\Projects\Angular Projects\Assignments\UserManagementApp\UserManagementAPI\UserManagementAPI.Domain\obj\Debug\net8.0\UserManagementAPI.Domain.pdb
+C:\Users\divya\OneDrive\Desktop\Projects\Angular Projects\Assignments\UserManagementApp\UserManagementAPI\UserManagementAPI.Domain\obj\Debug\net8.0\UserManagementAPI.Domain.genruntimeconfig.cache
+C:\Users\divya\OneDrive\Desktop\Projects\Angular Projects\Assignments\UserManagementApp\UserManagementAPI\UserManagementAPI.Domain\obj\Debug\net8.0\ref\UserManagementAPI.Domain.dll

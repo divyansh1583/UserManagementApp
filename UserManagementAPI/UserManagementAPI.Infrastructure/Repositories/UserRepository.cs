@@ -1,109 +1,68 @@
-﻿using Microsoft.Data.SqlClient;
+﻿
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-
-using UserManagementAPI.Application.Repositories;
 using UserManagementAPI.Domain.Common_Models;
 using UserManagementAPI.Domain.Entities;
-using UserManagementAPI.Infrastructure.Data;
+
+using BCrypt.Net;
+using UserManagementAPI.Application.Interfaces.Repositories;
+using UserManagementAPI.Domain;
 
 namespace UserManagementAPI.Infrastructure.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private readonly UserManagementContext _context;
+        private readonly UserDbContext _context;
 
-        public UserRepository(UserManagementContext context)
+        public UserRepository(UserDbContext context)
         {
             _context = context;
         }
 
-        public async Task<IEnumerable<User>> GetAllAsync()
+        public async Task<DcUser> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        public async Task<DcUser> GetUserByEmailAsync(string email)
-        {
-            var parameters = new[]
-            {
-            new SqlParameter("@Email", email),
-            };
-            var user = await _context.DcUsers.FromSqlRaw(
-                "SELECT * FROM DC_Users WHERE CONVERT(VARCHAR(100), DECRYPTBYPASSPHRASE('YourSecretKey', Email)) = @Email",
-                parameters
-            ).FirstOrDefaultAsync();
-
+            var user = await _context.DcUsers
+                .Include(u => u.DcUserAddresses)
+                .FirstOrDefaultAsync(u => u.UserId == id);
             return user;
-
         }
 
-
-        public async Task<int> AddUserAsync(User user)
+        public async Task<List<DcUser>> GetAllAsync()
         {
-            var parameters = new[]
-            {
-                new SqlParameter("@FirstName", user.FirstName),
-                new SqlParameter("@LastName", user.LastName ?? (object)DBNull.Value),
-                new SqlParameter("@MiddleName", user.MiddleName),
-                new SqlParameter("@Gender", user.Gender ?? (object)DBNull.Value),
-                new SqlParameter("@DateOfJoining", user.DateOfJoining ?? (object)DBNull.Value),
-                new SqlParameter("@DateOfBirth", user.DateOfBirth ?? (object)DBNull.Value),
-                new SqlParameter("@Email", user.Email),
-                new SqlParameter("@Phone", user.Phone),
-                new SqlParameter("@AlternatePhone", user.AlternatePhone ?? (object)DBNull.Value),
-                new SqlParameter("@ImagePath", DBNull.Value), // default value
-                new SqlParameter("@CreatedBy", DBNull.Value), // default value
-                new SqlParameter("@IsActive", user.IsActive),
-                new SqlParameter("@PrimaryAddress", user.Address1 ?? (object)DBNull.Value),
-                new SqlParameter("@PrimaryCity", user.City1 ?? (object)DBNull.Value),
-                new SqlParameter("@PrimaryState", user.State1 ?? (object)DBNull.Value),
-                new SqlParameter("@PrimaryCountry", user.Country1 ?? (object)DBNull.Value),
-                new SqlParameter("@PrimaryZipCode", user.ZipCode1 ?? (object)DBNull.Value),
-                new SqlParameter("@SecondaryAddress", user.Address2 ?? (object)DBNull.Value),
-                new SqlParameter("@SecondaryCity", user.City2 ?? (object)DBNull.Value),
-                new SqlParameter("@SecondaryState", user.State2 ?? (object)DBNull.Value),
-                new SqlParameter("@SecondaryCountry", user.Country2 ?? (object)DBNull.Value),
-                new SqlParameter("@SecondaryZipCode", user.ZipCode2 ?? (object)DBNull.Value),
-                new SqlParameter("@Password", user.Password)
-            };
-
-            var result = await _context.Database
-                .ExecuteSqlRawAsync("EXEC DC_AddUser @FirstName, @LastName, @MiddleName, @Gender, @DateOfJoining, @DateOfBirth, @Email, @Phone, @AlternatePhone, @ImagePath, @CreatedBy, @IsActive, @PrimaryAddress, @PrimaryCity, @PrimaryState, @PrimaryCountry, @PrimaryZipCode, @SecondaryAddress, @SecondaryCity, @SecondaryState, @SecondaryCountry, @SecondaryZipCode, @Password", parameters);
-
-            return result;
+            var users = await _context.DcUsers
+                .Include(u => u.DcUserAddresses)
+                .ToListAsync();
+            return users;
         }
 
-
-
-        //Login
-        public async Task<ResponseModel> LoginAsync(LoginDetails loginDetails)
+        public async Task<int> AddAsync(DcUser user)
         {
-            var parameters = new[]
-            {
-            new SqlParameter("@Email", loginDetails.Email),
-            new SqlParameter("@Password", loginDetails.Password)
-            };
+            await _context.DcUsers.AddAsync(user);
+            //await _context.DcUserAddresses.AddRangeAsync(user.DcUserAddresses);
+            var users=await _context.SaveChangesAsync();
 
-            var user = await _context.DcUsers.FromSqlRaw(
-                "SELECT * FROM DC_Users WHERE CONVERT(VARCHAR(100), DECRYPTBYPASSPHRASE('YourSecretKey', Email)) = @Email",
-                parameters
-            ).FirstOrDefaultAsync();
+            return users;
+        }
 
+        public async Task<bool> UpdateAsync(DcUser user)
+        {
+            _context.DcUsers.Update(user);
+            var users = await _context.SaveChangesAsync();
+            return users > 0;
+        }
+
+        public async Task<bool> DeleteAsync(int id)
+        {
+            var user = await _context.DcUsers.FindAsync(id);
             if (user != null)
             {
-                if (user.Password == loginDetails.Password)
-                {
-                    return new ResponseModel { StatusCode = 200, Data = new { user = loginDetails, token = "" }, Message = ResponseMessages.UserFound };
-                }
-                else
-                {
-                    return new ResponseModel { StatusCode = 401, Data = null, Message = ResponseMessages.InvaildPassword };
-                }
+                var addresses = await _context.DcUserAddresses.Where(a => a.UserId == id).ToListAsync();
+        _context.DcUserAddresses.RemoveRange(addresses);
+                _context.DcUsers.Remove(user);
+                var users = await _context.SaveChangesAsync();
+                return users > 0;
             }
-            else
-            {
-                return new ResponseModel { StatusCode = 404, Data = null, Message = ResponseMessages.UserNotFound };
-            }
+            return false;
         }
     }
 }
