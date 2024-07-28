@@ -52,9 +52,15 @@ namespace UserManagementAPI
             // Add services
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IEncryptionService, EncryptionService>();
+            builder.Services.AddScoped<IEmailService, EmailService>();
+            builder.Services.AddScoped<ITokenService,TokenService>();
 
-            builder.Services.AddTransient<TokenService>();
-            builder.Services.AddAutoMapper(typeof(MappingProfile));
+            builder.Services.AddAutoMapper(cfg =>
+            {
+                var serviceProvider = builder.Services.BuildServiceProvider();
+                var encryptionService = serviceProvider.GetRequiredService<IEncryptionService>();
+                cfg.AddProfile(new MappingProfile(encryptionService));
+            });
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

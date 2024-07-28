@@ -27,20 +27,42 @@ namespace UserManagementAPI.Infrastructure.Repositories
             return user;
         }
 
+        public async Task<List<DcUser>> GetAllAsync()
+        {
+            var users = await _context.DcUsers
+                .Include(u => u.DcUserAddresses)
+                .ToListAsync();
+            return users;
+        }
+
         public async Task<int> AddAsync(DcUser user)
         {
             await _context.DcUsers.AddAsync(user);
-            await _context.DcUserAddresses.AddRangeAsync(user.DcUserAddresses);
+            //await _context.DcUserAddresses.AddRangeAsync(user.DcUserAddresses);
             var users=await _context.SaveChangesAsync();
 
             return users;
         }
 
-        public async Task<List<DcUser>> GetAllAsync()
+        public async Task<bool> UpdateAsync(DcUser user)
         {
-            var users = await _context.DcUsers.ToListAsync();
-            return users;
+            _context.DcUsers.Update(user);
+            var users = await _context.SaveChangesAsync();
+            return users > 0;
         }
 
+        public async Task<bool> DeleteAsync(int id)
+        {
+            var user = await _context.DcUsers.FindAsync(id);
+            if (user != null)
+            {
+                var addresses = await _context.DcUserAddresses.Where(a => a.UserId == id).ToListAsync();
+        _context.DcUserAddresses.RemoveRange(addresses);
+                _context.DcUsers.Remove(user);
+                var users = await _context.SaveChangesAsync();
+                return users > 0;
+            }
+            return false;
+        }
     }
 }

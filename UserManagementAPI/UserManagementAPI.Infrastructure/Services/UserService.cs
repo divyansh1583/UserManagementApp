@@ -1,6 +1,6 @@
-﻿
+﻿using System.Security.Cryptography;
 using AutoMapper;
-using CollegeManagementAPI.Infrastructure.Implementation.Services;
+using Microsoft.Extensions.Configuration;
 using UserManagementAPI.Application.DTOs;
 using UserManagementAPI.Application.Interfaces.Repositories;
 using UserManagementAPI.Application.Interfaces.Services;
@@ -13,52 +13,141 @@ namespace UserManagementAPI.Infrastructure.Services
     {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
-        private readonly IEncryptionService _encryptionService;
+        private readonly IEncryptionService encryptionService;
+        private readonly ITokenService _tokenService;
+        private readonly IConfiguration _configuration;
+        private readonly IEmailService _emailService;
 
-        public UserService(IUserRepository userRepository, IMapper mapper, IEncryptionService encryptionService)
+        public UserService(
+            IUserRepository userRepository,
+            IMapper mapper,
+            IEncryptionService encryptionService,
+            ITokenService tokenService,
+            IConfiguration configuration,
+            IEmailService emailService
+            )
         {
             _userRepository = userRepository;
             _mapper = mapper;
-            _encryptionService = encryptionService;
+            encryptionService = encryptionService;
+            _tokenService = tokenService;
+            _configuration = configuration;
+            _emailService = emailService;
         }
-        public async Task<List<UserDto>> GetAllUsersAsync()
+
+        public async Task<ResponseModel> GetAllUsersAsync()
         {
             var users = await _userRepository.GetAllAsync();
-            return _mapper.Map<List<UserDto>>(users);
+            var userDtos = _mapper.Map<List<UserDto>>(users);
+            return new ResponseModel { StatusCode = 200, Data = userDtos };
         }
 
-        public async Task<UserDto> GetUserByIdAsync(int id)
+        public async Task<ResponseModel> GetUserByIdAsync(int id)
         {
             var user = await _userRepository.GetByIdAsync(id);
-            return _mapper.Map<UserDto>(user);
+            if (user == null)
+            {
+                return new ResponseModel { StatusCode = 404, Message = "User not found" };
+            }
+            var userDto = _mapper.Map<UserDto>(user);
+            return new ResponseModel { StatusCode = 200, Data = userDto };
         }
 
-        public async Task<int> AddUserAsync(UserDto userDto)
+        public async Task<ResponseModel> AddUserAsync(UserDto userDto)
         {
             DcUser user = _mapper.Map<DcUser>(userDto);
-
-            //Encrypting Email,Phone, AlternatePhone 
-            user.Email = _encryptionService.Encrypt(userDto.Email);
-            user.Phone = _encryptionService.Encrypt(userDto.Phone);
-            user.AlternatePhone = _encryptionService.Encrypt(userDto.AlternatePhone);
-
-            //Hashing Password
-            user.Password = BCrypt.Net.BCrypt.HashPassword(userDto.Password);
-
-            var userId = await _userRepository.AddAsync(user);
-
-            return userId;
+            var userChanges = await _userRepository.AddAsync(user);
+            if (userChanges >= 3)
+            {
+                return new ResponseModel { StatusCode = 201, Message = "User added successfully" };
+            }
+            return new ResponseModel { StatusCode = 500, Message = "Failed to add user" };
         }
 
-
-        public Task<bool> UpdateUserAsync(UserDto userDto)
+        public async Task<ResponseModel> UpdateUserAsync(UpdateUserDto updateUserDto)
         {
-            throw new NotImplementedException();
+            var existingUser = await _userRepository.GetByIdAsync(updateUserDto.UserId);
+            if (existingUser == null)
+            {
+                return new ResponseModel { StatusCode = 404, Message = "User not found" };
+            }
+
+            _mapper.Map(updateUserDto, existingUser);
+
+            var userUpdated = await _userRepository.UpdateAsync(existingUser);
+            if (userUpdated)
+            {
+                return new ResponseModel { StatusCode = 200, Message = "User updated successfully" };
+            }
+            return new ResponseModel { StatusCode = 500, Message = "Failed to update user" };
         }
 
-        public Task<bool> DeleteUserAsync(int id)
+        public async Task<ResponseModel> DeleteUserAsync(int id)
         {
-            throw new NotImplementedException();
+            var userDeleted = await _userRepository.DeleteAsync(id);
+            if (userDeleted)
+            {
+                return new ResponseModel { StatusCode = 200, Message = "User deleted successfully" };
+            }
+            return new ResponseModel { StatusCode = 500, Message = "Failed to delete user" };
+        }
+
+        public async Task<ResponseModel> SendResetPasswordEmailAsync(string email)
+        {
+            var users = await _userRepository.GetAllAsync();
+            var user = users.FirstOrDefault(u => encryptionService.Decrypt(u.Email) == email );
+            if (user == null)
+            {
+                return new ResponseModel { StatusCode = 404, Message = "Email doesn't exist" };
+            }
+
+            user.PasswordResetToken = Convert.ToBase64String(RandomNumberGenerator.GetBytes(64));
+            user.PasswordResetTokenExpiry = DateTime.Now.AddMinutes(15);
+
+            string from = _configuration["EmailSettings:From"];
+            var emailModel = new EmailModel(email, "Reset Password!!", EmailBody.EmailStringBody(email, user.PasswordResetToken));
+            _emailService.SendEmail(emailModel);
+
+            await _userRepository.UpdateAsync(user);
+
+            return new ResponseModel { StatusCode = 200, Message = "Email sent!" };
+        }
+
+        public async Task<ResponseModel> ResetPasswordAsync(ResetPasswordDto resetPasswordDto)
+        {
+            var users = await _userRepository.GetAllAsync();
+            var user = users.FirstOrDefault(u => encryptionService.Decrypt(u.Email) == resetPasswordDto.Email);
+            if (user == null)
+            {
+                return new ResponseModel { StatusCode = 404, Message = "User doesn't exist" };
+            }
+
+            if (user.PasswordResetToken != resetPasswordDto.EmailToken || user.PasswordResetTokenExpiry < DateTime.Now)
+            {
+                return new ResponseModel { StatusCode = 400, Message = "Invalid reset link" };
+            }
+
+            user.Password = BCrypt.Net.BCrypt.HashPassword(resetPasswordDto.NewPassword);
+            user.PasswordResetToken = null;
+            user.PasswordResetTokenExpiry = null;
+
+            await _userRepository.UpdateAsync(user);
+
+            return new ResponseModel { StatusCode = 200, Message = "Password reset successfully" };
+        }
+
+        public async Task<ResponseModel> LoginAsync(LoginDto loginDto)
+        {
+            var users = await _userRepository.GetAllAsync();
+            var user = users.FirstOrDefault(u => encryptionService.Decrypt(u.Email) == loginDto.Email);
+
+            if (user == null || !BCrypt.Net.BCrypt.Verify(loginDto.Password, user.Password))
+            {
+                return new ResponseModel { StatusCode = 401, Message = "Invalid credentials" };
+            }
+
+            var token = _tokenService.GenerateToken();
+            return new ResponseModel { StatusCode = 200, Message = "Login successful", Data = new { Token = token } };
         }
     }
 }

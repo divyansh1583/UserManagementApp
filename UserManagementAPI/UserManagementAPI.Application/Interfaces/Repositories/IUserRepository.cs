@@ -16,6 +16,7 @@ namespace UserManagementAPI.Application.Interfaces.Repositories
         Task<DcUser> GetByIdAsync(int id);
         Task<List<DcUser>> GetAllAsync();
         Task<int> AddAsync(DcUser user);
-        //Task AddUserAddressAsync(int userId, DcUser user);
+        Task<bool> UpdateAsync(DcUser user);
+        Task<bool> DeleteAsync(int id); 
     }
 }

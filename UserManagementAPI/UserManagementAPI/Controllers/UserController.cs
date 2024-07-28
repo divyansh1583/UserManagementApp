@@ -1,15 +1,12 @@
-﻿
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using UserManagementAPI.Application.DTOs;
 using UserManagementAPI.Application.Interfaces.Services;
 using UserManagementAPI.Domain.Common_Models;
-using UserManagementAPI.Domain.Entities;
 
 namespace UserManagementAPI.Controllers
 {
-
     [ApiController]
+    [Route("api/[controller]")]
     public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
@@ -19,22 +16,16 @@ namespace UserManagementAPI.Controllers
             _userService = userService;
         }
 
-        [HttpGet("get")]
-        public async Task<ActionResult<ResponseModel>> GetUser([FromBody] int id)
-        {
-            var user = await _userService.GetUserByIdAsync(id);
-            if (user == null)
-            {
-                return new ResponseModel { StatusCode = 404, Message = "User not found" };
-            }
-            return new ResponseModel { StatusCode = 200, Data = user };
-        }
-
         [HttpGet("getall")]
         public async Task<ActionResult<ResponseModel>> GetAllUsers()
         {
-            var users = await _userService.GetAllUsersAsync();
-            return new ResponseModel { StatusCode = 200, Data = new{ User=users } };
+            return await _userService.GetAllUsersAsync();
+        }
+
+        [HttpGet("getById")]
+        public async Task<ActionResult<ResponseModel>> GetUser([FromBody] int id)
+        {
+            return await _userService.GetUserByIdAsync(id);
         }
 
         [HttpPost("add")]
@@ -44,40 +35,41 @@ namespace UserManagementAPI.Controllers
             {
                 return new ResponseModel { StatusCode = 400, Message = "Invalid request" };
             }
-
-            var userId = await _userService.AddUserAsync(userDto);
-            if (userId >= 3)
-            {
-                return new ResponseModel { StatusCode = 201, Data = new { UserId = userId    }, Message = "User added successfully" };
-            }
-            return new ResponseModel { StatusCode = 500, Message = "Failed to add user" };
+            return await _userService.AddUserAsync(userDto);
         }
 
-        //[HttpPut("update")]
-        //public async Task<ActionResult<ResponseModel>> UpdateUser(UserDto userDto)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return new ResponseModel { StatusCode = 400, Message = "Invalid request" };
-        //    }
+        [HttpPut("update")]
+        public async Task<ActionResult<ResponseModel>> UpdateUser(UpdateUserDto updateUserDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return new ResponseModel { StatusCode = 400, Message = "Invalid request" };
+            }
+            return await _userService.UpdateUserAsync(updateUserDto);
+        }
 
-        //    var result = await _userService.UpdateUserAsync(userDto);
-        //    if (!result)
-        //    {
-        //        return new ResponseModel { StatusCode = 404, Message = "User not found" };
-        //    }
-        //    return new ResponseModel { StatusCode = 200, Message = "User updated successfully" };
-        //}
+        [HttpDelete("delete")]
+        public async Task<ActionResult<ResponseModel>> DeleteUser(int id)
+        {
+            return await _userService.DeleteUserAsync(id);
+        }
 
-        //[HttpDelete("delete")]
-        //public async Task<ActionResult<ResponseModel>> DeleteUser([FromBody] int id)
-        //{
-        //    var result = await _userService.DeleteUserAsync(id);
-        //    if (!result)
-        //    {
-        //        return new ResponseModel { StatusCode = 404, Message = "User not found" };
-        //    }
-        //    return new ResponseModel { StatusCode = 200, Message = "User deleted successfully" };
-        //}
+        [HttpPost("send-reset-email/{email}")]
+        public async Task<ActionResult<ResponseModel>> SendResetPasswordEmail(string email)
+        {
+            return await _userService.SendResetPasswordEmailAsync(email);
+        }
+
+        [HttpPost("reset-password")]
+        public async Task<ActionResult<ResponseModel>> ResetPassword(ResetPasswordDto resetPasswordDto)
+        {
+            return await _userService.ResetPasswordAsync(resetPasswordDto);
+        }
+
+        [HttpPost("login")]
+        public async Task<ActionResult<ResponseModel>> Login(LoginDto loginDto)
+        {
+            return await _userService.LoginAsync(loginDto);
+        }
     }
 }

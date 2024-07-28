@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using UserManagementAPI.Domain.Entities;
 
 namespace UserManagementAPI.Domain;
@@ -29,7 +30,14 @@ public partial class UserDbContext : DbContext
     public virtual DbSet<DcUserAddressType> DcUserAddressTypes { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Name=DefaultConnection");
+    {
+
+        if (!optionsBuilder.IsConfigured)
+        {
+            optionsBuilder.UseSqlServer("Data Source=LAPTOP-SQTG162V\\SQLEXPRESS;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;MultiSubnetFailover=False");
+        }
+      
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

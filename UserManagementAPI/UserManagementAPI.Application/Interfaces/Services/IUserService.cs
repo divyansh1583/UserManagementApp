@@ -12,12 +12,13 @@ namespace UserManagementAPI.Application.Interfaces.Services
 {
     public interface IUserService
     {
-
-        Task<UserDto> GetUserByIdAsync(int id);
-        Task<List<UserDto>> GetAllUsersAsync();
-        Task<int> AddUserAsync(UserDto userDto);
-        Task<bool> UpdateUserAsync(UserDto userDto);
-        Task<bool> DeleteUserAsync(int id);
-
+        Task<ResponseModel> GetAllUsersAsync();
+        Task<ResponseModel> GetUserByIdAsync(int id);
+        Task<ResponseModel> AddUserAsync(UserDto userDto);
+        Task<ResponseModel> UpdateUserAsync(UpdateUserDto updateUserDto);
+        Task<ResponseModel> DeleteUserAsync(int id);
+        Task<ResponseModel> SendResetPasswordEmailAsync(string email);
+        Task<ResponseModel> ResetPasswordAsync(ResetPasswordDto resetPasswordDto);
+        Task<ResponseModel> LoginAsync(LoginDto loginDto);
     }
 }
