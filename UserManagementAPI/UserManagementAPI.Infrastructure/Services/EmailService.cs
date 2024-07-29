@@ -17,14 +17,15 @@ namespace UserManagementAPI.Infrastructure.Services
 
         public EmailService(IConfiguration config)
         {
-            _config=config;
+            _config = config;
         }
 
 
         public void SendEmail(EmailModel emailModel)
-        {   var from= _config["Email:From"];
+        {
+            var from = _config["EmailSettings:From"];
             var emailMessage = new MimeMessage();
-            emailMessage.From.Add(new MailboxAddress("AdminEmail",from));
+            emailMessage.From.Add(new MailboxAddress("AdminEmail", from));
             emailMessage.To.Add(new MailboxAddress("UserEmail", emailModel.To));
             emailMessage.Subject = emailModel.Subject;
             emailMessage.Body = new TextPart(MimeKit.Text.TextFormat.Html)
@@ -41,7 +42,7 @@ namespace UserManagementAPI.Infrastructure.Services
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);  
+                    Console.WriteLine(ex.Message);
                 }
                 finally
                 {

@@ -30,8 +30,13 @@ namespace UserManagementAPI.Infrastructure.Data.Configurations
 
         private void ConfigureMappings(IEncryptionService encryptionService)
         {
+            if (encryptionService == null)
+            {
+                throw new ArgumentNullException(nameof(encryptionService));
+            }
             CreateMap<UserDto, DcUser>()
-             // Forward mapping from UserDto to DcUser
+            // Forward mapping from UserDto to DcUser
+            .ForMember(dest => dest.FirstName, opt => opt.MapFrom(src => src.FirstName))
             .ForMember(dest => dest.Email, opt => opt.MapFrom(src => encryptionService.Encrypt(src.Email)))
             .ForMember(dest => dest.Phone, opt => opt.MapFrom(src => encryptionService.Encrypt(src.Phone)))
             .ForMember(dest => dest.AlternatePhone, opt => opt.MapFrom(src => src.AlternatePhone != null ? encryptionService.Encrypt(src.AlternatePhone) : null))
@@ -39,7 +44,12 @@ namespace UserManagementAPI.Infrastructure.Data.Configurations
             .ForMember(dest => dest.DateOfJoining, opt => opt.MapFrom(src => src.DateOfJoining.HasValue ? DateOnly.FromDateTime(src.DateOfJoining.Value) : (DateOnly?)null))
             .ForMember(dest => dest.DateOfBirth, opt => opt.MapFrom(src => src.DateOfBirth.HasValue ? DateOnly.FromDateTime(src.DateOfBirth.Value) : (DateOnly?)null))
             .ForMember(dest => dest.DcUserAddresses, opt => opt.MapFrom(src => src.Addresses))
-                // Reverse mapping from DcUser to UserDto
+            .AfterMap((src, dest) => dest.CreatedBy = src.FirstName)
+            .AfterMap((src, dest) => dest.CreatedDate = DateTime.Now)
+            .AfterMap((src, dest) => dest.UpdatedBy = null)
+            .AfterMap((src, dest) => dest.UpdatedDate = null)
+            
+            // Reverse mapping from DcUser to UserDto
             .ReverseMap()
             .ForMember(dest => dest.Email, opt => opt.MapFrom(src => encryptionService.Decrypt(src.Email)))
             .ForMember(dest => dest.Phone, opt => opt.MapFrom(src => encryptionService.Decrypt(src.Phone)))
@@ -50,22 +60,29 @@ namespace UserManagementAPI.Infrastructure.Data.Configurations
             .ForMember(dest => dest.Addresses, opt => opt.MapFrom(src => src.DcUserAddresses));
 
             CreateMap<UpdateUserDto, DcUser>()
-                        .ForMember(dest => dest.Phone, opt => {
+                        .ForMember(dest => dest.Phone, opt =>
+                        {
                             opt.Condition(src => src.Phone != null);
                             opt.MapFrom(src => encryptionService.Encrypt(src.Phone));
                         })
-                        .ForMember(dest => dest.AlternatePhone, opt => {
+                        .ForMember(dest => dest.AlternatePhone, opt =>
+                        {
                             opt.Condition(src => src.AlternatePhone != null);
                             opt.MapFrom(src => encryptionService.Encrypt(src.AlternatePhone));
                         })
-                        .ForMember(dest => dest.DateOfJoining, opt => {
+                        .ForMember(dest => dest.DateOfJoining, opt =>
+                        {
                             opt.Condition(src => src.DateOfJoining.HasValue);
                             opt.MapFrom(src => DateOnly.FromDateTime(src.DateOfJoining.Value));
                         })
-                        .ForMember(dest => dest.DateOfBirth, opt => {
+                        .ForMember(dest => dest.DateOfBirth, opt =>
+                        {
                             opt.Condition(src => src.DateOfBirth.HasValue);
                             opt.MapFrom(src => DateOnly.FromDateTime(src.DateOfBirth.Value));
                         })
+                        .AfterMap((src, dest) => dest.UpdatedBy = src.FirstName)
+                        .AfterMap((src, dest) => dest.UpdatedDate = DateTime.Now)
+
                         .ForAllMembers(opt => opt.Condition((src, dest, srcMember) => srcMember != null));
 
             CreateMap<AddressDto, DcUserAddress>()

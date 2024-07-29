@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj": {}
+    "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Application\\UserManagementAPI.Application.csproj": {
+    "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Application\\UserManagementAPI.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Application\\UserManagementAPI.Application.csproj",
+        "projectUniqueName": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Application\\UserManagementAPI.Application.csproj",
         "projectName": "UserManagementAPI.Application",
-        "projectPath": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Application\\UserManagementAPI.Application.csproj",
-        "packagesPath": "C:\\Users\\divya\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Application\\obj\\",
+        "projectPath": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Application\\UserManagementAPI.Application.csproj",
+        "packagesPath": "C:\\Users\\divyansh.chauhan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\divya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\divyansh.chauhan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,14 +26,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj": {
-                "projectPath": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj"
+              "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj": {
+                "projectPath": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj"
               }
             }
           }
@@ -64,21 +69,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj": {
+    "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj",
         "projectName": "UserManagementAPI.Domain",
-        "projectPath": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj",
-        "packagesPath": "C:\\Users\\divya\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\obj\\",
+        "projectPath": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\UserManagementAPI.Domain.csproj",
+        "packagesPath": "C:\\Users\\divyansh.chauhan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\divya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\divyansh.chauhan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -86,6 +95,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -136,21 +146,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj": {
+    "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj",
         "projectName": "UserManagementAPI.Infrastructure",
-        "projectPath": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\divya\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\divyansh.chauhan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\divya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\divyansh.chauhan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -158,14 +172,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Application\\UserManagementAPI.Application.csproj": {
-                "projectPath": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Application\\UserManagementAPI.Application.csproj"
+              "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Application\\UserManagementAPI.Application.csproj": {
+                "projectPath": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Application\\UserManagementAPI.Application.csproj"
               }
             }
           }
@@ -238,7 +253,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

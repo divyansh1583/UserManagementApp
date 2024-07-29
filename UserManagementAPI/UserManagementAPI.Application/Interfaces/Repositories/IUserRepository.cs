@@ -14,6 +14,7 @@ namespace UserManagementAPI.Application.Interfaces.Repositories
     public interface IUserRepository
     {
         Task<DcUser> GetByIdAsync(int id);
+        Task<DcUser> GetByEmailAsync(string email);
         Task<List<DcUser>> GetAllAsync();
         Task<int> AddAsync(DcUser user);
         Task<bool> UpdateAsync(DcUser user);

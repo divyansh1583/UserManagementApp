@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
+import { UserModuleTsComponent } from './user--module=user/user.module.ts/user.module.ts.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserModuleTsComponent
   ],
   imports: [
     BrowserModule,

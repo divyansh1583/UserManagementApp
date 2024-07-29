@@ -7,16 +7,20 @@ using UserManagementAPI.Domain.Entities;
 using BCrypt.Net;
 using UserManagementAPI.Application.Interfaces.Repositories;
 using UserManagementAPI.Domain;
+using UserManagementAPI.Application.DTOs;
+using UserManagementAPI.Application.Interfaces.Services;
 
 namespace UserManagementAPI.Infrastructure.Repositories
 {
     public class UserRepository : IUserRepository
     {
         private readonly UserDbContext _context;
+        private readonly IEncryptionService _encryptionService;
 
-        public UserRepository(UserDbContext context)
+        public UserRepository(UserDbContext context, IEncryptionService encryptionService)
         {
             _context = context;
+            _encryptionService = encryptionService;
         }
 
         public async Task<DcUser> GetByIdAsync(int id)
@@ -24,6 +28,12 @@ namespace UserManagementAPI.Infrastructure.Repositories
             var user = await _context.DcUsers
                 .Include(u => u.DcUserAddresses)
                 .FirstOrDefaultAsync(u => u.UserId == id);
+            return user;
+        }
+        public async Task<DcUser> GetByEmailAsync(string email)
+        {
+            var users = await GetAllAsync();
+            var user = users.FirstOrDefault(u => _encryptionService.Decrypt(u.Email) == email);
             return user;
         }
 
@@ -38,7 +48,6 @@ namespace UserManagementAPI.Infrastructure.Repositories
         public async Task<int> AddAsync(DcUser user)
         {
             await _context.DcUsers.AddAsync(user);
-            //await _context.DcUserAddresses.AddRangeAsync(user.DcUserAddresses);
             var users=await _context.SaveChangesAsync();
 
             return users;
@@ -64,5 +73,6 @@ namespace UserManagementAPI.Infrastructure.Repositories
             }
             return false;
         }
+
     }
 }

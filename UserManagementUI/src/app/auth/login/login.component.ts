@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { LoginDetails } from 'src/app/models/login.modal';
+import { LoginDetails } from 'src/app/shared/models/login.modal';
 import { UserService } from 'src/app/services/user.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,7 @@ export class LoginComponent {
 
   constructor(
     private fb: FormBuilder,
-    private userService: UserService,
+    private authService:AuthService,
     private router: Router,
     private toastr: ToastrService,
   ) {
@@ -41,7 +42,7 @@ export class LoginComponent {
     this.loginDetails.password = this.loginForm.value.password!;
 
     if (this.loginForm.valid) {
-      this.userService.login(this.loginDetails).subscribe(res => {
+      this.authService.login(this.loginDetails).subscribe(res => {
 
         if (res.statusCode === 200) {
           console.log(res);

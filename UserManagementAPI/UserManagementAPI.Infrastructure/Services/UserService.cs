@@ -17,6 +17,7 @@ namespace UserManagementAPI.Infrastructure.Services
         private readonly ITokenService _tokenService;
         private readonly IConfiguration _configuration;
         private readonly IEmailService _emailService;
+        private readonly IEncryptionService _encryptionService;
 
         public UserService(
             IUserRepository userRepository,
@@ -29,7 +30,7 @@ namespace UserManagementAPI.Infrastructure.Services
         {
             _userRepository = userRepository;
             _mapper = mapper;
-            encryptionService = encryptionService;
+            _encryptionService = encryptionService;
             _tokenService = tokenService;
             _configuration = configuration;
             _emailService = emailService;
@@ -55,6 +56,12 @@ namespace UserManagementAPI.Infrastructure.Services
 
         public async Task<ResponseModel> AddUserAsync(UserDto userDto)
         {
+
+            var userExist = await _userRepository.GetByEmailAsync(userDto.Email);
+            if (userExist != null)
+            {
+                return new ResponseModel { StatusCode = 409, Message = "User Already Exists!" };
+            }
             DcUser user = _mapper.Map<DcUser>(userDto);
             var userChanges = await _userRepository.AddAsync(user);
             if (userChanges >= 3)
@@ -94,8 +101,7 @@ namespace UserManagementAPI.Infrastructure.Services
 
         public async Task<ResponseModel> SendResetPasswordEmailAsync(string email)
         {
-            var users = await _userRepository.GetAllAsync();
-            var user = users.FirstOrDefault(u => encryptionService.Decrypt(u.Email) == email );
+            var user = await _userRepository.GetByEmailAsync(email);
             if (user == null)
             {
                 return new ResponseModel { StatusCode = 404, Message = "Email doesn't exist" };
@@ -115,8 +121,8 @@ namespace UserManagementAPI.Infrastructure.Services
 
         public async Task<ResponseModel> ResetPasswordAsync(ResetPasswordDto resetPasswordDto)
         {
-            var users = await _userRepository.GetAllAsync();
-            var user = users.FirstOrDefault(u => encryptionService.Decrypt(u.Email) == resetPasswordDto.Email);
+            var user = await _userRepository.GetByEmailAsync(resetPasswordDto.Email);
+
             if (user == null)
             {
                 return new ResponseModel { StatusCode = 404, Message = "User doesn't exist" };
@@ -138,8 +144,7 @@ namespace UserManagementAPI.Infrastructure.Services
 
         public async Task<ResponseModel> LoginAsync(LoginDto loginDto)
         {
-            var users = await _userRepository.GetAllAsync();
-            var user = users.FirstOrDefault(u => encryptionService.Decrypt(u.Email) == loginDto.Email);
+            var user = await _userRepository.GetByEmailAsync(loginDto.Email);
 
             if (user == null || !BCrypt.Net.BCrypt.Verify(loginDto.Password, user.Password))
             {

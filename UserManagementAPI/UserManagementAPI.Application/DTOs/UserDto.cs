@@ -9,7 +9,7 @@ namespace UserManagementAPI.Application.DTOs
 
     public class UserDto
     {
-        public int UserId { get; set; }
+
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string MiddleName { get; set; }
@@ -21,9 +21,12 @@ namespace UserManagementAPI.Application.DTOs
         public string AlternatePhone { get; set; }
         public string ImagePath { get; set; }
         public string Password { get; set; }
-        public string? PasswordResetToken { get; set; }
-        public DateTime? PasswordResetTokenExpiry { get; set; }
+        public string? CreatedBy { get; set; }
+        public DateTime? CreatedDate { get; set; }
+        public string? UpdatedBy { get; set; }
+        public DateTime? UpdatedDate { get; set; }
         public bool? IsActive { get; set; }
+        public bool? IsDeleted { get; set; }
         public List<AddressDto> Addresses { get; set; }
     }
 }
