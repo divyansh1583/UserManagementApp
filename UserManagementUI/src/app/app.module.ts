@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
-import { UserModuleTsComponent } from './user--module=user/user.module.ts/user.module.ts.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    UserModuleTsComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +22,7 @@ import { UserModuleTsComponent } from './user--module=user/user.module.ts/user.m
       preventDuplicates: true,
       closeButton:true,
     }),
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

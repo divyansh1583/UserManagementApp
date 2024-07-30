@@ -3,7 +3,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { LoginDetails } from 'src/app/shared/models/login.modal';
-import { UserService } from 'src/app/services/user.service';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -40,7 +39,7 @@ export class LoginComponent {
   onSubmit() {
     this.loginDetails.email = this.loginForm.value.email!;
     this.loginDetails.password = this.loginForm.value.password!;
-
+    console.log(this.loginDetails);
     if (this.loginForm.valid) {
       this.authService.login(this.loginDetails).subscribe(res => {
 

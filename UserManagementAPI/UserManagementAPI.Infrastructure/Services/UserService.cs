@@ -6,6 +6,9 @@ using UserManagementAPI.Application.Interfaces.Repositories;
 using UserManagementAPI.Application.Interfaces.Services;
 using UserManagementAPI.Domain.Common_Models;
 using UserManagementAPI.Domain.Entities;
+using Microsoft.AspNetCore.Hosting;
+using System;
+using Microsoft.AspNetCore.Http;
 
 namespace UserManagementAPI.Infrastructure.Services
 {
@@ -18,6 +21,7 @@ namespace UserManagementAPI.Infrastructure.Services
         private readonly IConfiguration _configuration;
         private readonly IEmailService _emailService;
         private readonly IEncryptionService _encryptionService;
+        private readonly IWebHostEnvironment _environment;
 
         public UserService(
             IUserRepository userRepository,
@@ -25,7 +29,8 @@ namespace UserManagementAPI.Infrastructure.Services
             IEncryptionService encryptionService,
             ITokenService tokenService,
             IConfiguration configuration,
-            IEmailService emailService
+            IEmailService emailService,
+            IWebHostEnvironment environment
             )
         {
             _userRepository = userRepository;
@@ -34,6 +39,7 @@ namespace UserManagementAPI.Infrastructure.Services
             _tokenService = tokenService;
             _configuration = configuration;
             _emailService = emailService;
+            _environment = environment;
         }
 
         public async Task<ResponseModel> GetAllUsersAsync()
@@ -153,6 +159,30 @@ namespace UserManagementAPI.Infrastructure.Services
 
             var token = _tokenService.GenerateToken();
             return new ResponseModel { StatusCode = 200, Message = "Login successful", Data = new { Token = token } };
+        }
+        public async Task<ResponseModel> UploadUserImageAsync(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+            {
+                return new ResponseModel { StatusCode = 400, Message = "No file uploaded" };
+            }
+
+            var uploadsFolder = Path.Combine(_environment.WebRootPath, "uploads");
+            if (!Directory.Exists(uploadsFolder))
+            {
+                Directory.CreateDirectory(uploadsFolder);
+            }
+
+            var uniqueFileName = Guid.NewGuid().ToString() + "_" + file.FileName;
+            var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            {
+                await file.CopyToAsync(fileStream);
+            }
+
+            var relativePath = "/uploads/" + uniqueFileName;
+            return new ResponseModel { StatusCode = 200, Message = "Image uploaded successfully", Data = relativePath };
         }
     }
 }

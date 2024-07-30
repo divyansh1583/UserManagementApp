@@ -1,17 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Remove="DTOs\vs1texzt.4uv~" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Remove="DTOs\vs1texzt.4uv~" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\UserManagementAPI.Domain\UserManagementAPI.Domain.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\UserManagementAPI.Domain\UserManagementAPI.Domain.csproj" />
+	</ItemGroup>
 
 </Project>

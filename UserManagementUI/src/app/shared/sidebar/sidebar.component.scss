@@ -1,0 +1,26 @@
+.sidebar-sticky {
+    position: sticky;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: 1rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
+  .nav-link {
+    color: #333;
+    padding: 0.5rem 1rem;
+    
+    &:hover {
+      background-color: #f8f9fa;
+    }
+  
+    &.active {
+      color: #007bff;
+      font-weight: bold;
+    }
+  
+    i {
+      margin-right: 0.5rem;
+    }
+  }

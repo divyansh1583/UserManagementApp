@@ -1,12 +1,6 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Http;
 using UserManagementAPI.Application.DTOs;
 using UserManagementAPI.Domain.Common_Models;
-using UserManagementAPI.Domain.Entities;
 
 namespace UserManagementAPI.Application.Interfaces.Services
 {
@@ -20,5 +14,6 @@ namespace UserManagementAPI.Application.Interfaces.Services
         Task<ResponseModel> SendResetPasswordEmailAsync(string email);
         Task<ResponseModel> ResetPasswordAsync(ResetPasswordDto resetPasswordDto);
         Task<ResponseModel> LoginAsync(LoginDto loginDto);
+        Task<ResponseModel> UploadUserImageAsync(IFormFile file);
     }
 }

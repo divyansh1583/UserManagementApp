@@ -6,6 +6,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { UserComponent } from './user.component';
 import { SharedModule } from '../shared/shared.module';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -17,7 +20,10 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     UserRoutingModule,
-    SharedModule
+    SharedModule,
+    NgbPaginationModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class UserModule { }

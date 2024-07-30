@@ -10,6 +10,7 @@ namespace UserManagementAPI.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
+        IWebHostEnvironment _webHostEnvironment;
 
         public UsersController(IUserService userService)
         {
@@ -27,7 +28,16 @@ namespace UserManagementAPI.Controllers
         {
             return await _userService.GetUserByIdAsync(id);
         }
+        [HttpPost("upload-image")]
+        public async Task<ActionResult<ResponseModel>> UploadUserImage(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+            {
+                return BadRequest(new ResponseModel { StatusCode = 400, Message = "No file uploaded" });
+            }
 
+            return await _userService.UploadUserImageAsync(file);
+        }
         [HttpPost("add")]
         public async Task<ActionResult<ResponseModel>> AddUser(UserDto userDto)
         {

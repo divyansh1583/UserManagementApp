@@ -1,1 +1,70 @@
-<p>dashboard works!</p>
+<div class="container-fluid">
+    <div class="row mt-3">
+        <div class="col-md-3">
+            <div class="card bg-primary text-white">
+                <div class="card-body">
+                    <img class="my-auto" src="../../../assets/Images/IconBlue.png" alt="Active Users" width="40"
+                        height="40">
+                    <div class="card-info">
+                        <h5 class="card-title">Active</h5>
+                        <p class="card-text">{{ activeUsers }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card bg-warning text-white">
+                <div class="card-body">
+                    <img class="my-auto" src="../../../assets/Images/IconYellow.png" alt="Active Users" width="40"
+                        height="40">
+                    <div class="card-info">
+
+                        <h5 class="card-title">Inactive</h5>
+                        <p class="card-text">{{ inactiveUsers }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <h2>User List</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Last Name</th>
+                        <th>DOB</th>
+                        <th>Email</th>
+                        <th>Contact No</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of paginateData">
+                        <td>{{ user.firstName }}</td>
+                        <td>{{ user.middleName }}</td>
+                        <td>{{ user.lastName }}</td>
+                        <td>{{ user.dob }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.contactNo }}</td>
+                        <td>{{ user.city }}</td>
+                        <td>{{ user.state }}</td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <ngb-pagination class="d-flex justify-content-end" [collectionSize]="collectionSize" [(page)]="page"
+                [pageSize]="pageSize" (pageChange)="getPaginatedData()"></ngb-pagination>
+        </div>
+    </div>
+</div>

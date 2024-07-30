@@ -45,7 +45,6 @@ namespace UserManagementAPI
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
                     };
                 });
-
             // Add repositories
             builder.Services.AddScoped<IUserRepository, UserRepository>();
 
@@ -53,7 +52,7 @@ namespace UserManagementAPI
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IEncryptionService, EncryptionService>();
             builder.Services.AddScoped<IEmailService, EmailService>();
-            builder.Services.AddScoped<ITokenService,TokenService>();
+            builder.Services.AddScoped<ITokenService, TokenService>();
 
             builder.Services.AddAutoMapper(cfg =>
             {

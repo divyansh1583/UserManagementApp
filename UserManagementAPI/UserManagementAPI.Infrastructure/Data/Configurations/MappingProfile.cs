@@ -36,6 +36,7 @@ namespace UserManagementAPI.Infrastructure.Data.Configurations
             }
             CreateMap<UserDto, DcUser>()
             // Forward mapping from UserDto to DcUser
+            .ForMember(dest => dest.UserId, opt => opt.Ignore())
             .ForMember(dest => dest.FirstName, opt => opt.MapFrom(src => src.FirstName))
             .ForMember(dest => dest.Email, opt => opt.MapFrom(src => encryptionService.Encrypt(src.Email)))
             .ForMember(dest => dest.Phone, opt => opt.MapFrom(src => encryptionService.Encrypt(src.Phone)))
@@ -48,7 +49,7 @@ namespace UserManagementAPI.Infrastructure.Data.Configurations
             .AfterMap((src, dest) => dest.CreatedDate = DateTime.Now)
             .AfterMap((src, dest) => dest.UpdatedBy = null)
             .AfterMap((src, dest) => dest.UpdatedDate = null)
-            
+
             // Reverse mapping from DcUser to UserDto
             .ReverseMap()
             .ForMember(dest => dest.Email, opt => opt.MapFrom(src => encryptionService.Decrypt(src.Email)))
