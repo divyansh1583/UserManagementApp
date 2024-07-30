@@ -22,6 +22,15 @@ CREATE TABLE DC_City (
     FOREIGN KEY (StateId) REFERENCES DC_State(StateId)
 );
 
+INSERT INTO DC_Country (CountryName) VALUES 
+('USA'), ('Canada'), ('UK'), ('Australia'), ('India');
+
+INSERT INTO DC_State (CountryId, StateName) VALUES 
+(1, 'California'), (1, 'Florida'), (1, 'New York'), (1, 'Texas'),
+(2, 'Alberta'), (2, 'British Columbia'), (2, 'Ontario'), (2, 'Quebec'),
+(3, 'England'), (3, 'Scotland'), (3, 'Wales'), (3, 'Northern Ireland'),
+(4, 'New South Wales'), (4, 'Queensland'), (4, 'Victoria'), (4, 'Western Australia'),
+(5, 'Delhi'), (5, 'Maharashtra'), (5, 'Karnataka'), (5, 'Tamil Nadu');
 -- Insert sample cities (you can add more as needed)
 INSERT INTO DC_City (StateId, CityName) VALUES 
 (1, 'Los Angeles'), (1, 'San Francisco'), -- California
