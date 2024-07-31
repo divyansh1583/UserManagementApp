@@ -70,7 +70,7 @@ namespace UserManagementAPI.Infrastructure.Services
             }
             DcUser user = _mapper.Map<DcUser>(userDto);
             var userChanges = await _userRepository.AddAsync(user);
-            if (userChanges >= 3)
+            if (userChanges >= 2)
             {
                 return new ResponseModel { StatusCode = 201, Message = "User added successfully" };
             }
