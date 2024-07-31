@@ -1,6 +1,6 @@
 import { CanActivateFn } from '@angular/router';
 
-export const UserGuard: CanActivateFn = (route, state) => {
+export const userGuard: CanActivateFn = (route, state) => {
   if (localStorage.getItem('login_token')) {
     return true; 
   } else {

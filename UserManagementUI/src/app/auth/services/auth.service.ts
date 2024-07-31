@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { LoginDetails } from 'src/app/shared/models/login.modal';
+import { ResetPasswordDto } from '../../shared/models/reset-password.modal';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,22 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  // Corresponds to UserController.LoginAsync
+  // Existing login method
   login(loginDetails: LoginDetails): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/login`, loginDetails);
   }
+
+  sendResetPasswordEmail(email: string): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/send-reset-email/${email}`, {});
+  }
+  // New reset password method
+  resetPassword(resetPasswordDto: ResetPasswordDto): Observable<any> {
+    console.log(resetPasswordDto);
+    return this.http.post<any>(`${this.apiUrl}/reset-password`, resetPasswordDto);
+  }
+
+  
+  // validateResetToken(email: string, token: string): Observable<any> {
+  //   return this.http.post<any>(`${this.apiUrl}/validate-reset-token`, { email, token });
+  // }
 }

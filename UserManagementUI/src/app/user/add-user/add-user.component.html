@@ -1,167 +1,191 @@
 <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-9 p-4">
+  <div class="row">
+    <div class="col-md-12 p-4">
+      <div class="back-arrow d-flex">
+        <a routerLink="/user/dashboard">
+          <img src="../../../assets/Images/ArrowLeftCircle.png" alt="Back to Dashboard">
+        </a>
         <h2>Add User</h2>
-        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-          <div class="card mb-4">
-            <div class="card-body">
-              <h5 class="card-title">User Detail</h5>
-              <div class="text-center mb-3">
-                <div class="upload-placeholder" (click)="fileInput.click()">
-                  <img *ngIf="imagePreview" [src]="imagePreview" alt="User image">
-                  <div *ngIf="!imagePreview" class="placeholder-text">
-                    <i class="fas fa-cloud-upload-alt"></i>
-                    <p>Upload user image here</p>
-                  </div>
+      </div>
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="card mb-4 w-100">
+          <div class="card-body">
+            <h5 class="card-title">User Detail</h5>
+            <hr class="mt-2 mb-4">
+            <div class="upload-section">
+              <div class="upload-placeholder" (click)="fileInput.click()">
+                <img *ngIf="imagePreview" [src]="imagePreview" alt="User image">
+                <div *ngIf="!imagePreview" class="placeholder-text">
+                  <img src="../../../assets/Images/ImageUpload_icon.png" alt="">
                 </div>
+              </div>
+              <div class="upload-info">
                 <input type="file" #fileInput hidden (change)="onFileSelected($event)" accept="image/*">
+                <h6>Upload user image here</h6>
                 <button type="button" class="btn btn-sm btn-primary mt-2" (click)="fileInput.click()">Browse</button>
               </div>
-              <div class="row">
-                <div class="col-md-4 mb-3">
-                  <label for="firstName">First Name</label>
-                  <input type="text" class="form-control" id="firstName" formControlName="firstName" placeholder="First Name">
-                </div>
-                <div class="col-md-4 mb-3">
-                  <label for="middleName">Middle Name</label>
-                  <input type="text" class="form-control" id="middleName" formControlName="middleName" placeholder="Middle Name">
-                </div>
-                <div class="col-md-4 mb-3">
-                  <label for="lastName">Last Name</label>
-                  <input type="text" class="form-control" id="lastName" formControlName="lastName" placeholder="Last Name">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-4 mb-3">
-                  <label for="gender">Gender</label>
-                  <select class="form-control" id="gender" formControlName="gender">
-                    <option value="">Select</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <label for="dateOfBirth">Date of Birth</label>
-                  <input type="date" class="form-control" id="dateOfBirth" formControlName="dateOfBirth">
-                </div>
-                <div class="col-md-4 mb-3">
-                  <label for="email">Email</label>
-                  <input type="email" class="form-control" id="email" formControlName="email" placeholder="Email">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-4 mb-3">
-                  <label for="dateOfJoining">Date of Joining</label>
-                  <input type="date" class="form-control" id="dateOfJoining" formControlName="dateOfJoining">
-                </div>
-                <div class="col-md-4 mb-3">
-                  <label for="phone">Phone</label>
-                  <input type="tel" class="form-control" id="phone" formControlName="phone" placeholder="Phone">
-                </div>
-                <div class="col-md-4 mb-3">
-                  <label for="alternatePhone">Alternate Phone</label>
-                  <input type="tel" class="form-control" id="alternatePhone" formControlName="alternatePhone" placeholder="Alternate Phone">
-                </div>
-              </div>
-              
-              <div formArrayName="addresses">
-                <!-- Primary Address -->
-                <div [formGroupName]="0">
-                  <h5 class="mt-4">Primary Address</h5>
-                  <div class="row">
-                    <div class="col-md-12 mb-3">
-                      <label for="address0">Address</label>
-                      <input type="text" class="form-control" id="address0" formControlName="address" placeholder="Address">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-4 mb-3">
-                      <label for="country0">Country</label>
-                      <select class="form-control" id="country0" formControlName="countryId">
-                        <option value="">Select</option>
-                        <!-- Add country options here -->
-                      </select>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label for="state0">State</label>
-                      <select class="form-control" id="state0" formControlName="stateId">
-                        <option value="">Select</option>
-                        <!-- Add state options here -->
-                      </select>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label for="city0">City</label>
-                      <select class="form-control" id="city0" formControlName="cityId">
-                        <option value="">Select</option>
-                        <!-- Add city options here -->
-                      </select>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-4 mb-3">
-                      <label for="zipCode0">Zip Code</label>
-                      <input type="text" class="form-control" id="zipCode0" formControlName="zipCode" placeholder="Zip Code">
-                    </div>
-                  </div>
-                </div>
-  
-                <!-- Checkbox for Secondary Address -->
-                <div class="form-check mb-3">
-                  <input type="checkbox" class="form-check-input" id="showSecondaryAddress" (change)="toggleSecondaryAddress($event)">
-                  <label class="form-check-label" for="showSecondaryAddress">Add Secondary Address</label>
-                </div>
-  
-                <!-- Secondary Address -->
-                <div [formGroupName]="1" *ngIf="showSecondaryAddress">
-                  <h5 class="mt-4">Secondary Address</h5>
-                  <div class="row">
-                    <div class="col-md-12 mb-3">
-                      <label for="address1">Address</label>
-                      <input type="text" class="form-control" id="address1" formControlName="address" placeholder="Address">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-4 mb-3">
-                      <label for="country1">Country</label>
-                      <select class="form-control" id="country1" formControlName="countryId">
-                        <option value="">Select</option>
-                        <!-- Add country options here -->
-                      </select>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label for="state1">State</label>
-                      <select class="form-control" id="state1" formControlName="stateId">
-                        <option value="">Select</option>
-                        <!-- Add state options here -->
-                      </select>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label for="city1">City</label>
-                      <select class="form-control" id="city1" formControlName="cityId">
-                        <option value="">Select</option>
-                        <!-- Add city options here -->
-                      </select>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-4 mb-3">
-                      <label for="zipCode1">Zip Code</label>
-                      <input type="text" class="form-control" id="zipCode1" formControlName="zipCode" placeholder="Zip Code">
-                    </div>
-                  </div>
-                </div>
-              </div>
-  
-              <div class="form-check mb-3">
-                <input type="checkbox" class="form-check-input" id="isActive" formControlName="isActive">
-                <label class="form-check-label" for="isActive">Inactive</label>
-              </div>
-  
-              <button type="submit" class="btn btn-primary">Save</button>
             </div>
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" id="firstName" formControlName="firstName"
+                  placeholder="First Name">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="middleName">Middle Name</label>
+                <input type="text" class="form-control" id="middleName" formControlName="middleName"
+                  placeholder="Middle Name">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" id="lastName" formControlName="lastName"
+                  placeholder="Last Name">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <label for="gender">Gender</label>
+                <select class="form-control" id="gender" formControlName="gender">
+                  <option value="">Select</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="dateOfBirth">Date of Birth</label>
+                <input type="date" class="form-control" id="dateOfBirth" formControlName="dateOfBirth">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" formControlName="email" placeholder="Email">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <label for="dateOfJoining">Date of Joining</label>
+                <input type="date" class="form-control" id="dateOfJoining" formControlName="dateOfJoining">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="phone">Phone</label>
+                <input type="tel" class="form-control" id="phone" formControlName="phone" placeholder="Phone">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="alternatePhone">Alternate Phone</label>
+                <input type="tel" class="form-control" id="alternatePhone" formControlName="alternatePhone"
+                  placeholder="Alternate Phone">
+              </div>
+            </div>
+
+            <div formArrayName="addresses">
+              <!-- Primary Address -->
+              <div [formGroupName]="0">
+                <h5 class="mt-4">Primary Address</h5>
+                <div class="row">
+                  <div class="col-md-12 mb-3">
+                    <label for="address0">Address</label>
+                    <input type="text" class="form-control" id="address0" formControlName="address"
+                      placeholder="Address">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 mb-3">
+                    <label for="country0">Country</label>
+                    <select class="form-control" id="country0" formControlName="countryId">
+                      <option value="">Select</option>
+                      <option *ngFor="let country of countries" [value]="country.id">{{ country.name }}</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="state0">State</label>
+                    <select class="form-control" id="state0" formControlName="stateId">
+                      <option value="">Select</option>
+                      <option *ngFor="let state of getStates(0)" [value]="state.id">{{ state.name }}</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="city0">City</label>
+                    <select class="form-control" id="city0" formControlName="cityId">
+                      <option value="">Select</option>
+                      <option *ngFor="let city of getCities(0)" [value]="city.id">{{ city.name }}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 mb-3">
+                    <label for="zipCode0">Zip Code</label>
+                    <input type="text" class="form-control" id="zipCode0" formControlName="zipCode"
+                      placeholder="Zip Code">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Checkbox for Secondary Address -->
+              <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="showSecondaryAddress"
+                  (change)="toggleSecondaryAddress($event)">
+                <label class="form-check-label" for="showSecondaryAddress">Add Secondary Address</label>
+              </div>
+
+              <!-- Secondary Address -->
+              <div [formGroupName]="1" *ngIf="showSecondaryAddress">
+                <h5 class="mt-4">Secondary Address</h5>
+                <div class="row">
+                  <div class="col-md-12 mb-3">
+                    <label for="address1">Address</label>
+                    <input type="text" class="form-control" id="address1" formControlName="address"
+                      placeholder="Address">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 mb-3">
+                    <label for="country0">Country</label>
+                    <select class="form-control" id="country0" formControlName="countryId">
+                      <option value="">Select</option>
+                      <option *ngFor="let country of countries" [value]="country.id">{{ country.name }}</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="state0">State</label>
+                    <select class="form-control" id="state0" formControlName="stateId">
+                      <option value="">Select</option>
+                      <option *ngFor="let state of getStates(1)" [value]="state.id">{{ state.name }}</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="city0">City</label>
+                    <select class="form-control" id="city0" formControlName="cityId">
+                      <option value="">Select</option>
+                      <option *ngFor="let city of getCities(1)" [value]="city.id">{{ city.name }}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 mb-3">
+                    <label for="zipCode1">Zip Code</label>
+                    <input type="text" class="form-control" id="zipCode1" formControlName="zipCode"
+                      placeholder="Zip Code">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-check mb-3">
+              <input type="checkbox" class="form-check-input" id="isActive" formControlName="isActive">
+              <label class="form-check-label" for="isActive">Inactive</label>
+            </div>
+            <div class="row mt-4">
+              <div class="col-10">
+
+              </div>
+              <div class="col">
+                <button type="submit" class="btn btn-primary btn-md  px-5">Save</button>
+              </div>
+            </div>
+
           </div>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
   </div>
+</div>

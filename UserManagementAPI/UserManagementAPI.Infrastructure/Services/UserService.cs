@@ -9,6 +9,7 @@ using UserManagementAPI.Domain.Entities;
 using Microsoft.AspNetCore.Hosting;
 using System;
 using Microsoft.AspNetCore.Http;
+using System.Web;
 
 namespace UserManagementAPI.Infrastructure.Services
 {
@@ -16,7 +17,6 @@ namespace UserManagementAPI.Infrastructure.Services
     {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
-        private readonly IEncryptionService encryptionService;
         private readonly ITokenService _tokenService;
         private readonly IConfiguration _configuration;
         private readonly IEmailService _emailService;
@@ -133,10 +133,13 @@ namespace UserManagementAPI.Infrastructure.Services
             {
                 return new ResponseModel { StatusCode = 404, Message = "User doesn't exist" };
             }
-
-            if (user.PasswordResetToken != resetPasswordDto.EmailToken || user.PasswordResetTokenExpiry < DateTime.Now)
+            if (user.PasswordResetToken != resetPasswordDto.EmailToken)
             {
-                return new ResponseModel { StatusCode = 400, Message = "Invalid reset link" };
+                return new ResponseModel { StatusCode = 400, Message = "Invalid Password Reset Token " };
+            }
+            if (user.PasswordResetTokenExpiry < DateTime.Now)
+            {
+                return new ResponseModel { StatusCode = 400, Message = "Time to reset password has expired. Try Again!" };
             }
 
             user.Password = BCrypt.Net.BCrypt.HashPassword(resetPasswordDto.NewPassword);
@@ -167,7 +170,7 @@ namespace UserManagementAPI.Infrastructure.Services
                 return new ResponseModel { StatusCode = 400, Message = "No file uploaded" };
             }
 
-            var uploadsFolder = Path.Combine(_environment.WebRootPath, "uploads");
+            var uploadsFolder = Path.Combine(_environment.ContentRootPath, "uploads");
             if (!Directory.Exists(uploadsFolder))
             {
                 Directory.CreateDirectory(uploadsFolder);

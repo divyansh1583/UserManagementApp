@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControlOptions, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
+import { ResetPasswordDto } from 'src/app/shared/models/reset-password.modal';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-reset-password',
@@ -8,15 +12,28 @@ import { AbstractControlOptions, FormBuilder, FormGroup, Validators } from '@ang
 })
 export class ResetPasswordComponent implements OnInit {
   resetForm: FormGroup = new FormGroup({});
+  email: string = '';
+  emailToken: string = '';
+  isLoading: boolean = false;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private route: ActivatedRoute,
+    private router: Router,
+    private authService: AuthService,
+    private toastr: ToastrService
+  ) { }
 
   ngOnInit() {
     this.resetForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
       confirmPassword: ['', Validators.required]
     }, { validator: this.passwordMatchValidator } as AbstractControlOptions);
+
+    this.route.queryParams.subscribe(params => {
+      this.email = params['email'];
+      this.emailToken = decodeURIComponent(params['code']);
+    });
   }
 
   passwordMatchValidator(form: FormGroup) {
@@ -31,8 +48,33 @@ export class ResetPasswordComponent implements OnInit {
 
   onSubmit() {
     if (this.resetForm.valid) {
-      console.log('Form submitted', this.resetForm.value);
-      // Implement password reset logic here
+      this.isLoading = true;
+      const resetPasswordDto: ResetPasswordDto = {
+        Email: this.email,
+        EmailToken: this.emailToken,
+        NewPassword: this.resetForm.get('password')!.value
+      };
+      console.log(resetPasswordDto);
+      this.authService.resetPassword(resetPasswordDto).subscribe({
+        next: (res) => {
+          if (res.statusCode === 200) {
+            this.toastr.success(res.message);
+            this.router.navigate(['/login']);
+          }
+          else {
+            this.toastr.error(res.message);
+          }
+        },
+        error: (error) => {
+          this.toastr.error(error.error.message || 'An error occurred');
+          if (error.error.statusCode === 400) {
+            this.router.navigate(['/login']);
+          }
+        },
+        complete: () => {
+          this.isLoading = false;
+        }
+      });
     }
   }
 }

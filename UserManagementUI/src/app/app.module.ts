@@ -17,7 +17,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserAnimationsModule,
     HttpClientModule,
     ToastrModule.forRoot({
-      timeOut: 1000,
+      timeOut: 10000,
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
       closeButton:true,
