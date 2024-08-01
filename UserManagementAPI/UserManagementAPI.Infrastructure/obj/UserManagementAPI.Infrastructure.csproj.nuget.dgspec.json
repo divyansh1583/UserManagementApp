@@ -235,6 +235,10 @@
               "target": "Package",
               "version": "[4.7.1, )"
             },
+            "PasswordGenerator": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
               "version": "[8.0.1, )"

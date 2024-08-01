@@ -308,3 +308,5 @@ C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserMa
 C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI\bin\Debug\net8.0\MailKit.dll
 C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI\bin\Debug\net8.0\MimeKit.dll
 C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI\bin\Debug\net8.0\System.Formats.Asn1.dll
+C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI\bin\Debug\net8.0\UserManagementAPI.staticwebassets.runtime.json
+C:\Users\divyansh.chauhan\Desktop\DC\Angular+.NET+MSSQL\UserManagementApp\UserManagementAPI\UserManagementAPI\bin\Debug\net8.0\PasswordGenerator.dll

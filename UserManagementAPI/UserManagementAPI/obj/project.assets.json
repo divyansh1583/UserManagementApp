@@ -1042,6 +1042,15 @@
           }
         }
       },
+      "PasswordGenerator/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/PasswordGenerator.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/PasswordGenerator.dll": {}
+        }
+      },
       "Swashbuckle.AspNetCore/6.6.2": {
         "type": "package",
         "dependencies": {
@@ -1759,6 +1768,7 @@
           "MailKit": "4.7.1.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.7",
           "MimeKit": "4.7.1",
+          "PasswordGenerator": "2.1.0",
           "System.IdentityModel.Tokens.Jwt": "8.0.1",
           "UserManagementAPI.Application": "1.0.0"
         },
@@ -3634,6 +3644,18 @@
         "lib/netstandard2.0/Newtonsoft.Json.Bson.xml",
         "newtonsoft.json.bson.1.0.2.nupkg.sha512",
         "newtonsoft.json.bson.nuspec"
+      ]
+    },
+    "PasswordGenerator/2.1.0": {
+      "sha512": "G70cCeAOYCk/uTuFw5PBGpYY9kmBZyzld7tphachvyU514PowMRDYyKwTefxIHNGWrhXY2d1DV5B1tDEnTtY3A==",
+      "type": "package",
+      "path": "passwordgenerator/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/PasswordGenerator.dll",
+        "passwordgenerator.2.1.0.nupkg.sha512",
+        "passwordgenerator.nuspec"
       ]
     },
     "Swashbuckle.AspNetCore/6.6.2": {

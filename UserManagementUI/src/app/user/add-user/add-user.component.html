@@ -5,7 +5,7 @@
         <a routerLink="/user/dashboard">
           <img src="../../../assets/Images/ArrowLeftCircle.png" alt="Back to Dashboard">
         </a>
-        <h2>Add User</h2>
+        <h2>{{ isUpdateMode ? 'Update' : 'Add' }} User</h2>
       </div>
       <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
         <div class="card mb-4 w-100">
@@ -14,7 +14,7 @@
             <hr class="mt-2 mb-4">
             
             <!-- Image Upload Section -->
-            <div class="upload-section">
+            <div class="upload-section" *ngIf="!isUpdateMode">
               <div class="upload-placeholder" (click)="fileInput.click()">
                 <img *ngIf="imagePreview" [src]="imagePreview" alt="User image">
                 <div *ngIf="!imagePreview" class="placeholder-text">
@@ -44,16 +44,28 @@
                   <option *ngFor="let option of ['male', 'female', 'other']" [value]="option">{{option | titlecase}}</option>
                 </select>
               </div>
-              <div *ngFor="let field of ['dateOfBirth', 'email']" class="col-md-4 mb-3">
-                <label [for]="field">{{field | titlecase}}</label>
-                <input [type]="field === 'email' ? 'email' : 'date'" class="form-control" [id]="field" [formControlName]="field" [placeholder]="field | titlecase">
+              <div class="col-md-4 mb-3">
+                <label for="dateOfBirth">Date of Birth</label>
+                <input type="date" class="form-control" id="dateOfBirth" formControlName="dateOfBirth">
+              </div>
+              <div class="col-md-4 mb-3" *ngIf="!isUpdateMode">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" formControlName="email" placeholder="Email">
               </div>
             </div>
 
             <div class="row">
-              <div *ngFor="let field of ['dateOfJoining', 'phone', 'alternatePhone']" class="col-md-4 mb-3">
-                <label [for]="field">{{field | titlecase}}</label>
-                <input [type]="field.includes('phone') ? 'tel' : 'date'" class="form-control" [id]="field" [formControlName]="field" [placeholder]="field | titlecase">
+              <div class="col-md-4 mb-3">
+                <label for="dateOfJoining">Date of Joining</label>
+                <input type="date" class="form-control" id="dateOfJoining" formControlName="dateOfJoining">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="phone">Phone</label>
+                <input type="tel" class="form-control" id="phone" formControlName="phone" placeholder="Phone">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="alternatePhone">Alternate Phone</label>
+                <input type="tel" class="form-control" id="alternatePhone" formControlName="alternatePhone" placeholder="Alternate Phone">
               </div>
             </div>
 
@@ -103,7 +115,9 @@
             <div class="row mt-4">
               <div class="col-10"></div>
               <div class="col">
-                <button type="submit" class="btn btn-primary btn-md px-5" [disabled]="userForm.invalid">Save</button>
+                <button type="submit" class="btn btn-primary btn-md px-5" [disabled]="userForm.invalid">
+                  {{ isUpdateMode ? 'Update' : 'Save' }}
+                </button>
               </div>
             </div>
           </div>
@@ -112,6 +126,3 @@
     </div>
   </div>
 </div>
-
-<p>{{ userForm.value | json }}</p>
-<p>{{ userForm.valid | json }}</p>

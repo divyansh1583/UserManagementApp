@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Hosting;
 using System;
 using Microsoft.AspNetCore.Http;
 using System.Web;
+using PasswordGenerator;
 
 namespace UserManagementAPI.Infrastructure.Services
 {
@@ -68,10 +69,16 @@ namespace UserManagementAPI.Infrastructure.Services
             {
                 return new ResponseModel { StatusCode = 409, Message = "User Already Exists!" };
             }
+
+            var pwd = new Password(8).IncludeLowercase().IncludeUppercase().IncludeSpecial().IncludeNumeric();
+            var password = pwd.Next();
+            userDto.Password = password;
             DcUser user = _mapper.Map<DcUser>(userDto);
             var userChanges = await _userRepository.AddAsync(user);
             if (userChanges >= 2)
             {
+                var emailModel = new EmailModel(userDto.Email, "New User Account - Login Credentials", $"Congratulations, your new user account has been created! Your login credentials are: \nEmail: {userDto.Email} \nPassword: {password}");
+                //_emailService.SendEmail(emailModel);
                 return new ResponseModel { StatusCode = 201, Message = "User added successfully" };
             }
             return new ResponseModel { StatusCode = 500, Message = "Failed to add user" };
@@ -105,64 +112,7 @@ namespace UserManagementAPI.Infrastructure.Services
             return new ResponseModel { StatusCode = 500, Message = "Failed to delete user" };
         }
 
-        public async Task<ResponseModel> SendResetPasswordEmailAsync(string email)
-        {
-            var user = await _userRepository.GetByEmailAsync(email);
-            if (user == null)
-            {
-                return new ResponseModel { StatusCode = 404, Message = "Email doesn't exist" };
-            }
 
-            user.PasswordResetToken = Convert.ToBase64String(RandomNumberGenerator.GetBytes(64));
-            user.PasswordResetTokenExpiry = DateTime.Now.AddMinutes(15);
-
-            string from = _configuration["EmailSettings:From"];
-            var emailModel = new EmailModel(email, "Reset Password!!", EmailBody.EmailStringBody(email, user.PasswordResetToken));
-            _emailService.SendEmail(emailModel);
-
-            await _userRepository.UpdateAsync(user);
-
-            return new ResponseModel { StatusCode = 200, Message = "Email sent!" };
-        }
-
-        public async Task<ResponseModel> ResetPasswordAsync(ResetPasswordDto resetPasswordDto)
-        {
-            var user = await _userRepository.GetByEmailAsync(resetPasswordDto.Email);
-
-            if (user == null)
-            {
-                return new ResponseModel { StatusCode = 404, Message = "User doesn't exist" };
-            }
-            if (user.PasswordResetToken != resetPasswordDto.EmailToken)
-            {
-                return new ResponseModel { StatusCode = 400, Message = "Invalid Password Reset Token " };
-            }
-            if (user.PasswordResetTokenExpiry < DateTime.Now)
-            {
-                return new ResponseModel { StatusCode = 400, Message = "Time to reset password has expired. Try Again!" };
-            }
-
-            user.Password = BCrypt.Net.BCrypt.HashPassword(resetPasswordDto.NewPassword);
-            user.PasswordResetToken = null;
-            user.PasswordResetTokenExpiry = null;
-
-            await _userRepository.UpdateAsync(user);
-
-            return new ResponseModel { StatusCode = 200, Message = "Password reset successfully" };
-        }
-
-        public async Task<ResponseModel> LoginAsync(LoginDto loginDto)
-        {
-            var user = await _userRepository.GetByEmailAsync(loginDto.Email);
-
-            if (user == null || !BCrypt.Net.BCrypt.Verify(loginDto.Password, user.Password))
-            {
-                return new ResponseModel { StatusCode = 401, Message = "Invalid credentials" };
-            }
-
-            var token = _tokenService.GenerateToken();
-            return new ResponseModel { StatusCode = 200, Message = "Login successful", Data = new { Token = token } };
-        }
         public async Task<ResponseModel> UploadUserImageAsync(IFormFile file)
         {
             if (file == null || file.Length == 0)
@@ -170,7 +120,7 @@ namespace UserManagementAPI.Infrastructure.Services
                 return new ResponseModel { StatusCode = 400, Message = "No file uploaded" };
             }
 
-            var uploadsFolder = Path.Combine(_environment.ContentRootPath, "uploads");
+            var uploadsFolder = Path.Combine(_environment.WebRootPath, "uploads");
             if (!Directory.Exists(uploadsFolder))
             {
                 Directory.CreateDirectory(uploadsFolder);
@@ -183,8 +133,8 @@ namespace UserManagementAPI.Infrastructure.Services
             {
                 await file.CopyToAsync(fileStream);
             }
-
             var relativePath = "/uploads/" + uniqueFileName;
+            var imagePath = _environment.WebRootPath + relativePath;
             return new ResponseModel { StatusCode = 200, Message = "Image uploaded successfully", Data = relativePath };
         }
     }

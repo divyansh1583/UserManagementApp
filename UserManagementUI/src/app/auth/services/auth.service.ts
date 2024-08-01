@@ -9,7 +9,7 @@ import { ResetPasswordDto } from '../../shared/models/reset-password.modal';
 })
 export class AuthService {
 
-  private apiUrl = 'https://localhost:7118/api/Users'; // Replace with your API URL
+  private apiUrl = 'https://localhost:7118/api/Auth'; // Replace with your API URL
 
   constructor(private http: HttpClient) { }
 
@@ -26,9 +26,8 @@ export class AuthService {
     console.log(resetPasswordDto);
     return this.http.post<any>(`${this.apiUrl}/reset-password`, resetPasswordDto);
   }
-
-  
-  // validateResetToken(email: string, token: string): Observable<any> {
-  //   return this.http.post<any>(`${this.apiUrl}/validate-reset-token`, { email, token });
-  // }
+  //change password
+  changePassword(changePasswordDto: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/change-password`, changePasswordDto);
+  }
 }

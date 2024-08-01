@@ -20,4 +20,8 @@
 		<ProjectReference Include="..\UserManagementAPI.Infrastructure\UserManagementAPI.Infrastructure.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="wwwroot\" />
+	</ItemGroup>
+
 </Project>

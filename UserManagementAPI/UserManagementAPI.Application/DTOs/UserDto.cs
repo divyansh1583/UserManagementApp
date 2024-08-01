@@ -20,7 +20,7 @@ namespace UserManagementAPI.Application.DTOs
         public string Phone { get; set; }
         public string AlternatePhone { get; set; }
         public string ImagePath { get; set; }
-        public string Password { get; set; }
+        public string? Password { get; set; }
         public string? CreatedBy { get; set; }
         public DateTime? CreatedDate { get; set; }
         public string? UpdatedBy { get; set; }

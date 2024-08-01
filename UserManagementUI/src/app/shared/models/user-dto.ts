@@ -16,11 +16,25 @@ export interface UserDto {
     addresses?: AddressDto[];
   }
   
-  interface AddressDto {
+  export interface AddressDto {
     address: string;
     cityId: number;
     stateId: number;
     countryId: number;
     zipCode: string;
     addressTypeId: number;
+  }
+  export interface UpdateUserDto {
+    UserId: number; // Required to identify the user to update
+    FirstName?: string;
+    LastName?: string;
+    MiddleName?: string;
+    Gender?: string;
+    DateOfJoining?: Date;
+    DateOfBirth?: Date;
+    Phone?: string;
+    AlternatePhone?: string;
+    ImagePath?: string;
+    IsActive?: boolean;
+    Addresses?: AddressDto[];
   }

@@ -24,19 +24,9 @@ namespace UserManagementAPI.Controllers
         }
 
         [HttpGet("getById")]
-        public async Task<ActionResult<ResponseModel>> GetUser([FromBody] int id)
+        public async Task<ActionResult<ResponseModel>> GetUser( int id)
         {
             return await _userService.GetUserByIdAsync(id);
-        }
-        [HttpPost("upload-image")]
-        public async Task<ActionResult<ResponseModel>> UploadUserImage(IFormFile file)
-        {
-            if (file == null || file.Length == 0)
-            {
-                return BadRequest(new ResponseModel { StatusCode = 400, Message = "No file uploaded" });
-            }
-
-            return await _userService.UploadUserImageAsync(file);
         }
         [HttpPost("add")]
         public async Task<ActionResult<ResponseModel>> AddUser(UserDto userDto)
@@ -64,22 +54,16 @@ namespace UserManagementAPI.Controllers
             return await _userService.DeleteUserAsync(id);
         }
 
-        [HttpPost("send-reset-email/{email}")]
-        public async Task<ActionResult<ResponseModel>> SendResetPasswordEmail(string email)
+        [HttpPost("upload-image")]
+        public async Task<ActionResult<ResponseModel>> UploadUserImage(IFormFile file)
         {
-            return await _userService.SendResetPasswordEmailAsync(email);
+            if (file == null || file.Length == 0)
+            {
+                return BadRequest(new ResponseModel { StatusCode = 400, Message = "No file uploaded" });
+            }
+
+            return await _userService.UploadUserImageAsync(file);
         }
 
-        [HttpPost("reset-password")]
-        public async Task<ActionResult<ResponseModel>> ResetPassword(ResetPasswordDto resetPasswordDto)
-        {
-            return await _userService.ResetPasswordAsync(resetPasswordDto);
-        }
-
-        [HttpPost("login")]
-        public async Task<ActionResult<ResponseModel>> Login(LoginDto loginDto)
-        {
-            return await _userService.LoginAsync(loginDto);
-        }
     }
 }

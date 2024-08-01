@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../services/user.service';
-import { UserDto } from '../../shared/models/user-dto';
+import { UserDto, UpdateUserDto } from '../../shared/models/user-dto';
 import { ToastrService } from 'ngx-toastr';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { cities, countries, states } from 'src/app/shared/data/location-data';
+import { TokenService } from 'src/app/auth/services/token.service';
 
 @Component({
   selector: 'app-add-user',
@@ -16,19 +17,30 @@ export class AddUserComponent implements OnInit {
   states: { [key: string]: { id: string; name: string; }[] } = states;
   cities: { [key: string]: { id: string; name: string; }[] } = cities;
 
-  userForm: FormGroup=this.fb.group({});
+  userForm: FormGroup = this.fb.group({});
   imagePreview: string | ArrayBuffer | null = null;
   showSecondaryAddress: boolean = false;
+  isUpdateMode: boolean = false;
+  userId: number | null = null;
 
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
     private toastr: ToastrService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute,
+    private tokenService: TokenService
   ) { }
 
   ngOnInit(): void {
-    this.initForm();
+    this.route.params.subscribe(params => {
+      this.userId = params['id'] ? +params['id'] : null;
+      this.isUpdateMode = !!this.userId;
+      this.initForm();
+      if (this.isUpdateMode) {
+        this.loadUserData();
+      }
+    });
   }
 
   initForm() {
@@ -38,26 +50,30 @@ export class AddUserComponent implements OnInit {
       lastName: [null, Validators.required],
       gender: [null, Validators.required],
       dateOfBirth: [null, Validators.required],
-      email: [null, [Validators.required, Validators.email]],
       dateOfJoining: [null, Validators.required],
       phone: [null, Validators.required],
       alternatePhone: [null],
-      imagePath:[null],
-      password:["12345@Dc"],
+      imagePath: [null],
       isActive: [true],
       addresses: this.fb.array([
-        this.createAddressFormGroup(1),  // Primary address
+        this.createAddressFormGroup(1),
       ])
     });
+
+    if (!this.isUpdateMode) {
+      this.userForm.addControl('email', this.fb.control(null, [Validators.required, Validators.email]));
+      this.userForm.addControl('password', this.fb.control('12345@Dc'));
+      this.userForm.addControl('createdBy', this.fb.control(this.tokenService.getEmail()));
+    }
   }
 
-  createAddressFormGroup(addressTypeId: number): FormGroup {
+  createAddressFormGroup(addressTypeId: number, address?: any): FormGroup {
     return this.fb.group({
-      address: [null, Validators.required],
-      cityId: [null, Validators.required],
-      stateId: [null, Validators.required],
-      countryId: [null, Validators.required],
-      zipCode: [null, Validators.required],
+      address: [address ? address.address : null, Validators.required],
+      cityId: [address ? address.cityId : null, Validators.required],
+      stateId: [address ? address.stateId : null, Validators.required],
+      countryId: [address ? address.countryId : null, Validators.required],
+      zipCode: [address ? address.zipCode : null, Validators.required],
       addressTypeId: [addressTypeId]
     });
   }
@@ -66,19 +82,104 @@ export class AddUserComponent implements OnInit {
     return this.userForm.get('addresses') as FormArray;
   }
 
-  getLocationData(field: string, index: number) {
-    switch (field) {
-      case 'country':
-        return this.countries;
-      case 'state':
-        const countryId = this.userForm.get(`addresses.${index}.countryId`)?.value;
-        return countryId ? this.states[countryId] : [];
-      case 'city':
-        const stateId = this.userForm.get(`addresses.${index}.stateId`)?.value;
-        return stateId ? this.cities[stateId] : [];
-      default:
-        return [];
+  loadUserData() {
+    if (this.userId) {
+      this.userService.getUserById(this.userId).subscribe(
+        (response: any) => {
+          if (response.statusCode === 200 && response.data) {
+            const user = response.data;
+            this.userForm.patchValue(user);
+            this.imagePreview = user.imagePath;
+            // Handle addresses
+            this.addressesFormArray.clear();
+            user.addresses.forEach((address: any) => {
+              this.addressesFormArray.push(this.createAddressFormGroup(address.addressTypeId, address));
+            });
+          } else {
+            this.toastr.error('Error loading user data');
+          }
+        },
+        error => {
+          this.toastr.error('Error loading user data');
+        }
+      );
     }
+  }
+
+  onSubmit() {
+    if (this.userForm.valid) {
+      if (this.isUpdateMode) {
+        this.updateUser();
+      } else {
+        this.addUser();
+      }
+    } else {
+      this.toastr.warning('Please fill all the required fields');
+    }
+  }
+
+  addUser() {
+    const formData = new FormData();
+    const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement;
+    const file = fileInput.files?.[0];
+
+    if (file) {
+      formData.append('file', file);
+      this.userService.uploadImage(formData).subscribe(
+        response => {
+          if (response.statusCode === 200 && response.data) {
+            const userData = this.prepareUserData(response.data);
+            this.userService.addUser(userData).subscribe(
+              res => {
+                if (res.statusCode === 200 || res.statusCode === 201) {
+                  this.toastr.success(res.message);
+                  this.router.navigate(['/user/dashboard']);
+                } else {
+                  this.toastr.error(res.message);
+                }
+              },
+              error => {
+                this.toastr.error('Error adding user');
+              }
+            );
+          }
+        },
+        error => {
+          this.toastr.error('Error uploading image');
+        }
+      );
+    } else {
+      this.toastr.warning('Please select an image to upload');
+    }
+  }
+
+  updateUser() {
+    const updateUserDto: UpdateUserDto = {
+      userId: this.userId!,
+      ...this.userForm.value
+    };
+    this.userService.updateUser(updateUserDto).subscribe(
+      res => {
+        if (res.statusCode === 200) {
+          this.toastr.success(res.message);
+          this.router.navigate(['/user/dashboard']);
+        } else {
+          this.toastr.error(res.message);
+        }
+      },
+      error => {
+        this.toastr.error('Error updating user');
+      }
+    );
+  }
+
+  prepareUserData(imagePath: string) {
+    this.userForm.get('imagePath')!.setValue(imagePath);
+    const formValue = this.userForm.value;
+    const userData: UserDto = {
+      ...formValue
+    };
+    return userData;
   }
 
   onFileSelected(event: Event) {
@@ -101,56 +202,18 @@ export class AddUserComponent implements OnInit {
     }
   }
 
-  onSubmit() {
-    if (this.userForm.valid) {
-      console.log(this.userForm.value);
-      const formData = new FormData();
-      const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement;
-      const file = fileInput.files?.[0];
-
-      if (file) {
-        formData.append('file', file);
-        console.log(formData);
-        try {
-          this.userService.uploadImage(formData).subscribe(response => {
-            console.log(response);
-            if (response && response.data) {
-              const userData = this.prepareUserData(response.data);
-              console.log(userData);
-              this.addUser(userData);
-            }
-          });
-        } catch (error) {
-          console.log(error);
-          this.toastr.error('Error uploading image!');
-        }
-      } else {
-        this.toastr.warning('Please select an image to upload');
-      }
-    } else {
-      this.toastr.warning('Please fill all the required fields');
+  getLocationData(field: string, index: number) {
+    switch (field) {
+      case 'country':
+        return this.countries;
+      case 'state':
+        const countryId = this.userForm.get(`addresses.${index}.countryId`)?.value;
+        return countryId ? this.states[countryId] : [];
+      case 'city':
+        const stateId = this.userForm.get(`addresses.${index}.stateId`)?.value;
+        return stateId ? this.cities[stateId] : [];
+      default:
+        return [];
     }
-  }
-
-  prepareUserData(imagePath: string) {
-    this.userForm.get('imagePath')!.setValue(imagePath);
-    const formValue = this.userForm.value;
-    const userData: UserDto = {
-      ...formValue
-    };
-    return userData;
-  }
-
-  addUser(userDto: UserDto) {
-    this.userService.addUser(userDto).subscribe(res => {
-      if (res.statusCode == 200||res.statusCode == 201) {
-        console.log(res);
-        this.router.navigate(['/user/dashboard']);
-        this.toastr.success(res.message);
-      } else {
-        console.log(res);
-        this.toastr.error(res.message);
-      }
-    });
   }
 }

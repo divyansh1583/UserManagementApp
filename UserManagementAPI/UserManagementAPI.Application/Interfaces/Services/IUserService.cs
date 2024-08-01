@@ -11,9 +11,7 @@ namespace UserManagementAPI.Application.Interfaces.Services
         Task<ResponseModel> AddUserAsync(UserDto userDto);
         Task<ResponseModel> UpdateUserAsync(UpdateUserDto updateUserDto);
         Task<ResponseModel> DeleteUserAsync(int id);
-        Task<ResponseModel> SendResetPasswordEmailAsync(string email);
-        Task<ResponseModel> ResetPasswordAsync(ResetPasswordDto resetPasswordDto);
-        Task<ResponseModel> LoginAsync(LoginDto loginDto);
         Task<ResponseModel> UploadUserImageAsync(IFormFile file);
+
     }
 }

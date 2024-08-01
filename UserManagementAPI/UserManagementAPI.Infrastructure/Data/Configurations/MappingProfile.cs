@@ -45,7 +45,6 @@ namespace UserManagementAPI.Infrastructure.Data.Configurations
             .ForMember(dest => dest.DateOfJoining, opt => opt.MapFrom(src => src.DateOfJoining.HasValue ? DateOnly.FromDateTime(src.DateOfJoining.Value) : (DateOnly?)null))
             .ForMember(dest => dest.DateOfBirth, opt => opt.MapFrom(src => src.DateOfBirth.HasValue ? DateOnly.FromDateTime(src.DateOfBirth.Value) : (DateOnly?)null))
             .ForMember(dest => dest.DcUserAddresses, opt => opt.MapFrom(src => src.Addresses))
-            .AfterMap((src, dest) => dest.CreatedBy = src.FirstName)
             .AfterMap((src, dest) => dest.CreatedDate = DateTime.Now)
             .AfterMap((src, dest) => dest.UpdatedBy = null)
             .AfterMap((src, dest) => dest.UpdatedDate = null)

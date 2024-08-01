@@ -935,6 +935,15 @@
           "lib/netstandard2.0/Mono.TextTemplating.dll": {}
         }
       },
+      "PasswordGenerator/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/PasswordGenerator.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/PasswordGenerator.dll": {}
+        }
+      },
       "System.CodeDom/4.4.0": {
         "type": "package",
         "compile": {
@@ -3055,6 +3064,18 @@
         "mono.texttemplating.nuspec"
       ]
     },
+    "PasswordGenerator/2.1.0": {
+      "sha512": "G70cCeAOYCk/uTuFw5PBGpYY9kmBZyzld7tphachvyU514PowMRDYyKwTefxIHNGWrhXY2d1DV5B1tDEnTtY3A==",
+      "type": "package",
+      "path": "passwordgenerator/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/PasswordGenerator.dll",
+        "passwordgenerator.2.1.0.nupkg.sha512",
+        "passwordgenerator.nuspec"
+      ]
+    },
     "System.CodeDom/4.4.0": {
       "sha512": "2sCCb7doXEwtYAbqzbF/8UAeDRMNmPaQbU2q50Psg1J9KzumyVVCgKQY8s53WIPTufNT0DpSe9QRvVjOzfDWBA==",
       "type": "package",
@@ -4134,6 +4155,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.7",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.7",
       "MimeKit >= 4.7.1",
+      "PasswordGenerator >= 2.1.0",
       "System.IdentityModel.Tokens.Jwt >= 8.0.1",
       "UserManagementAPI.Application >= 1.0.0"
     ]
@@ -4223,6 +4245,10 @@
           "MimeKit": {
             "target": "Package",
             "version": "[4.7.1, )"
+          },
+          "PasswordGenerator": {
+            "target": "Package",
+            "version": "[2.1.0, )"
           },
           "System.IdentityModel.Tokens.Jwt": {
             "target": "Package",
