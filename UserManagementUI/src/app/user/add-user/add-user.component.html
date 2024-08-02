@@ -12,9 +12,9 @@
           <div class="card-body">
             <h5 class="card-title">User Detail</h5>
             <hr class="mt-2 mb-4">
-            
+
             <!-- Image Upload Section -->
-            <div class="upload-section" *ngIf="!isUpdateMode">
+            <div class="upload-section">
               <div class="upload-placeholder" (click)="fileInput.click()">
                 <img *ngIf="imagePreview" [src]="imagePreview" alt="User image">
                 <div *ngIf="!imagePreview" class="placeholder-text">
@@ -32,7 +32,8 @@
             <div class="row">
               <div *ngFor="let field of ['firstName', 'middleName', 'lastName']" class="col-md-4 mb-3">
                 <label [for]="field">{{field | titlecase}}</label>
-                <input type="text" class="form-control" [id]="field" [formControlName]="field" [placeholder]="field | titlecase">
+                <input type="text" class="form-control" [id]="field" [formControlName]="field"
+                  [placeholder]="field | titlecase">
               </div>
             </div>
 
@@ -41,7 +42,8 @@
                 <label for="gender">Gender</label>
                 <select class="form-control" id="gender" formControlName="gender">
                   <option value="">Select</option>
-                  <option *ngFor="let option of ['male', 'female', 'other']" [value]="option">{{option | titlecase}}</option>
+                  <option *ngFor="let option of ['male', 'female', 'other']" [value]="option">{{option | titlecase}}
+                  </option>
                 </select>
               </div>
               <div class="col-md-4 mb-3">
@@ -65,7 +67,8 @@
               </div>
               <div class="col-md-4 mb-3">
                 <label for="alternatePhone">Alternate Phone</label>
-                <input type="tel" class="form-control" id="alternatePhone" formControlName="alternatePhone" placeholder="Alternate Phone">
+                <input type="tel" class="form-control" id="alternatePhone" formControlName="alternatePhone"
+                  placeholder="Alternate Phone">
               </div>
             </div>
 
@@ -77,7 +80,8 @@
                   <div class="row">
                     <div class="col-md-12 mb-3">
                       <label [for]="'address' + i">Address</label>
-                      <input type="text" class="form-control" [id]="'address' + i" formControlName="address" placeholder="Address">
+                      <input type="text" class="form-control" [id]="'address' + i" formControlName="address"
+                        placeholder="Address">
                     </div>
                   </div>
                   <div class="row">
@@ -92,7 +96,8 @@
                   <div class="row">
                     <div class="col-md-4 mb-3">
                       <label [for]="'zipCode' + i">Zip Code</label>
-                      <input type="text" class="form-control" [id]="'zipCode' + i" formControlName="zipCode" placeholder="Zip Code">
+                      <input type="text" class="form-control" [id]="'zipCode' + i" formControlName="zipCode"
+                        placeholder="Zip Code">
                     </div>
                   </div>
                 </div>
@@ -100,8 +105,9 @@
             </div>
 
             <!-- Secondary Address Checkbox -->
-            <div class="form-check mb-3" *ngIf="!showSecondaryAddress">
-              <input type="checkbox" class="form-check-input" id="showSecondaryAddress" (change)="toggleSecondaryAddress($event)">
+            <div class="form-check mb-3" *ngIf="addressesFormArray.length === 1">
+              <input type="checkbox" class="form-check-input" id="showSecondaryAddress"
+                (change)="toggleSecondaryAddress($event)">
               <label class="form-check-label" for="showSecondaryAddress">Add Secondary Address</label>
             </div>
 

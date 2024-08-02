@@ -33,12 +33,17 @@ export class AddUserComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      this.userId = params['id'] ? +params['id'] : null;
-      this.isUpdateMode = !!this.userId;
-      this.initForm();
-      if (this.isUpdateMode) {
-        this.loadUserData();
+    this.route.params.subscribe({
+      next: (params) => {
+        this.userId = params['id'] ? +params['id'] : null;
+        this.isUpdateMode = !!this.userId;
+        this.initForm();
+        if (this.isUpdateMode) {
+          this.loadUserData();
+        }
+      },
+      error: (err) => {
+        console.error('Error in route params:', err);
       }
     });
   }
@@ -84,26 +89,37 @@ export class AddUserComponent implements OnInit {
 
   loadUserData() {
     if (this.userId) {
-      this.userService.getUserById(this.userId).subscribe(
-        (response: any) => {
+      this.userService.getUserById(this.userId).subscribe({
+        next: (response: any) => {
           if (response.statusCode === 200 && response.data) {
             const user = response.data;
-            this.userForm.patchValue(user);
+            this.userForm.patchValue({
+              ...user,
+              dateOfBirth: this.formatDate(user.dateOfBirth),
+              dateOfJoining: this.formatDate(user.dateOfJoining),
+              gender: user.gender.toLowerCase() // Normalize the gender value
+            });
             this.imagePreview = user.imagePath;
             // Handle addresses
             this.addressesFormArray.clear();
             user.addresses.forEach((address: any) => {
               this.addressesFormArray.push(this.createAddressFormGroup(address.addressTypeId, address));
             });
+            this.showSecondaryAddress = this.addressesFormArray.length > 1;
           } else {
             this.toastr.error('Error loading user data');
           }
         },
-        error => {
+        error: (error) => {
           this.toastr.error('Error loading user data');
+          console.error('Error loading user data:', error);
         }
-      );
+      });
     }
+  }
+
+  formatDate(date: string): string {
+    return new Date(date).toISOString().split('T')[0];
   }
 
   onSubmit() {
@@ -125,12 +141,12 @@ export class AddUserComponent implements OnInit {
 
     if (file) {
       formData.append('file', file);
-      this.userService.uploadImage(formData).subscribe(
-        response => {
+      this.userService.uploadImage(formData).subscribe({
+        next: (response) => {
           if (response.statusCode === 200 && response.data) {
             const userData = this.prepareUserData(response.data);
-            this.userService.addUser(userData).subscribe(
-              res => {
+            this.userService.addUser(userData).subscribe({
+              next: (res) => {
                 if (res.statusCode === 200 || res.statusCode === 201) {
                   this.toastr.success(res.message);
                   this.router.navigate(['/user/dashboard']);
@@ -138,16 +154,18 @@ export class AddUserComponent implements OnInit {
                   this.toastr.error(res.message);
                 }
               },
-              error => {
+              error: (error) => {
                 this.toastr.error('Error adding user');
+                console.error('Error adding user:', error);
               }
-            );
+            });
           }
         },
-        error => {
+        error: (error) => {
           this.toastr.error('Error uploading image');
+          console.error('Error uploading image:', error);
         }
-      );
+      });
     } else {
       this.toastr.warning('Please select an image to upload');
     }
@@ -158,8 +176,8 @@ export class AddUserComponent implements OnInit {
       userId: this.userId!,
       ...this.userForm.value
     };
-    this.userService.updateUser(updateUserDto).subscribe(
-      res => {
+    this.userService.updateUser(updateUserDto).subscribe({
+      next: (res) => {
         if (res.statusCode === 200) {
           this.toastr.success(res.message);
           this.router.navigate(['/user/dashboard']);
@@ -167,10 +185,11 @@ export class AddUserComponent implements OnInit {
           this.toastr.error(res.message);
         }
       },
-      error => {
+      error: (error) => {
         this.toastr.error('Error updating user');
+        console.error('Error updating user:', error);
       }
-    );
+    });
   }
 
   prepareUserData(imagePath: string) {
@@ -195,9 +214,9 @@ export class AddUserComponent implements OnInit {
 
   toggleSecondaryAddress(event: Event) {
     this.showSecondaryAddress = (event.target as HTMLInputElement).checked;
-    if (this.showSecondaryAddress) {
+    if (this.showSecondaryAddress && this.addressesFormArray.length === 1) {
       this.addressesFormArray.push(this.createAddressFormGroup(2));
-    } else {
+    } else if (!this.showSecondaryAddress && this.addressesFormArray.length > 1) {
       this.addressesFormArray.removeAt(1);
     }
   }
