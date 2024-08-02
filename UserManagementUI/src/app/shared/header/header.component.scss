@@ -9,13 +9,14 @@
     .ml-auto {
       display: flex;
       align-items: center;
-  
+      .img-wrapper{
+        height: 50px;
+        width: 50px;
+        margin-right: 0.5rem;
+        
+      }
       span {
         margin-right: 10px;
-      }
-  
-      img {
-        border: 2px solid #3498db;
       }
     }
   }

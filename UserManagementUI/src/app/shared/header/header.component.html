@@ -1,7 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Integrity Solution</a>
-    <div class="ml-auto">
-      <span>Hi, {{ userName }} 👋</span>
-      <img src="../../../assets/Images/ProfilePic.png" alt="User Avatar" class="rounded-circle ml-2" width="30" height="30">
+  <a class="navbar-brand" href="#">Integrity Solution</a>
+  <span>Hi, {{ userName }} 👋</span>
+  <span style="flex: 1 1 auto;"></span>
+  <div class="ml-auto">
+    <div class="rounded-circle p-1 border img-wrapper">
+      <img src={{imagePath}} alt="User Avatar" class="w-100 h-100">
     </div>
-  </nav>
+    <span>{{userName}}</span>
+
+  </div>
+</nav>

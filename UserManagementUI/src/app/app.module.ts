@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxUiLoaderHttpModule, NgxUiLoaderModule, NgxUiLoaderRouterModule } from 'ngx-ui-loader';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
       closeButton:true,
     }),
     NgbModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderRouterModule,
+    NgxUiLoaderHttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

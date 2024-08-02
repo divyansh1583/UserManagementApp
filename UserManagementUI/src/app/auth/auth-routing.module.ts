@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'reset-password', component: ResetPasswordComponent, canActivate: [resetPasswordGuard] },
   { path: 'change-password', component: ChangePasswordComponent },
+  // { path: '**', redirectTo: 'login' }
 ];
 
 @NgModule({

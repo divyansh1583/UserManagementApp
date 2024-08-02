@@ -4,7 +4,8 @@ import { userGuard } from './guards/user.guard';
 
 const routes: Routes = [
   { path: '', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
-  { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule), canActivate: [userGuard] }
+  { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule), canActivate: [userGuard] },
+  { path: '**', redirectTo: '/login' }
 ];
 
 @NgModule({

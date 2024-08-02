@@ -1,27 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { UserService } from '../services/user.service'; // Import the UserService
 import { ExcelDownloadService } from '../services/excel-download.service';
-import { UserDto} from 'src/app/shared/models/user-dto'; // Import DTOs as needed
+import { UserDto } from 'src/app/shared/models/user-dto'; // Import DTOs as needed
 import { ToastrService } from 'ngx-toastr';
 import { cities, states } from 'src/app/shared/data/location-data';
 import { Router } from '@angular/router';
-interface User {
-  userId: number;
-  firstName: string;
-  middleName: string;
-  lastName: string;
-  dateOfBirth: string;
-  email: string;
-  phone: string;
-  imagePath: string;
-  isActive: boolean;
-}
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  @ViewChild('deleteDialog') deleteDialog!: TemplateRef<any>;
   activeUsers: number = 0;
   inactiveUsers: number = 0;
 
@@ -42,8 +34,9 @@ export class DashboardComponent implements OnInit {
     private userService: UserService,
     private excelDownloadService: ExcelDownloadService,
     private toastr: ToastrService,
-    private router:Router
-  ) {}
+    private router: Router,
+    private modalService: NgbModal,
+  ) { }
 
   ngOnInit() {
     this.getUserData();
@@ -78,15 +71,27 @@ export class DashboardComponent implements OnInit {
   editUser(userId: number) {
     this.router.navigate(['/user/edit', userId]);
   }
-  
+
   deleteUser(userId: number) {
-    this.userService.deleteUser(userId).subscribe(
-      res => {
-        if (res.statusCode === 200) {
-          this.getUserData();
-          this.toastr.success('User deleted successfully');
-        } else {
-          this.toastr.error(res.message);
+    const modalRef = this.modalService.open(this.deleteDialog!);
+    modalRef.result.then(
+      result => {
+        if (result) {
+          this.userService.deleteUser(userId).subscribe(
+            {
+              next: (res) => {
+                if (res.statusCode === 200) {
+                  this.getUserData();
+                  this.toastr.success(res.message);
+                } else {
+                  this.toastr.error(res.message);
+                }
+              },
+              error:(err)=>{
+                this.toastr.error(err.message);
+              }
+            }
+          );
         }
       }
     );

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../services/user.service';
 import { UserDto, UpdateUserDto } from '../../shared/models/user-dto';
 import { ToastrService } from 'ngx-toastr';
@@ -50,14 +50,14 @@ export class AddUserComponent implements OnInit {
 
   initForm() {
     this.userForm = this.fb.group({
-      firstName: [null, Validators.required],
-      middleName: [null],
-      lastName: [null, Validators.required],
+      firstName: [null, [Validators.required, Validators.maxLength(50),this.noWhitespaceValidator]],
+      middleName: [null, [Validators.required, Validators.maxLength(50)]],
+      lastName: [null, Validators.maxLength(50)],
       gender: [null, Validators.required],
       dateOfBirth: [null, Validators.required],
       dateOfJoining: [null, Validators.required],
-      phone: [null, Validators.required],
-      alternatePhone: [null],
+      phone: [null, [Validators.required, Validators.pattern(/^\d{10}$/)]],
+      alternatePhone: [null, Validators.pattern(/^\d{10}$/)],
       imagePath: [null],
       isActive: [true],
       addresses: this.fb.array([
@@ -66,19 +66,23 @@ export class AddUserComponent implements OnInit {
     });
 
     if (!this.isUpdateMode) {
-      this.userForm.addControl('email', this.fb.control(null, [Validators.required, Validators.email]));
+      this.userForm.addControl('email', this.fb.control(null, [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)]));
       this.userForm.addControl('password', this.fb.control('12345@Dc'));
       this.userForm.addControl('createdBy', this.fb.control(this.tokenService.getEmail()));
     }
   }
-
+  noWhitespaceValidator(control: FormControl) {
+    const isWhitespace = (control.value || '').trim() === '';
+    const isValid = !isWhitespace;
+    return isValid ? null : { 'whitespace': true };
+  }
   createAddressFormGroup(addressTypeId: number, address?: any): FormGroup {
     return this.fb.group({
       address: [address ? address.address : null, Validators.required],
       cityId: [address ? address.cityId : null, Validators.required],
       stateId: [address ? address.stateId : null, Validators.required],
       countryId: [address ? address.countryId : null, Validators.required],
-      zipCode: [address ? address.zipCode : null, Validators.required],
+      zipCode: [address ? address.zipCode : null, [Validators.required, Validators.pattern(/^\d{5}$/)]],
       addressTypeId: [addressTypeId]
     });
   }
@@ -97,10 +101,9 @@ export class AddUserComponent implements OnInit {
               ...user,
               dateOfBirth: this.formatDate(user.dateOfBirth),
               dateOfJoining: this.formatDate(user.dateOfJoining),
-              gender: user.gender.toLowerCase() // Normalize the gender value
+              gender: user.gender.toLowerCase()
             });
-            this.imagePreview = user.imagePath;
-            // Handle addresses
+            this.imagePreview = "https://localhost:7118"+user.imagePath;
             this.addressesFormArray.clear();
             user.addresses.forEach((address: any) => {
               this.addressesFormArray.push(this.createAddressFormGroup(address.addressTypeId, address));
@@ -130,7 +133,7 @@ export class AddUserComponent implements OnInit {
         this.addUser();
       }
     } else {
-      this.toastr.warning('Please fill all the required fields');
+      this.toastr.warning('Please fill all the required fields correctly');
     }
   }
 
@@ -155,14 +158,14 @@ export class AddUserComponent implements OnInit {
                 }
               },
               error: (error) => {
-                this.toastr.error('Error adding user');
+                this.toastr.error(error.message);
                 console.error('Error adding user:', error);
               }
             });
           }
         },
         error: (error) => {
-          this.toastr.error('Error uploading image');
+          this.toastr.error(error.message);
           console.error('Error uploading image:', error);
         }
       });
@@ -186,7 +189,7 @@ export class AddUserComponent implements OnInit {
         }
       },
       error: (error) => {
-        this.toastr.error('Error updating user');
+        this.toastr.error(error.message);
         console.error('Error updating user:', error);
       }
     });

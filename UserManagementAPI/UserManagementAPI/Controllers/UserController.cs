@@ -12,9 +12,10 @@ namespace UserManagementAPI.Controllers
         private readonly IUserService _userService;
         IWebHostEnvironment _webHostEnvironment;
 
-        public UsersController(IUserService userService)
+        public UsersController(IUserService userService, IWebHostEnvironment webHostEnvironment)
         {
             _userService = userService;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         [HttpGet("getall")]
@@ -24,26 +25,27 @@ namespace UserManagementAPI.Controllers
         }
 
         [HttpGet("getById")]
-        public async Task<ActionResult<ResponseModel>> GetUser( int id)
+        public async Task<ActionResult<ResponseModel>> GetUser(int id)
         {
             return await _userService.GetUserByIdAsync(id);
         }
+
         [HttpPost("add")]
-        public async Task<ActionResult<ResponseModel>> AddUser(UserDto userDto)
+        public async Task<ActionResult<ResponseModel>> AddUser([FromBody] UserDto userDto)
         {
             if (!ModelState.IsValid)
             {
-                return new ResponseModel { StatusCode = 400, Message = "Invalid request" };
+                return BadRequest(new ResponseModel { StatusCode = 400, Message = "Invalid request", Data = ModelState });
             }
             return await _userService.AddUserAsync(userDto);
         }
 
         [HttpPut("update")]
-        public async Task<ActionResult<ResponseModel>> UpdateUser(UpdateUserDto updateUserDto)
+        public async Task<ActionResult<ResponseModel>> UpdateUser([FromBody] UpdateUserDto updateUserDto)
         {
             if (!ModelState.IsValid)
             {
-                return new ResponseModel { StatusCode = 400, Message = "Invalid request" };
+                return BadRequest(new ResponseModel { StatusCode = 400, Message = "Invalid request", Data = ModelState });
             }
             return await _userService.UpdateUserAsync(updateUserDto);
         }
@@ -64,6 +66,5 @@ namespace UserManagementAPI.Controllers
 
             return await _userService.UploadUserImageAsync(file);
         }
-
     }
 }

@@ -78,7 +78,7 @@ namespace UserManagementAPI.Infrastructure.Services
             if (userChanges >= 2)
             {
                 var emailModel = new EmailModel(userDto.Email, "New User Account - Login Credentials", $"Congratulations, your new user account has been created! Your login credentials are: \nEmail: {userDto.Email} \nPassword: {password}");
-                //_emailService.SendEmail(emailModel);
+                _emailService.SendEmail(emailModel);
                 return new ResponseModel { StatusCode = 201, Message = "User added successfully" };
             }
             return new ResponseModel { StatusCode = 500, Message = "Failed to add user" };

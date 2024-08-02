@@ -9,6 +9,7 @@ import { SharedModule } from '../shared/shared.module';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 
 
 @NgModule({
@@ -23,7 +24,11 @@ import { HttpClientModule } from '@angular/common/http';
     SharedModule,
     NgbPaginationModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMaskDirective,
+  ],
+  providers:[
+    provideNgxMask()
   ]
 })
 export class UserModule { }

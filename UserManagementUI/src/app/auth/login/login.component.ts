@@ -39,19 +39,23 @@ export class LoginComponent {
   onSubmit() {
     this.loginDetails.email = this.loginForm.value.email!;
     this.loginDetails.password = this.loginForm.value.password!;
-    console.log(this.loginDetails);
     if (this.loginForm.valid) {
-      this.authService.login(this.loginDetails).subscribe(res => {
-
-        if (res.statusCode === 200) {
-          console.log(res);
-          localStorage.setItem('login_token', res.data.token);
-          this.router.navigate(['/user']);
-          this.toastr.success(res.message);
-        }
-        else {
-          console.log(res);
-          this.toastr.error(res.message);
+      this.authService.login(this.loginDetails).subscribe({
+        next:(res)=> {
+          if (res.statusCode === 200) {
+            console.log(res);
+            localStorage.setItem('login_token', res.data.token);
+            debugger
+            this.router.navigate(['/user']);
+            this.toastr.success(res.message);
+          }
+          else {
+            console.log(res);
+            this.toastr.error(res.message);
+          }
+        },
+        error: (err) => {
+          this.toastr.error(err.message);
         }
       });
     }

@@ -19,7 +19,12 @@ namespace UserManagementAPI
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
+            var environment = builder.Environment;
+            var machineName = Environment.MachineName;
+            //"SMARTDATA-497"
+            var connectionString = machineName == "LAPTOP-SQTG162V"
+                ? builder.Configuration.GetConnectionString("LocalConnection")
+                : builder.Configuration.GetConnectionString("DefaultConnection");
             // Add services to the container.
 
             builder.Services.AddControllers();
@@ -29,7 +34,7 @@ namespace UserManagementAPI
             builder.Services.AddSwaggerGen();
             // Add DbContext
             builder.Services.AddDbContext<UserDbContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(connectionString));
 
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>

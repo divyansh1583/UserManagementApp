@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TokenService } from 'src/app/auth/services/token.service';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  userName: string = 'Lima Taylor';
+  userName: string;
+  imagePath: any;
+  constructor(
+    private tokenService:TokenService
+  ){
+    this.userName = this.tokenService.getName();
+    this.imagePath = this.tokenService.getImagePath();
+  }
 }
