@@ -1,0 +1,14 @@
+/* app.component.css */
+.app-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+  
+  .sidebar-closed app-sidebar {
+    width: 60px;
+  }

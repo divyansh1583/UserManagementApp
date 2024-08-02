@@ -1,22 +1,63 @@
-.navbar {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  
-    .navbar-brand {
-      font-weight: bold;
-      color: #3498db;
-    }
-  
-    .ml-auto {
-      display: flex;
-      align-items: center;
-      .img-wrapper{
-        height: 50px;
-        width: 50px;
-        margin-right: 0.5rem;
-        
-      }
-      span {
-        margin-right: 10px;
-      }
-    }
-  }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.profile-dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.user-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-name {
+  font-weight: bold;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f5f5f5;
+}

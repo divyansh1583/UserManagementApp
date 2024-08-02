@@ -50,7 +50,7 @@ export class AddUserComponent implements OnInit {
 
   initForm() {
     this.userForm = this.fb.group({
-      firstName: [null, [Validators.required, Validators.maxLength(50),this.noWhitespaceValidator]],
+      firstName: [null, [Validators.required, Validators.maxLength(50), this.noWhitespaceValidator]],
       middleName: [null, [Validators.required, Validators.maxLength(50)]],
       lastName: [null, Validators.maxLength(50)],
       gender: [null, Validators.required],
@@ -103,7 +103,7 @@ export class AddUserComponent implements OnInit {
               dateOfJoining: this.formatDate(user.dateOfJoining),
               gender: user.gender.toLowerCase()
             });
-            this.imagePreview = "https://localhost:7118"+user.imagePath;
+            this.imagePreview = "https://localhost:7118" + user.imagePath;
             this.addressesFormArray.clear();
             user.addresses.forEach((address: any) => {
               this.addressesFormArray.push(this.createAddressFormGroup(address.addressTypeId, address));
@@ -137,44 +137,69 @@ export class AddUserComponent implements OnInit {
     }
   }
 
-  addUser() {
-    const formData = new FormData();
-    const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement;
-    const file = fileInput.files?.[0];
+  uploadImage(): Promise<string | null> {
+    return new Promise((resolve, reject) => {
+      const formData = new FormData();
+      const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement;
+      const file = fileInput.files?.[0];
 
-    if (file) {
-      formData.append('file', file);
-      this.userService.uploadImage(formData).subscribe({
-        next: (response) => {
-          if (response.statusCode === 200 && response.data) {
-            const userData = this.prepareUserData(response.data);
-            this.userService.addUser(userData).subscribe({
-              next: (res) => {
-                if (res.statusCode === 200 || res.statusCode === 201) {
-                  this.toastr.success(res.message);
-                  this.router.navigate(['/user/dashboard']);
-                } else {
-                  this.toastr.error(res.message);
-                }
-              },
-              error: (error) => {
-                this.toastr.error(error.message);
-                console.error('Error adding user:', error);
-              }
-            });
+      if (file) {
+        formData.append('file', file);
+        this.userService.uploadImage(formData).subscribe({
+          next: (response) => {
+            if (response.statusCode === 200 && response.data) {
+              resolve(response.data);
+            } else {
+              this.toastr.error(response.message);
+              reject(new Error(response.message));
+            }
+          },
+          error: (error) => {
+            this.toastr.error(error.message);
+            console.error('Error uploading image:', error);
+            reject(error);
+          }
+        });
+      } else {
+
+        resolve(null);
+      }
+    });
+  }
+  async addUser() {
+    const imagePath = await this.uploadImage();
+    if (imagePath != null) {
+      this.userForm.get('imagePath')!.setValue(imagePath);
+      const formValue = this.userForm.value;
+      const userData: UserDto = {
+        ...formValue
+      };
+      this.userService.addUser(userData).subscribe({
+        next: (res) => {
+          if (res.statusCode === 200 || res.statusCode === 201) {
+            this.toastr.success(res.message);
+            this.router.navigate(['/user/dashboard']);
+          } else {
+            this.toastr.error(res.message);
           }
         },
         error: (error) => {
           this.toastr.error(error.message);
-          console.error('Error uploading image:', error);
+          console.error('Error adding user:', error);
         }
       });
-    } else {
-      this.toastr.warning('Please select an image to upload');
+    }
+    else {
+      this.toastr.error('Faliled to upload Image! Please choose again.')
     }
   }
 
-  updateUser() {
+  async updateUser() {
+    const imagePath = await this.uploadImage();
+    //If new image have been uploaded update image path
+    if (imagePath != null) {
+      this.userForm.get('imagePath')!.setValue(imagePath);
+    }
     const updateUserDto: UpdateUserDto = {
       userId: this.userId!,
       ...this.userForm.value
@@ -193,15 +218,6 @@ export class AddUserComponent implements OnInit {
         console.error('Error updating user:', error);
       }
     });
-  }
-
-  prepareUserData(imagePath: string) {
-    this.userForm.get('imagePath')!.setValue(imagePath);
-    const formValue = this.userForm.value;
-    const userData: UserDto = {
-      ...formValue
-    };
-    return userData;
   }
 
   onFileSelected(event: Event) {

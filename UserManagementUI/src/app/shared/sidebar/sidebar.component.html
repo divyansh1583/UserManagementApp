@@ -1,4 +1,4 @@
-<div class="sidebar-sticky">
+<!-- <div class="sidebar-sticky">
     <ul class="nav flex-column">
       <li class="nav-item" *ngFor="let item of menuItems">
         <a class="nav-link" [routerLink]="item.route" routerLinkActive="active">
@@ -7,18 +7,20 @@
         </a>
       </li>
     </ul>
-  </div>
-  <!-- <div class="col-md-3 bg-primary text-white p-4">
-    <h2>Integrity Solution</h2>
-    <ul class="nav flex-column">
-      <li class="nav-item"><a class="nav-link text-white" href="#">Dashboard</a></li>
-      <li class="nav-item">
-        <a class="nav-link text-white" href="#" data-toggle="collapse" data-target="#manageUserSubmenu">
-          Manage User <i class="fa fa-caret-down"></i>
-        </a>
-        <ul class="collapse list-unstyled" id="manageUserSubmenu">
-          <li><a class="nav-link text-white" href="#">Add User</a></li>
+  </div> -->
+<!-- sidebar.component.html -->
+<div class="sidebar" [class.closed]="!isOpen">
+  <h2 class="logo">Integrity Solution</h2>
+  <nav>
+    <ul>
+      <li><a routerLink="/dashboard" routerLinkActive="active"><i class="icon-dashboard"></i> <span>Dashboard</span></a></li>
+      <li>
+        <a href="#" (click)="toggleManageUser()" [class.active]="isManageUserOpen"><i class="icon-manage-user"></i> <span>Manage User</span></a>
+        <ul class="submenu" *ngIf="isManageUserOpen">
+          <li><a routerLink="/add-user" routerLinkActive="active">Add User</a></li>
+          <!-- Add other submenu items as needed -->
         </ul>
       </li>
     </ul>
-  </div> -->
+  </nav>
+</div>

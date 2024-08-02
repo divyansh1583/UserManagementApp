@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{3CFB5C7F-3350-434C-8344-E5502E0486C0}|UserManagementAPI\\UserManagementAPI.csproj|solutionrelative:usermanagementapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C69D1BC-8673-42E0-89B4-63658E7BB784}|UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi.infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C69D1BC-8673-42E0-89B4-63658E7BB784}|UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj|solutionrelative:usermanagementapi.infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0C69D1BC-8673-42E0-89B4-63658E7BB784}|UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi.infrastructure\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0C69D1BC-8673-42E0-89B4-63658E7BB784}|UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj|solutionrelative:usermanagementapi.infrastructure\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C69D1BC-8673-42E0-89B4-63658E7BB784}|UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi.infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C69D1BC-8673-42E0-89B4-63658E7BB784}|UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj|solutionrelative:usermanagementapi.infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0C69D1BC-8673-42E0-89B4-63658E7BB784}|UserManagementAPI.Infrastructure\\UserManagementAPI.Infrastructure.csproj|c:\\users\\divyansh.chauhan\\desktop\\dc\\angular\u002B.net\u002Bmssql\\usermanagementapp\\usermanagementapi\\usermanagementapi.infrastructure\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -161,13 +161,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Infrastructure\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "UserManagementAPI.Infrastructure\\Services\\UserService.cs",
               "ToolTip": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Infrastructure\\Services\\UserService.cs",
               "RelativeToolTip": "UserManagementAPI.Infrastructure\\Services\\UserService.cs",
-              "ViewState": "AQIAAF0AAAAAAAAAAAAhwGoAAAAMAAAA",
+              "ViewState": "AQIAAHYAAAAAAAAAAIAwwIoAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-31T14:31:33.526Z",
               "EditorCaption": ""
@@ -193,7 +193,7 @@
               "RelativeDocumentMoniker": "UserManagementAPI\\Controllers\\UserController.cs",
               "ToolTip": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\Controllers\\UserController.cs",
               "RelativeToolTip": "UserManagementAPI\\Controllers\\UserController.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAADgvy0AAAAMAAAA",
+              "ViewState": "AQIAADIAAAAAAAAAAAApwD0AAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-31T14:14:10.183Z",
               "EditorCaption": ""
@@ -300,7 +300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular\u002B.NET\u002BMSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI.Infrastructure\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "UserManagementAPI.Infrastructure\\Repositories\\UserRepository.cs",

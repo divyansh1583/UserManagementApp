@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,4 +10,10 @@ export class SidebarComponent {
     { icon: 'bi-speedometer2', label: 'Dashboard', route: '/user/dashboard' },
     { icon: 'bi-person', label: 'Manage User', route: '/user/add-user' }
   ];
+  @Input() isOpen = true;
+  isManageUserOpen = false;
+
+  toggleManageUser() {
+    this.isManageUserOpen = !this.isManageUserOpen;
+  }
 }

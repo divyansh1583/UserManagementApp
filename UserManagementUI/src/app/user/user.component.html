@@ -1,4 +1,4 @@
-<app-header></app-header>
+<!-- <app-header></app-header>
 <div class="container-fluid">
   <div class="row">
     <nav class="col-md-2 d-none d-md-block bg-light sidebar">
@@ -7,5 +7,13 @@
     <main class="col-md-9 ml-sm-auto col-lg-10 px-4">
       <router-outlet></router-outlet>
     </main>
+  </div>
+</div> -->
+<!-- app.component.html -->
+<div class="app-container" [class.sidebar-closed]="!isSidebarOpen">
+  <app-sidebar [isOpen]="isSidebarOpen"></app-sidebar>
+  <div class="main-content">
+    <app-header (toggleSidebar)="toggleSidebar()"></app-header>
+    <router-outlet></router-outlet>
   </div>
 </div>

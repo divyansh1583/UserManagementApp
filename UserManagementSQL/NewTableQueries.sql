@@ -59,3 +59,28 @@ DROP TABLE DC_UserAddressType
 
 TRUNCATE TABLE DC_UserAddress;
 TRUNCATE TABLE DC_User;
+
+CREATE PROCEDURE DC_DeleteUser
+    @UserId INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRANSACTION
+
+    BEGIN TRY
+        DELETE FROM DC_UserAddress
+        WHERE UserId = @UserId
+
+        DELETE FROM DC_User
+        WHERE UserId = @UserId
+
+        COMMIT TRANSACTION
+    END TRY
+    BEGIN CATCH
+        ROLLBACK TRANSACTION
+        THROW
+    END CATCH
+END
+GO
+EXEC DC_DeleteUser 
