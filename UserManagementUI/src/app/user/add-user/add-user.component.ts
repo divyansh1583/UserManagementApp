@@ -124,17 +124,19 @@ export class AddUserComponent implements OnInit {
   formatDate(date: string): string {
     return new Date(date).toISOString().split('T')[0];
   }
-
+  
   onSubmit() {
-    if (this.userForm.valid) {
+    if (this.userForm.invalid) {
+      this.userForm.markAllAsTouched();
+      this.toastr.warning('Please fill all the required fields correctly');
+      return;
+    }
       if (this.isUpdateMode) {
         this.updateUser();
       } else {
         this.addUser();
       }
-    } else {
-      this.toastr.warning('Please fill all the required fields correctly');
-    }
+    
   }
 
   uploadImage(): Promise<string | null> {

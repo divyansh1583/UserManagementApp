@@ -1,25 +1,18 @@
-<!-- <div class="sidebar-sticky">
-    <ul class="nav flex-column">
-      <li class="nav-item" *ngFor="let item of menuItems">
-        <a class="nav-link" [routerLink]="item.route" routerLinkActive="active">
-          <i class="bi {{ item.icon }}"></i>
-          {{ item.label }}
-        </a>
-      </li>
-    </ul>
-  </div> -->
-<!-- sidebar.component.html -->
 <div class="sidebar" [class.closed]="!isOpen">
   <h2 class="logo">Integrity Solution</h2>
   <nav>
     <ul>
-      <li><a routerLink="/dashboard" routerLinkActive="active"><i class="icon-dashboard"></i> <span>Dashboard</span></a></li>
-      <li>
-        <a href="#" (click)="toggleManageUser()" [class.active]="isManageUserOpen"><i class="icon-manage-user"></i> <span>Manage User</span></a>
-        <ul class="submenu" *ngIf="isManageUserOpen">
-          <li><a routerLink="/add-user" routerLinkActive="active">Add User</a></li>
-          <!-- Add other submenu items as needed -->
-        </ul>
+      <li><a routerLink="/user/dashboard" routerLinkActive="active">
+        <i class="bi bi-grid"></i> <span>Dashboard</span>
+      </a></li>
+      <li ngbDropdown>
+        <a href (click)="false" ngbDropdownToggle>
+          <i class="bi bi-people"></i> <span>Manage User</span>
+        </a>
+        <div ngbDropdownMenu>
+          <button ngbDropdownItem routerLink="/user/add-user">Add User</button>
+          <!-- Add other user management options here -->
+        </div>
       </li>
     </ul>
   </nav>

@@ -11,21 +11,6 @@ import { TokenService } from 'src/app/auth/services/token.service';
 export class HeaderComponent {
   userName: string;
   imagePath: any;
-  // constructor(
-  //   private tokenService:TokenService,
-  //   private sidebarService: SidebarService,
-  //   private router: Router
-  // ){
-  //   this.userName = this.tokenService.getName();
-  //   this.imagePath = this.tokenService.getImagePath();
-  // }
-  // toggleSidebar() {
-  //   this.sidebarService.toggle();
-  // }
-  // logout() {
-  //   localStorage.removeItem('login_token');
-  //   this.router.navigate(['/login']);
-  // }
   constructor(
     private tokenService: TokenService,
     private sidebarService: SidebarService,
@@ -40,22 +25,13 @@ export class HeaderComponent {
   onToggleSidebar() {
     this.toggleSidebar.emit();
   }
-  @HostListener('document:click')
-  closeProfileDropdown() {
-    this.isProfileDropdownOpen = false;
-  }
-  toggleProfileDropdown(event: Event) {
-    event.stopPropagation();
-    this.isProfileDropdownOpen = !this.isProfileDropdownOpen;
-  }
 
-  changePassword(event: Event) {
-    event.preventDefault();
+  changePassword() {
+  
     this.router.navigate(['/change-password']);
   }
 
-  logout(event: Event) {
-    event.preventDefault();
+  logOut() {
     localStorage.removeItem('login_token');
     this.router.navigate(['/login']);
   }

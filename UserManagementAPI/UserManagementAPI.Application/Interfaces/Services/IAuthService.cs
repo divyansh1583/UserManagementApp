@@ -14,5 +14,6 @@ namespace UserManagementAPI.Application.Interfaces.Services
         Task<ResponseModel> SendResetPasswordEmailAsync(string email);
         Task<ResponseModel> ResetPasswordAsync(ResetPasswordDto resetPasswordDto);
         Task<ResponseModel> ChangePasswordAsync(ChangePasswordDto changePasswordDto);
+        //Task<ResponseModel> ActivateAccountAsync(string email, string token);
     }
 }

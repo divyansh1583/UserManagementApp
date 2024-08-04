@@ -1,14 +1,21 @@
-/* app.component.css */
 .app-container {
-    display: flex;
-    height: 100vh;
-  }
-  
-  .main-content {
-    flex-grow: 1;
-    overflow-y: auto;
-  }
-  
-  .sidebar-closed app-sidebar {
-    width: 60px;
-  }
+  display: flex;
+  height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar-closed .main-content {
+  margin-left: 0;
+}
+
+.full-width {
+  width: 80%;
+}
+
+.router-content{
+  padding: 10px 20px;
+}

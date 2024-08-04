@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -13,7 +13,15 @@ export class SidebarComponent {
   @Input() isOpen = true;
   isManageUserOpen = false;
 
-  toggleManageUser() {
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['isOpen'] && !changes['isOpen'].currentValue) {
+      this.isManageUserOpen = false;
+    }
+  }
+
+  toggleManageUser(event: Event) {
+    event.preventDefault();
+    event.stopPropagation();
     this.isManageUserOpen = !this.isManageUserOpen;
   }
 }
