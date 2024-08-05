@@ -5,7 +5,7 @@
   color: white;
   padding: 20px;
   transition: all 0.3s ease;
-  overflow-x: hidden;
+  position: fixed;
 }
 
 .sidebar.closed {

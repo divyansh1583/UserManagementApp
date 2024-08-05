@@ -59,7 +59,7 @@ export class AddUserComponent implements OnInit {
       phone: [null, [Validators.required, Validators.pattern(/^\d{10}$/)]],
       alternatePhone: [null, Validators.pattern(/^\d{10}$/)],
       imagePath: [null],
-      isActive: [true],
+      isActive: [false],
       addresses: this.fb.array([
         this.createAddressFormGroup(1),
       ])

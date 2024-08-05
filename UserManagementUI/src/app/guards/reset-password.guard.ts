@@ -13,7 +13,7 @@ export const resetPasswordGuard: CanActivateFn = (route, state) => {
 
   if (!email || !token) {
     router.navigate(['/login']);
-    toastr.warning("Invalid Link for Reset Password");
+    toastr.warning("Invalid Link");
     return false;
   }
   return true;

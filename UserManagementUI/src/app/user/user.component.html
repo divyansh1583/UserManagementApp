@@ -1,11 +1,11 @@
-
 <!-- app.component.html -->
-<div class="app-container" [class.sidebar-closed]="!isSidebarOpen">
+<div class="sidebarContainer">
   <app-sidebar [isOpen]="isSidebarOpen"></app-sidebar>
-  <div class="main-content" [class.full-width]="!isSidebarOpen">
+</div>
+<div class="app-container">
+  <div class="header-main-content">
     <app-header (toggleSidebar)="toggleSidebar()"></app-header>
-    <div class="router-content">
-      <router-outlet></router-outlet>
-    </div>
+    <router-outlet></router-outlet>
   </div>
+
 </div>

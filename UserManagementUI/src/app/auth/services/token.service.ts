@@ -8,8 +8,8 @@ export class TokenService {
   private claimNames = {
     id: 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier',
     email: 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress',
-    name: 'Name', // added Name claim
-    imagePath: 'ImagePath' // added ImagePath claim
+    name: 'name', // added Name claim
+    imagePath: 'imagePath' // added ImagePath claim
   };
   constructor() {
     this.token = localStorage.getItem('login_token')!;
@@ -20,9 +20,12 @@ export class TokenService {
     const decodedToken = JSON.parse(atob(this.token.split('.')[1]));
     return decodedToken.exp;
   }
-
-  getUserId(): string {
-    if (!this.token) return '';
+  getUserIdToActivate( token:string){
+    const decodedToken = JSON.parse(atob(token.split('.')[1]));
+    return decodedToken[this.claimNames.id];
+  }
+  getUserId(): number {
+    if (!this.token) return 0;
     const decodedToken = JSON.parse(atob(this.token.split('.')[1]));
     return decodedToken[this.claimNames.id];
   }

@@ -1,6 +1,5 @@
 .app-container {
   display: flex;
-  height: 100vh;
 }
 
 .main-content {
@@ -8,14 +7,6 @@
   transition: margin-left 0.3s ease;
 }
 
-.sidebar-closed .main-content {
-  margin-left: 0;
-}
-
-.full-width {
-  width: 80%;
-}
-
-.router-content{
-  padding: 10px 20px;
+.sidebar-container{
+  width: 20%;
 }

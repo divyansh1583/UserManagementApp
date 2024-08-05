@@ -13,13 +13,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { ActivateAccountComponent } from './login/activate.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    ActivateAccountComponent
   ],
   imports: [
     CommonModule,

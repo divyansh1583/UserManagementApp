@@ -5,6 +5,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { resetPasswordGuard } from '../guards/reset-password.guard';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { ActivateAccountComponent } from './login/activate.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'reset-password', component: ResetPasswordComponent, canActivate: [resetPasswordGuard] },
   { path: 'change-password', component: ChangePasswordComponent },
+  { path: 'activate', component: ActivateAccountComponent },
   // { path: '**', redirectTo: 'login' }
 ];
 

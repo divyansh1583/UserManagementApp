@@ -22,11 +22,11 @@ namespace UserManagementAPI.Controllers
         {
             return await _authService.LoginAsync(loginDto);
         }
-        //[HttpPost("activate")]
-        //public async Task<ActionResult<ResponseModel>> ActivateAccount([FromQuery] string email, [FromQuery] string token)
-        //{
-        //    return await _authService.ActivateAccountAsync(email, token);
-        //}
+        [HttpPost("activate")]
+        public async Task<ActionResult<ResponseModel>> ActivateAccount([FromQuery] int userId)
+        {
+            return await _authService.ActivateAccountAsync(userId);
+        }
         [HttpPost("send-reset-email/{email}")]
         public async Task<ActionResult<ResponseModel>> SendResetPasswordEmail(string email)
         {

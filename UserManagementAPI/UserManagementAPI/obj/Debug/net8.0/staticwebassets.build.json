@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5QkjJgSxe5A/38bvesgzK3Xd/QnTLw2xSzSmh0OWoLQ=",
+  "Hash": "0n3g5fZiAWlmbQR8Z6UpcpYHlgyGOf0ousSapwJXtlA=",
   "Source": "UserManagementAPI",
   "BasePath": "_content/UserManagementAPI",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "UserManagementAPI\\wwwroot",
       "Source": "UserManagementAPI",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\129f5646-6571-402f-a6ef-150ff8ade759_Asset 1 1.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\129f5646-6571-402f-a6ef-150ff8ade759_Asset 1 1.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/129f5646-6571-402f-a6ef-150ff8ade759_Asset 1 1.png",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\129f5646-6571-402f-a6ef-150ff8ade759_Asset 1 1.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\15aa48b1-f550-482f-85d7-30f86dc2bfce_Asset 1 1.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\15aa48b1-f550-482f-85d7-30f86dc2bfce_Asset 1 1.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/15aa48b1-f550-482f-85d7-30f86dc2bfce_Asset 1 1.png",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\15aa48b1-f550-482f-85d7-30f86dc2bfce_Asset 1 1.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\15d9ff5b-7079-4332-ab03-548703a8b951_Asset 1 1.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\15d9ff5b-7079-4332-ab03-548703a8b951_Asset 1 1.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/15d9ff5b-7079-4332-ab03-548703a8b951_Asset 1 1.png",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\15d9ff5b-7079-4332-ab03-548703a8b951_Asset 1 1.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\1666c6a5-7b4e-4b36-bf75-d5d394d1c20e_artremix.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\1666c6a5-7b4e-4b36-bf75-d5d394d1c20e_artremix.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/1666c6a5-7b4e-4b36-bf75-d5d394d1c20e_artremix.png",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\1666c6a5-7b4e-4b36-bf75-d5d394d1c20e_artremix.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\1f4b1542-bcdb-444d-86bc-c9b996ae0c8a_artremix.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\1f4b1542-bcdb-444d-86bc-c9b996ae0c8a_artremix.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/1f4b1542-bcdb-444d-86bc-c9b996ae0c8a_artremix.png",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\1f4b1542-bcdb-444d-86bc-c9b996ae0c8a_artremix.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\22a67ce1-dc64-4272-8ede-fff2ef086fc9_Asset 1 1.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\22a67ce1-dc64-4272-8ede-fff2ef086fc9_Asset 1 1.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/22a67ce1-dc64-4272-8ede-fff2ef086fc9_Asset 1 1.png",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\22a67ce1-dc64-4272-8ede-fff2ef086fc9_Asset 1 1.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\26f3d66b-b702-4288-977d-99b8b0e34f48_Asset 1 1.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\26f3d66b-b702-4288-977d-99b8b0e34f48_Asset 1 1.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/26f3d66b-b702-4288-977d-99b8b0e34f48_Asset 1 1.png",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\26f3d66b-b702-4288-977d-99b8b0e34f48_Asset 1 1.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\278f0bfd-b77f-471e-879c-07fc3c67130d_Asset 1 1.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\278f0bfd-b77f-471e-879c-07fc3c67130d_Asset 1 1.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/278f0bfd-b77f-471e-879c-07fc3c67130d_Asset 1 1.png",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\278f0bfd-b77f-471e-879c-07fc3c67130d_Asset 1 1.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\2a28db67-3c5b-4283-96cc-7f119b2822a4_trash.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\2a28db67-3c5b-4283-96cc-7f119b2822a4_trash.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/2a28db67-3c5b-4283-96cc-7f119b2822a4_trash.png",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\2a28db67-3c5b-4283-96cc-7f119b2822a4_trash.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\354c30a4-5c20-4677-8339-94283c7fbe23_ImageUpload_icon.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\354c30a4-5c20-4677-8339-94283c7fbe23_ImageUpload_icon.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/354c30a4-5c20-4677-8339-94283c7fbe23_ImageUpload_icon.png",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\354c30a4-5c20-4677-8339-94283c7fbe23_ImageUpload_icon.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\381622bf-56fa-4db6-adf9-1147c608beff_Asset 1 1.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\381622bf-56fa-4db6-adf9-1147c608beff_Asset 1 1.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/381622bf-56fa-4db6-adf9-1147c608beff_Asset 1 1.png",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\381622bf-56fa-4db6-adf9-1147c608beff_Asset 1 1.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\39267fb2-8a8b-4089-81e7-d0414de7a377_trash.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\39267fb2-8a8b-4089-81e7-d0414de7a377_trash.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/39267fb2-8a8b-4089-81e7-d0414de7a377_trash.png",
       "AssetKind": "All",
@@ -245,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\39267fb2-8a8b-4089-81e7-d0414de7a377_trash.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\427f4858-491c-4c08-85f9-4ee1eb1549ba_Asset 1 1.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\427f4858-491c-4c08-85f9-4ee1eb1549ba_Asset 1 1.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/427f4858-491c-4c08-85f9-4ee1eb1549ba_Asset 1 1.png",
       "AssetKind": "All",
@@ -264,10 +264,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\427f4858-491c-4c08-85f9-4ee1eb1549ba_Asset 1 1.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\4a8ba39f-c176-4ceb-bb79-68cef7cd4a90_artremix.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\4a8ba39f-c176-4ceb-bb79-68cef7cd4a90_artremix.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/4a8ba39f-c176-4ceb-bb79-68cef7cd4a90_artremix.png",
       "AssetKind": "All",
@@ -283,10 +283,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\4a8ba39f-c176-4ceb-bb79-68cef7cd4a90_artremix.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\4d6609dc-13d0-4148-9251-494a847ce9e2_trash.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\4d6609dc-13d0-4148-9251-494a847ce9e2_trash.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/4d6609dc-13d0-4148-9251-494a847ce9e2_trash.png",
       "AssetKind": "All",
@@ -302,10 +302,29 @@
       "OriginalItemSpec": "wwwroot\\uploads\\4d6609dc-13d0-4148-9251-494a847ce9e2_trash.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\69aa0c48-5390-4679-8e68-75743bc3ec1c_ImageUpload_icon.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\564f7c26-db90-43c2-b2ec-cf2b97278e6f_WhatsApp Image 2024-07-28 at 4.11.37 AM.jpeg",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "BasePath": "_content/UserManagementAPI",
+      "RelativePath": "uploads/564f7c26-db90-43c2-b2ec-cf2b97278e6f_WhatsApp Image 2024-07-28 at 4.11.37 AM.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\564f7c26-db90-43c2-b2ec-cf2b97278e6f_WhatsApp Image 2024-07-28 at 4.11.37 AM.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\69aa0c48-5390-4679-8e68-75743bc3ec1c_ImageUpload_icon.png",
+      "SourceId": "UserManagementAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/69aa0c48-5390-4679-8e68-75743bc3ec1c_ImageUpload_icon.png",
       "AssetKind": "All",
@@ -321,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\69aa0c48-5390-4679-8e68-75743bc3ec1c_ImageUpload_icon.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\741b6ef9-9d77-4b39-8086-9d59c6665dc3_pen.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\741b6ef9-9d77-4b39-8086-9d59c6665dc3_pen.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/741b6ef9-9d77-4b39-8086-9d59c6665dc3_pen.png",
       "AssetKind": "All",
@@ -340,10 +359,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\741b6ef9-9d77-4b39-8086-9d59c6665dc3_pen.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\7f143d77-481b-403c-a9e4-2e0aa2c04d28_ImageUpload_icon.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\7f143d77-481b-403c-a9e4-2e0aa2c04d28_ImageUpload_icon.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/7f143d77-481b-403c-a9e4-2e0aa2c04d28_ImageUpload_icon.png",
       "AssetKind": "All",
@@ -359,10 +378,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\7f143d77-481b-403c-a9e4-2e0aa2c04d28_ImageUpload_icon.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\82ded7cf-b8e8-4df9-a31a-b40ea0409012_Asset 1 1.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\82ded7cf-b8e8-4df9-a31a-b40ea0409012_Asset 1 1.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/82ded7cf-b8e8-4df9-a31a-b40ea0409012_Asset 1 1.png",
       "AssetKind": "All",
@@ -378,10 +397,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\82ded7cf-b8e8-4df9-a31a-b40ea0409012_Asset 1 1.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\8c2d1b5d-6c55-4d35-b833-ea4e50d3a0b8_artremix.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\8c2d1b5d-6c55-4d35-b833-ea4e50d3a0b8_artremix.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/8c2d1b5d-6c55-4d35-b833-ea4e50d3a0b8_artremix.png",
       "AssetKind": "All",
@@ -397,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\8c2d1b5d-6c55-4d35-b833-ea4e50d3a0b8_artremix.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\8dc00a1c-9bf4-4dc8-bbc0-8482c146f5b6_Asset 1 1.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\8dc00a1c-9bf4-4dc8-bbc0-8482c146f5b6_Asset 1 1.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/8dc00a1c-9bf4-4dc8-bbc0-8482c146f5b6_Asset 1 1.png",
       "AssetKind": "All",
@@ -416,10 +435,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\8dc00a1c-9bf4-4dc8-bbc0-8482c146f5b6_Asset 1 1.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\996672d9-3362-4be9-9089-cde91e41e2a6_Asset 1 1.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\996672d9-3362-4be9-9089-cde91e41e2a6_Asset 1 1.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/996672d9-3362-4be9-9089-cde91e41e2a6_Asset 1 1.png",
       "AssetKind": "All",
@@ -435,10 +454,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\996672d9-3362-4be9-9089-cde91e41e2a6_Asset 1 1.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\9c4e9bf0-2de5-4f81-bba5-7feff1b0df9c_Vector.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\9c4e9bf0-2de5-4f81-bba5-7feff1b0df9c_Vector.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/9c4e9bf0-2de5-4f81-bba5-7feff1b0df9c_Vector.png",
       "AssetKind": "All",
@@ -454,10 +473,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\9c4e9bf0-2de5-4f81-bba5-7feff1b0df9c_Vector.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\9c8e213e-c6be-4003-b602-5c39cf1a4cd5_Asset 1 1.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\9c8e213e-c6be-4003-b602-5c39cf1a4cd5_Asset 1 1.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/9c8e213e-c6be-4003-b602-5c39cf1a4cd5_Asset 1 1.png",
       "AssetKind": "All",
@@ -473,10 +492,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\9c8e213e-c6be-4003-b602-5c39cf1a4cd5_Asset 1 1.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\9e48b97d-ed27-4efb-bf84-ced9c7c8743c_trash.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\9e48b97d-ed27-4efb-bf84-ced9c7c8743c_trash.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/9e48b97d-ed27-4efb-bf84-ced9c7c8743c_trash.png",
       "AssetKind": "All",
@@ -492,10 +511,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\9e48b97d-ed27-4efb-bf84-ced9c7c8743c_trash.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\a84eeba4-075d-4791-85d2-40bedc1a1060_pen.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\a84eeba4-075d-4791-85d2-40bedc1a1060_pen.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/a84eeba4-075d-4791-85d2-40bedc1a1060_pen.png",
       "AssetKind": "All",
@@ -511,10 +530,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\a84eeba4-075d-4791-85d2-40bedc1a1060_pen.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\a9e2f682-38c5-44ae-a076-fc97d2f30d55_Asset 1 1.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\a9e2f682-38c5-44ae-a076-fc97d2f30d55_Asset 1 1.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/a9e2f682-38c5-44ae-a076-fc97d2f30d55_Asset 1 1.png",
       "AssetKind": "All",
@@ -530,10 +549,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\a9e2f682-38c5-44ae-a076-fc97d2f30d55_Asset 1 1.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\c0551323-7b52-42af-b64d-951d09ce1a62_Asset 1 1.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\c0551323-7b52-42af-b64d-951d09ce1a62_Asset 1 1.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/c0551323-7b52-42af-b64d-951d09ce1a62_Asset 1 1.png",
       "AssetKind": "All",
@@ -549,10 +568,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\c0551323-7b52-42af-b64d-951d09ce1a62_Asset 1 1.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\c09cd49a-9974-494a-ab24-7c11fcdcd43e_trash.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\c09cd49a-9974-494a-ab24-7c11fcdcd43e_trash.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/c09cd49a-9974-494a-ab24-7c11fcdcd43e_trash.png",
       "AssetKind": "All",
@@ -568,10 +587,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\c09cd49a-9974-494a-ab24-7c11fcdcd43e_trash.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\c21085a3-2df3-4531-8acb-eb7761876871_Asset 1 1.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\c21085a3-2df3-4531-8acb-eb7761876871_Asset 1 1.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/c21085a3-2df3-4531-8acb-eb7761876871_Asset 1 1.png",
       "AssetKind": "All",
@@ -587,10 +606,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\c21085a3-2df3-4531-8acb-eb7761876871_Asset 1 1.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\c2985b70-16fd-48e4-a78f-4360371ac7bc_trash.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\c2985b70-16fd-48e4-a78f-4360371ac7bc_trash.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/c2985b70-16fd-48e4-a78f-4360371ac7bc_trash.png",
       "AssetKind": "All",
@@ -606,10 +625,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\c2985b70-16fd-48e4-a78f-4360371ac7bc_trash.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\c3599c5d-4c3c-4127-b636-8b4502ce197d_Asset 1 1.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\c3599c5d-4c3c-4127-b636-8b4502ce197d_Asset 1 1.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/c3599c5d-4c3c-4127-b636-8b4502ce197d_Asset 1 1.png",
       "AssetKind": "All",
@@ -625,10 +644,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\c3599c5d-4c3c-4127-b636-8b4502ce197d_Asset 1 1.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\c3e47cf0-46b4-457d-9eea-3970c2f06747_location-pin.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\c3e47cf0-46b4-457d-9eea-3970c2f06747_location-pin.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/c3e47cf0-46b4-457d-9eea-3970c2f06747_location-pin.png",
       "AssetKind": "All",
@@ -644,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\c3e47cf0-46b4-457d-9eea-3970c2f06747_location-pin.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\c7d31c6b-74f2-4561-8173-e786ceba61d4_Asset 1 1.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\c7d31c6b-74f2-4561-8173-e786ceba61d4_Asset 1 1.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/c7d31c6b-74f2-4561-8173-e786ceba61d4_Asset 1 1.png",
       "AssetKind": "All",
@@ -663,10 +682,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\c7d31c6b-74f2-4561-8173-e786ceba61d4_Asset 1 1.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\db8c94f3-03c7-470d-886b-bd22e3e62e7c_ImageUpload_icon.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\db8c94f3-03c7-470d-886b-bd22e3e62e7c_ImageUpload_icon.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/db8c94f3-03c7-470d-886b-bd22e3e62e7c_ImageUpload_icon.png",
       "AssetKind": "All",
@@ -682,10 +701,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\db8c94f3-03c7-470d-886b-bd22e3e62e7c_ImageUpload_icon.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\e02ef594-12a8-426c-9d8e-e518be3bc016_trash.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\e02ef594-12a8-426c-9d8e-e518be3bc016_trash.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/e02ef594-12a8-426c-9d8e-e518be3bc016_trash.png",
       "AssetKind": "All",
@@ -701,10 +720,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\e02ef594-12a8-426c-9d8e-e518be3bc016_trash.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\edabd41b-3209-4ac2-b923-1d7ebd0cac0c_Asset 1 1.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\edabd41b-3209-4ac2-b923-1d7ebd0cac0c_Asset 1 1.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/edabd41b-3209-4ac2-b923-1d7ebd0cac0c_Asset 1 1.png",
       "AssetKind": "All",
@@ -720,10 +739,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\edabd41b-3209-4ac2-b923-1d7ebd0cac0c_Asset 1 1.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\f3fabb7d-c757-4ab3-8ca0-65fbb765d3da_Asset 1 1.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\f3fabb7d-c757-4ab3-8ca0-65fbb765d3da_Asset 1 1.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/f3fabb7d-c757-4ab3-8ca0-65fbb765d3da_Asset 1 1.png",
       "AssetKind": "All",
@@ -739,10 +758,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\f3fabb7d-c757-4ab3-8ca0-65fbb765d3da_Asset 1 1.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\f5bb31c7-4eb0-4e19-b65b-379818d94752_Asset 1 1.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\f5bb31c7-4eb0-4e19-b65b-379818d94752_Asset 1 1.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/f5bb31c7-4eb0-4e19-b65b-379818d94752_Asset 1 1.png",
       "AssetKind": "All",
@@ -758,10 +777,29 @@
       "OriginalItemSpec": "wwwroot\\uploads\\f5bb31c7-4eb0-4e19-b65b-379818d94752_Asset 1 1.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\ff5b958c-38f8-4f08-8db9-c56ccd0e9a3f_Asset 1 1.png",
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\f9d02e74-9555-46e7-906b-add9db438104_d28b3a529ee480b.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\OneDrive\\Desktop\\Projects\\Angular Projects\\Assignments\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "BasePath": "_content/UserManagementAPI",
+      "RelativePath": "uploads/f9d02e74-9555-46e7-906b-add9db438104_d28b3a529ee480b.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\f9d02e74-9555-46e7-906b-add9db438104_d28b3a529ee480b.png"
+    },
+    {
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\ff5b958c-38f8-4f08-8db9-c56ccd0e9a3f_Asset 1 1.png",
+      "SourceId": "UserManagementAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
       "BasePath": "_content/UserManagementAPI",
       "RelativePath": "uploads/ff5b958c-38f8-4f08-8db9-c56ccd0e9a3f_Asset 1 1.png",
       "AssetKind": "All",

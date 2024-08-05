@@ -17,8 +17,8 @@ export class AuthService {
   login(loginDetails: LoginDetails): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/login`, loginDetails);
   }
-  activateAccount(email: string, token: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/auth/activate`, null, { params: { email, token } });
+  activateAccount(userId: number): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/activate`, null, { params: { userId } });
   }
   sendResetPasswordEmail(email: string): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/send-reset-email/${email}`, {});

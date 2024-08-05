@@ -13,6 +13,11 @@ export class SidebarComponent {
   @Input() isOpen = true;
   isManageUserOpen = false;
 
+  isExpanded = true;
+  showSubmenu: boolean = false;
+  isShowing = false;
+
+
   ngOnChanges(changes: SimpleChanges) {
     if (changes['isOpen'] && !changes['isOpen'].currentValue) {
       this.isManageUserOpen = false;

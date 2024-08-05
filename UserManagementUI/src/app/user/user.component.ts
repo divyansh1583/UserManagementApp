@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { SidebarService } from '../auth/services/sidebar.service';
 
 @Component({
   selector: 'app-user',

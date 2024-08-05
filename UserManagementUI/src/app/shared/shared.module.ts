@@ -8,7 +8,7 @@ import { SortableHeaderDirective } from './directives/sortable-header.directive'
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
-
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { MatIconModule } from '@angular/material/icon';
     SharedRoutingModule,
     NgbDropdownModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
+    MatListModule
   ],
   exports:[
     HeaderComponent,

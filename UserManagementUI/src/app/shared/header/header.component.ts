@@ -1,6 +1,5 @@
 import { Component, EventEmitter, HostListener, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { SidebarService } from 'src/app/auth/services/sidebar.service';
 import { TokenService } from 'src/app/auth/services/token.service';
 
 @Component({
@@ -13,7 +12,6 @@ export class HeaderComponent {
   imagePath: any;
   constructor(
     private tokenService: TokenService,
-    private sidebarService: SidebarService,
     private router: Router
   ) {
     this.userName = this.tokenService.getName();

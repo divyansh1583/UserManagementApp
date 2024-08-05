@@ -84,7 +84,3 @@ BEGIN
 END
 GO
 EXEC DC_DeleteUser 
-
-ALTER TABLE DC_User
-ADD ActivationToken VARCHAR(100),
-    ActivationTokenExpiry DATETIME;
