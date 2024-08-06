@@ -12,7 +12,9 @@ import { JsonPipe } from '@angular/common';
 })
 export class ChangePasswordComponent {
   changePasswordForm: FormGroup;
-
+  currentPasswordVisible = false;
+  newPasswordVisible = false;
+  confirmNewPasswordVisible = false;
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,

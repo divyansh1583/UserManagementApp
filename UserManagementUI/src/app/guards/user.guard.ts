@@ -7,15 +7,16 @@ export const userGuard: CanActivateFn = (route, state) => {
   const tokenService = inject(TokenService);
   const toastrService = inject(ToastrService);
   const router = inject(Router);
-  if(localStorage.getItem('login_token')){
-    return true;
-  }
-  return false;
-  // if (tokenService.isTokenValid()) {
-  //   return true; 
-  // } else {
-  //   toastrService.error('Session Ended! Please login again.', 'Error');
-  //   router.navigate(['/login']); 
-  //   return false; 
+  // if(localStorage.getItem('login_token')){
+  //   return true;
   // }
+  // return false;
+ 
+  if (tokenService.isTokenValid()) {
+    return true; 
+  } else {
+    toastrService.error('Session Ended! Please login again.', 'Error');
+    router.navigate(['/login']); 
+    return false; 
+  }
 };

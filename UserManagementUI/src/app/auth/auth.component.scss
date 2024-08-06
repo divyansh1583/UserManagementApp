@@ -1,0 +1,21 @@
+.wrapper {
+    height: 100vh;
+    background-color: #fff;
+}
+
+.left-wrapper {
+    background-image: url('../../assets/Images/Group.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 100%;
+    }
+}
+.right-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

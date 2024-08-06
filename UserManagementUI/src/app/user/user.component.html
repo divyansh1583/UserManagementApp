@@ -1,5 +1,5 @@
 <!-- app.component.html -->
-<div class="sidebarContainer">
+<!-- <div class="sidebarContainer">
   <app-sidebar [isOpen]="isSidebarOpen"></app-sidebar>
 </div>
 <div class="app-container">
@@ -8,4 +8,11 @@
     <router-outlet></router-outlet>
   </div>
 
+</div> -->
+<div class="app-container" [class.sidebar-open]="isSidebarOpen">
+  <app-sidebar [isOpen]="isSidebarOpen"></app-sidebar>
+  <div class="main-content">
+    <app-header (toggleSidebar)="toggleSidebar()"></app-header>
+    <router-outlet></router-outlet>
+  </div>
 </div>

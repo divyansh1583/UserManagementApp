@@ -23,7 +23,7 @@
               </div>
               <div class="upload-info">
                 <input type="file" #fileInput hidden (change)="onFileSelected($event)" accept="image/*">
-                <h6>Upload user image here</h6>
+                <h6 *ngIf="!imagePreview">Upload user image here</h6>
                 <button type="button" class="btn btn-sm btn-primary mt-2" (click)="fileInput.click()">Browse</button>
               </div>
             </div>
@@ -32,25 +32,39 @@
             <div class="row">
               <div class="col-md-4 mb-3">
                 <label for="firstName">First Name</label>
-                <input type="text" class="form-control" id="firstName" formControlName="firstName" placeholder="First Name">
-                <div *ngIf="userForm.get('firstName')?.invalid && (userForm.get('firstName')?.touched||userForm.get('firstName')?.dirty)" class="text-danger">
-                  <small *ngIf="userForm.get('firstName')?.errors?.['required']||userForm.get('firstName')?.errors?.['whitespace']">First name is required</small>
-                  <small *ngIf="userForm.get('firstName')?.errors?.['maxlength']">First name cannot exceed 50 characters</small>
+                <input type="text" class="form-control" id="firstName" formControlName="firstName"
+                  placeholder="First Name">
+                <div
+                  *ngIf="userForm.get('firstName')?.invalid && (userForm.get('firstName')?.touched||userForm.get('firstName')?.dirty)"
+                  class="text-danger">
+                  <small
+                    *ngIf="userForm.get('firstName')?.errors?.['required']||userForm.get('firstName')?.errors?.['whitespace']">First
+                    name is required</small>
+                  <small *ngIf="userForm.get('firstName')?.errors?.['maxlength']">First name cannot exceed 50
+                    characters</small>
                 </div>
               </div>
               <div class="col-md-4 mb-3">
                 <label for="middleName">Middle Name</label>
-                <input type="text" class="form-control" id="middleName" formControlName="middleName" placeholder="Middle Name">
-                <div *ngIf="userForm.get('middleName')?.invalid && (userForm.get('middleName')?.touched||userForm.get('middleName')?.dirty)" class="text-danger">
-                  <small *ngIf="userForm.get('middleName')?.errors?.['required']">Middle name is required</small>
-                  <small *ngIf="userForm.get('middleName')?.errors?.['maxlength']">Middle name cannot exceed 50 characters</small>
+                <input type="text" class="form-control" id="middleName" formControlName="middleName"
+                  placeholder="Middle Name">
+                <div
+                  *ngIf="userForm.get('middleName')?.invalid && (userForm.get('middleName')?.touched||userForm.get('middleName')?.dirty)"
+                  class="text-danger">
+                  <small *ngIf="userForm.get('middleName')?.errors?.['required']||userForm.get('middleName')?.errors?.['whitespace']">Middle name is required</small>
+                  <small *ngIf="userForm.get('middleName')?.errors?.['maxlength']">Middle name cannot exceed 50
+                    characters</small>
                 </div>
               </div>
               <div class="col-md-4 mb-3">
                 <label for="lastName">Last Name</label>
-                <input type="text" class="form-control" id="lastName" formControlName="lastName" placeholder="Last Name">
-                <div *ngIf="userForm.get('lastName')?.invalid && (userForm.get('lastName')?.touched||userForm.get('lastName')?.dirty)" class="text-danger">
+                <input type="text" class="form-control" id="lastName" formControlName="lastName"
+                  placeholder="Last Name">
+                <div
+                  *ngIf="userForm.get('lastName')?.invalid && (userForm.get('lastName')?.touched||userForm.get('lastName')?.dirty)"
+                  class="text-danger">
                   <small *ngIf="userForm.get('lastName')?.errors?.['maxlength']">Last name cannot exceed 50 characters</small>
+                  <small *ngIf="userForm.get('lastName')?.errors?.['whitespace']">Whitespaces not allowed</small>
                 </div>
               </div>
             </div>
@@ -60,23 +74,31 @@
                 <label for="gender">Gender</label>
                 <select class="form-control" id="gender" formControlName="gender">
                   <option value="">Select</option>
-                  <option *ngFor="let option of ['male', 'female', 'other']" [value]="option">{{option | titlecase}}</option>
+                  <option *ngFor="let option of ['male', 'female', 'other']" [value]="option">{{option | titlecase}}
+                  </option>
                 </select>
-                <div *ngIf="userForm.get('gender')?.invalid && (userForm.get('gender')?.touched||userForm.get('gender')?.dirty)" class="text-danger">
+                
+                <div
+                  *ngIf="userForm.get('gender')?.invalid && (userForm.get('gender')?.touched||userForm.get('gender')?.dirty)"
+                  class="text-danger">
                   <small>Gender is required</small>
                 </div>
               </div>
-                            <div class="col-md-4 mb-3">
+              <div class="col-md-4 mb-3">
                 <label for="dateOfBirth">Date of Birth</label>
                 <input type="date" class="form-control" id="dateOfBirth" formControlName="dateOfBirth">
-                <div *ngIf="userForm.get('dateOfBirth')?.invalid && (userForm.get('dateOfBirth')?.touched||userForm.get('dateOfBirth')?.dirty)" class="text-danger">
+                <div
+                  *ngIf="userForm.get('dateOfBirth')?.invalid && (userForm.get('dateOfBirth')?.touched||userForm.get('dateOfBirth')?.dirty)"
+                  class="text-danger">
                   <small>Date of birth is required</small>
                 </div>
               </div>
               <div class="col-md-4 mb-3" *ngIf="!isUpdateMode">
                 <label for="email">Email</label>
                 <input type="email" class="form-control" id="email" formControlName="email" placeholder="Email">
-                <div *ngIf="userForm.get('email')?.invalid && (userForm.get('email')?.touched||userForm.get('email')?.dirty)" class="text-danger">
+                <div
+                  *ngIf="userForm.get('email')?.invalid && (userForm.get('email')?.touched||userForm.get('email')?.dirty)"
+                  class="text-danger">
                   <small *ngIf="userForm.get('email')?.errors?.['required']">Email is required</small>
                   <small *ngIf="userForm.get('email')?.errors?.['pattern']">Invalid email format</small>
                 </div>
@@ -87,25 +109,40 @@
               <div class="col-md-4 mb-3">
                 <label for="dateOfJoining">Date of Joining</label>
                 <input type="date" class="form-control" id="dateOfJoining" formControlName="dateOfJoining">
-                <div *ngIf="userForm.get('dateOfJoining')?.invalid && (userForm.get('dateOfJoining')?.touched||userForm.get('dateOfJoining')?.dirty)" class="text-danger">
+                <div
+                  *ngIf="userForm.get('dateOfJoining')?.invalid && (userForm.get('dateOfJoining')?.touched||userForm.get('dateOfJoining')?.dirty)"
+                  class="text-danger">
                   <small>Date of joining is required</small>
                 </div>
               </div>
               <div class="col-md-4 mb-3">
                 <label for="phone">Phone</label>
-                <input type="tel" class="form-control" id="phone" formControlName="phone" placeholder="Phone" mask="(000) 000-0000">
-                <div *ngIf="userForm.get('phone')?.invalid && (userForm.get('phone')?.touched||userForm.get('phone')?.dirty)" class="text-danger">
+                <input type="tel" class="form-control" id="phone" formControlName="phone" placeholder="Phone"
+                  mask="(000) 000-0000">
+                <div
+                  *ngIf="userForm.get('phone')?.invalid && (userForm.get('phone')?.touched||userForm.get('phone')?.dirty)"
+                  class="text-danger">
                   <small *ngIf="userForm.get('phone')?.errors?.['required']">Phone number is required</small>
                   <small *ngIf="userForm.get('phone')?.errors?.['pattern']">Phone number must be 10 digits</small>
                 </div>
               </div>
               <div class="col-md-4 mb-3">
                 <label for="alternatePhone">Alternate Phone</label>
-                <input type="tel" class="form-control" id="alternatePhone" formControlName="alternatePhone" placeholder="Alternate Phone" mask="(000) 000-0000">
-                <div *ngIf="userForm.get('alternatePhone')?.invalid && (userForm.get('alternatePhone')?.touched||userForm.get('alternatePhone')?.dirty)" class="text-danger">
-                  <small *ngIf="userForm.get('alternatePhone')?.errors?.['pattern']">Phone number must be 10 digits</small>
+                <input type="tel" class="form-control" id="alternatePhone" formControlName="alternatePhone"
+                  placeholder="Alternate Phone" mask="(000) 000-0000">
+                <div
+                  *ngIf="userForm.get('alternatePhone')?.invalid && (userForm.get('alternatePhone')?.touched||userForm.get('alternatePhone')?.dirty)"
+                  class="text-danger">
+                  <small *ngIf="userForm.get('alternatePhone')?.errors?.['pattern']">Phone number must be 10
+                    digits</small>
                 </div>
               </div>
+            </div>
+
+            <!-- Secondary Address Checkbox -->
+            <div class="form-check mb-3 secondary-checkbox">
+              <input type="checkbox" class="form-check-input" id="showSecondaryAddress" (change)="toggleSecondaryAddress($event)" [checked]="hasSecondAddresses">
+              <label class="form-check-label" for="showSecondaryAddress">Add Secondary Address</label>
             </div>
 
             <!-- Address Section -->
@@ -116,8 +153,11 @@
                   <div class="row">
                     <div class="col-md-12 mb-3">
                       <label [for]="'address' + i">Address</label>
-                      <input type="text" class="form-control" [id]="'address' + i" formControlName="address" placeholder="Address">
-                      <div *ngIf="address.get('address')?.invalid && (address.get('address')?.touched||address.get('address')?.dirty)" class="text-danger">
+                      <input type="text" class="form-control" [id]="'address' + i" formControlName="address"
+                        placeholder="Address">
+                      <div
+                        *ngIf="address.get('address')?.invalid && address.get('address')?.errors?.['whitespace'] && (address.get('address')?.touched||address.get('address')?.dirty)"
+                        class="text-danger">
                         <small>Address is required</small>
                       </div>
                     </div>
@@ -127,9 +167,12 @@
                       <label [for]="'country' + i">Country</label>
                       <select class="form-control" [id]="'country' + i" formControlName="countryId">
                         <option value="">Select</option>
-                                                <option *ngFor="let country of getLocationData('country', i)" [value]="country.id">{{country.name}}</option>
+                        <option *ngFor="let country of getLocationData('country', i)" [value]="country.id">
+                          {{country.name}}</option>
                       </select>
-                      <div *ngIf="address.get('countryId')?.invalid && (address.get('countryId')?.touched||address.get('countryId')?.dirty)" class="text-danger">
+                      <div
+                        *ngIf="address.get('countryId')?.invalid && (address.get('countryId')?.touched||address.get('countryId')?.dirty)"
+                        class="text-danger">
                         <small>Country is required</small>
                       </div>
                     </div>
@@ -137,9 +180,12 @@
                       <label [for]="'state' + i">State</label>
                       <select class="form-control" [id]="'state' + i" formControlName="stateId">
                         <option value="">Select</option>
-                        <option *ngFor="let state of getLocationData('state', i)" [value]="state.id">{{state.name}}</option>
+                        <option *ngFor="let state of getLocationData('state', i)" [value]="state.id">{{state.name}}
+                        </option>
                       </select>
-                      <div *ngIf="address.get('stateId')?.invalid && (address.get('stateId')?.touched||address.get('stateId')?.dirty)" class="text-danger">
+                      <div
+                        *ngIf="address.get('stateId')?.invalid && (address.get('stateId')?.touched||address.get('stateId')?.dirty)"
+                        class="text-danger">
                         <small>State is required</small>
                       </div>
                     </div>
@@ -149,7 +195,9 @@
                         <option value="">Select</option>
                         <option *ngFor="let city of getLocationData('city', i)" [value]="city.id">{{city.name}}</option>
                       </select>
-                      <div *ngIf="address.get('cityId')?.invalid && (address.get('cityId')?.touched||address.get('cityId')?.dirty)" class="text-danger">
+                      <div
+                        *ngIf="address.get('cityId')?.invalid && (address.get('cityId')?.touched||address.get('cityId')?.dirty)"
+                        class="text-danger">
                         <small>City is required</small>
                       </div>
                     </div>
@@ -157,10 +205,14 @@
                   <div class="row">
                     <div class="col-md-4 mb-3">
                       <label [for]="'zipCode' + i">Zip Code</label>
-                      <input type="text" class="form-control" [id]="'zipCode' + i" formControlName="zipCode" placeholder="Zip Code">
-                      <div *ngIf="address.get('zipCode')?.invalid && (address.get('zipCode')?.touched||address.get('zipCode')?.dirty)" class="text-danger">
+                      <input type="text" class="form-control" [id]="'zipCode' + i" formControlName="zipCode"
+                        placeholder="Zip Code">
+                      <div
+                        *ngIf="address.get('zipCode')?.invalid && (address.get('zipCode')?.touched||address.get('zipCode')?.dirty)"
+                        class="text-danger">
                         <small *ngIf="address.get('zipCode')?.errors?.['required']">Zip code is required</small>
-                        <small *ngIf="address.get('zipCode')?.errors?.['pattern']">Invalid zip code format i.e. 12345</small>
+                        <small *ngIf="address.get('zipCode')?.errors?.['pattern']">Invalid zip code format i.e.
+                          12345</small>
                       </div>
                     </div>
                   </div>
@@ -168,14 +220,9 @@
               </ng-container>
             </div>
 
-            <!-- Secondary Address Checkbox -->
-            <div class="form-check mb-3">
-              <input type="checkbox" class="form-check-input" id="showSecondaryAddress" (change)="toggleSecondaryAddress($event)">
-              <label class="form-check-label" for="showSecondaryAddress">Add Secondary Address</label>
-            </div>
 
             <!-- Active/Inactive Checkbox -->
-            <div class="form-check mb-3">
+            <div class="form-check mb-3" *ngIf="isUpdateMode">
               <input type="checkbox" class="form-check-input" id="isActive" formControlName="isActive">
               <label class="form-check-label" for="isActive">Active</label>
             </div>

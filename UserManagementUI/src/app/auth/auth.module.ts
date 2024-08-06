@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ActivateAccountComponent } from './login/activate.component';
+import { AuthComponent } from './auth.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ActivateAccountComponent } from './login/activate.component';
     ForgotPasswordComponent,
     ResetPasswordComponent,
     ChangePasswordComponent,
-    ActivateAccountComponent
+    ActivateAccountComponent,
+    AuthComponent,
   ],
   imports: [
     CommonModule,

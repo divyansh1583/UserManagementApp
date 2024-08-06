@@ -6,6 +6,8 @@ import { ToastrService } from 'ngx-toastr';
 import { Router, ActivatedRoute } from '@angular/router';
 import { cities, countries, states } from 'src/app/shared/data/location-data';
 import { TokenService } from 'src/app/auth/services/token.service';
+import { MatCheckboxChange } from '@angular/material/checkbox';
+import { CustomValidators } from 'src/app/shared/custom-validators/custom-validators';
 
 @Component({
   selector: 'app-add-user',
@@ -22,6 +24,7 @@ export class AddUserComponent implements OnInit {
   showSecondaryAddress: boolean = false;
   isUpdateMode: boolean = false;
   userId: number | null = null;
+  hasSecondAddresses: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -50,9 +53,9 @@ export class AddUserComponent implements OnInit {
 
   initForm() {
     this.userForm = this.fb.group({
-      firstName: [null, [Validators.required, Validators.maxLength(50), this.noWhitespaceValidator]],
-      middleName: [null, [Validators.required, Validators.maxLength(50)]],
-      lastName: [null, Validators.maxLength(50)],
+      firstName: [null, [Validators.required, Validators.maxLength(50), CustomValidators.noWhitespace]],
+      middleName: [null, [Validators.required, Validators.maxLength(50),CustomValidators.noWhitespace]],
+      lastName: [null, [Validators.maxLength(50),CustomValidators.noWhitespace]],
       gender: [null, Validators.required],
       dateOfBirth: [null, Validators.required],
       dateOfJoining: [null, Validators.required],
@@ -78,7 +81,7 @@ export class AddUserComponent implements OnInit {
   }
   createAddressFormGroup(addressTypeId: number, address?: any): FormGroup {
     return this.fb.group({
-      address: [address ? address.address : null, Validators.required],
+      address: [address ? address.address : null, [Validators.required,CustomValidators.noWhitespace]],
       cityId: [address ? address.cityId : null, Validators.required],
       stateId: [address ? address.stateId : null, Validators.required],
       countryId: [address ? address.countryId : null, Validators.required],
@@ -108,7 +111,7 @@ export class AddUserComponent implements OnInit {
             user.addresses.forEach((address: any) => {
               this.addressesFormArray.push(this.createAddressFormGroup(address.addressTypeId, address));
             });
-            this.showSecondaryAddress = this.addressesFormArray.length > 1;
+            this.hasSecondAddresses  = this.addressesFormArray.length > 1;
           } else {
             this.toastr.error('Error loading user data');
           }
@@ -124,19 +127,19 @@ export class AddUserComponent implements OnInit {
   formatDate(date: string): string {
     return new Date(date).toISOString().split('T')[0];
   }
-  
+
   onSubmit() {
     if (this.userForm.invalid) {
       this.userForm.markAllAsTouched();
       this.toastr.warning('Please fill all the required fields correctly');
       return;
     }
-      if (this.isUpdateMode) {
-        this.updateUser();
-      } else {
-        this.addUser();
-      }
-    
+    if (this.isUpdateMode) {
+      this.updateUser();
+    } else {
+      this.addUser();
+    }
+
   }
 
   uploadImage(): Promise<string | null> {
@@ -241,6 +244,7 @@ export class AddUserComponent implements OnInit {
       this.addressesFormArray.removeAt(1);
     }
   }
+
 
   getLocationData(field: string, index: number) {
     switch (field) {

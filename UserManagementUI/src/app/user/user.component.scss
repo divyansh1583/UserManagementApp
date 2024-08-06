@@ -1,12 +1,27 @@
+// .app-container {
+//   display: flex;
+// }
+
+// .main-content {
+//   flex-grow: 1;
+//   transition: margin-left 0.3s ease;
+// }
+
+// .sidebar-container{
+//   width: 20%;
+// }
+
 .app-container {
   display: flex;
+  min-height: 100vh;
 }
 
 .main-content {
   flex-grow: 1;
   transition: margin-left 0.3s ease;
+  width: 100%;
 }
 
-.sidebar-container{
-  width: 20%;
+.sidebar-open .main-content {
+  margin-left: 250px; // This should match the width of your sidebar
 }

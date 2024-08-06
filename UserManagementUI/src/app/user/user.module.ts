@@ -7,10 +7,10 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { UserComponent } from './user.component';
 import { SharedModule } from '../shared/shared.module';
 import { NgbDropdownModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,9 @@ import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
     ReactiveFormsModule,
     HttpClientModule,
     NgxMaskDirective,
-    NgbDropdownModule
+    NgbDropdownModule,
+    FormsModule,
+    MatCheckboxModule
   ],
   providers:[
     provideNgxMask()

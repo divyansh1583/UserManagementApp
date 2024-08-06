@@ -39,7 +39,7 @@ namespace CollegeManagementAPI.Infrastructure.Implementation.Services
                 _configuration["Jwt:Issuer"],
                 _configuration["Jwt:Audience"],
                 claims,
-                expires: DateTime.Now.AddMinutes(5),
+                expires: DateTime.Now.AddMinutes(100),
                 signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);

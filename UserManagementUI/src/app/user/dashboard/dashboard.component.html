@@ -12,14 +12,46 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th (click)="sort('firstName')">First Name</th>
-                        <th (click)="sort('middleName')">Middle Name</th>
-                        <th (click)="sort('lastName')">Last Name</th>
-                        <th (click)="sort('dateOfBirth')">DOB</th>
-                        <th (click)="sort('email')">Email</th>
-                        <th (click)="sort('phone')">Contact No</th>
-                        <th (click)="sort('state')">State</th>
-                        <th (click)="sort('city')">City</th>
+                        <th (click)="sort('firstName')">
+                            First Name
+                            <i class="bi bi-arrow-up" *ngIf="sortColumn === 'firstName' && sortDirection === 'asc'"></i>
+                            <i class="bi bi-arrow-down" *ngIf="sortColumn === 'firstName' && sortDirection === 'desc'"></i>
+                        </th>
+                        <th (click)="sort('middleName')">
+                            Middle Name
+                            <i class="bi bi-arrow-up" *ngIf="sortColumn === 'middleName' && sortDirection === 'asc'"></i>
+                            <i class="bi bi-arrow-down" *ngIf="sortColumn === 'middleName' && sortDirection === 'desc'"></i>
+                        </th>
+                        <th (click)="sort('lastName')">
+                            Last Name
+                            <i class="bi bi-arrow-up" *ngIf="sortColumn === 'lastName' && sortDirection === 'asc'"></i>
+                            <i class="bi bi-arrow-down" *ngIf="sortColumn === 'lastName' && sortDirection === 'desc'"></i>
+                        </th>
+                        <th (click)="sort('dateOfBirth')">
+                            DOB
+                            <i class="bi bi-arrow-up" *ngIf="sortColumn === 'dateOfBirth' && sortDirection === 'asc'"></i>
+                            <i class="bi bi-arrow-down" *ngIf="sortColumn === 'dateOfBirth' && sortDirection === 'desc'"></i>
+                        </th>
+                        <th (click)="sort('email')">
+                            Email
+                            <i class="bi bi-arrow-up" *ngIf="sortColumn === 'email' && sortDirection === 'asc'"></i>
+                            <i class="bi bi-arrow-down" *ngIf="sortColumn === 'email' && sortDirection === 'desc'"></i>
+                        </th>
+                        <th (click)="sort('phone')">
+                            Contact No
+                            <i class="bi bi-arrow-up" *ngIf="sortColumn === 'phone' && sortDirection === 'asc'"></i>
+                            <i class="bi bi-arrow-down" *ngIf="sortColumn === 'phone' && sortDirection === 'desc'"></i>
+                        </th>
+                        <th (click)="sort('state')">
+                            State
+                            <i class="bi bi-arrow-up" *ngIf="sortColumn === 'state' && sortDirection === 'asc'"></i>
+                            <i class="bi bi-arrow-down" *ngIf="sortColumn === 'state' && sortDirection === 'desc'"></i>
+                        </th>
+                        <th (click)="sort('city')">
+                            City
+                            <i class="bi bi-arrow-up" *ngIf="sortColumn === 'city' && sortDirection === 'asc'"></i>
+                            <i class="bi bi-arrow-down" *ngIf="sortColumn === 'city' && sortDirection === 'desc'"></i>
+                        </th>
                         <th>Action</th>
                     </tr>
                 </thead>

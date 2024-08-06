@@ -43,9 +43,7 @@ export class LoginComponent {
       this.authService.login(this.loginDetails).subscribe({
         next:(res)=> {
           if (res.statusCode === 200) {
-            console.log(res);
             localStorage.setItem('login_token', res.data.token);
-            debugger
             this.router.navigate(['/user']);
             this.toastr.success(res.message);
           }

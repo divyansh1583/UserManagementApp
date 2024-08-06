@@ -15,7 +15,8 @@ export class ResetPasswordComponent implements OnInit {
   email: string = '';
   emailToken: string = '';
   isLoading: boolean = false;
-
+  passwordVisible = false;
+  confirmPasswordVisible = false;
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
