@@ -37,18 +37,18 @@ export class TokenService {
     const decodedToken = JSON.parse(atob(this.token.split('.')[1]));
     return decodedToken[this.claimNames.email];
   }
-  getName(): string {
-    if (!this.token) return '';
-    const decodedToken = JSON.parse(atob(this.token.split('.')[1]));
-    return decodedToken[this.claimNames.name];
-  }
+  // getName(): string {
+  //   if (!this.token) return '';
+  //   const decodedToken = JSON.parse(atob(this.token.split('.')[1]));
+  //   return decodedToken[this.claimNames.name];
+  // }
 
-  getImagePath(): string {
-    if (!this.token) return '';
-    const decodedToken = JSON.parse(atob(this.token.split('.')[1]));
-    var path = "https://localhost:7118" + decodedToken[this.claimNames.imagePath];
-    return path;
-  }
+  // getImagePath(): string {
+  //   if (!this.token) return '';
+  //   const decodedToken = JSON.parse(atob(this.token.split('.')[1]));
+  //   var path = "https://localhost:7118" + decodedToken[this.claimNames.imagePath];
+  //   return path;
+  // }
   isTokenValid(): boolean {
     this.updateToken();
     if (!this.token) return false;

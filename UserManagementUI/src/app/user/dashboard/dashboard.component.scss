@@ -1,46 +1,57 @@
 .card {
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  
-    .card-body {
-      padding: 1.5rem;
-      display: flex;
-    }
-    .card-info{
-        margin-left: 30px;
-        .card-title {
-          font-size: 1.2rem;
-          margin-bottom: 0.5rem;
-        }
-      
-        .card-text {
-          font-size: 2rem;
-          font-weight: bold;
-        }
-    }
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #4285f4;
+
+  .card-body {
+    padding: 1.5rem;
+    display: flex;
   }
 
-  table {
-    th {
-      font-weight: 600;
-      background-color: #f8f9fa;
+  .card-info {
+    margin-left: 30px;
+
+    .card-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
     }
-  
-    td {
-      vertical-align: middle;
+
+    .card-text {
+      font-size: 2rem;
+      font-weight: bold;
     }
   }
-  
-  .btn-outline {
-    padding: 0.25rem 0.5rem;
+}
+
+table {
+  th {
+    font-weight: 600;
+    background-color: #f8f9fa;
   }
-  
-  ngb-pagination {
-    margin-top: 1rem;
+
+  td {
+    vertical-align: middle;
   }
-.header-wrapper{
+}
+
+.btn-outline {
+  padding: 0.25rem 0.5rem;
+}
+
+ngb-pagination {
+  margin-top: 1rem;
+  position: sticky;
+  left: 0;
+  bottom: 0;
+  background-color: white;
+  padding-top: 0.5rem;
+  z-index: 1;
+}
+
+.header-wrapper {
   display: flex;
+  position: sticky;
   justify-content: space-between;
   margin-bottom: 1rem;
 }

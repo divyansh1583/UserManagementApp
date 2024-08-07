@@ -26,8 +26,11 @@
                 <h6 *ngIf="!imagePreview">Upload user image here</h6>
                 <button type="button" class="btn btn-sm btn-primary mt-2" (click)="fileInput.click()">Browse</button>
               </div>
+              <div *ngIf="isImageUploaded && userForm.touched" class="text-danger">
+                <small>* Image file is required</small>
+              </div>
             </div>
-
+            <p>{{isImageUploaded}}</p>
             <!-- User Details -->
             <div class="row">
               <div class="col-md-4 mb-3">
@@ -51,7 +54,9 @@
                 <div
                   *ngIf="userForm.get('middleName')?.invalid && (userForm.get('middleName')?.touched||userForm.get('middleName')?.dirty)"
                   class="text-danger">
-                  <small *ngIf="userForm.get('middleName')?.errors?.['required']||userForm.get('middleName')?.errors?.['whitespace']">Middle name is required</small>
+                  <small
+                    *ngIf="userForm.get('middleName')?.errors?.['required']||userForm.get('middleName')?.errors?.['whitespace']">Middle
+                    name is required</small>
                   <small *ngIf="userForm.get('middleName')?.errors?.['maxlength']">Middle name cannot exceed 50
                     characters</small>
                 </div>
@@ -63,8 +68,10 @@
                 <div
                   *ngIf="userForm.get('lastName')?.invalid && (userForm.get('lastName')?.touched||userForm.get('lastName')?.dirty)"
                   class="text-danger">
-                  <small *ngIf="userForm.get('lastName')?.errors?.['maxlength']">Last name cannot exceed 50 characters</small>
-                  <small *ngIf="userForm.get('lastName')?.errors?.['whitespace']">Whitespaces not allowed</small>
+                  <small *ngIf="userForm.get('lastName')?.errors?.['maxlength']">Last name cannot exceed 50
+                    characters</small>
+                  <small *ngIf="userForm.get('lastName')?.errors?.['whitespace']&&userForm.get('lastName')?.dirty">Blank
+                    spaces are not allowed</small>
                 </div>
               </div>
             </div>
@@ -77,7 +84,7 @@
                   <option *ngFor="let option of ['male', 'female', 'other']" [value]="option">{{option | titlecase}}
                   </option>
                 </select>
-                
+
                 <div
                   *ngIf="userForm.get('gender')?.invalid && (userForm.get('gender')?.touched||userForm.get('gender')?.dirty)"
                   class="text-danger">
@@ -86,7 +93,7 @@
               </div>
               <div class="col-md-4 mb-3">
                 <label for="dateOfBirth">Date of Birth</label>
-                <input type="date" class="form-control" id="dateOfBirth" formControlName="dateOfBirth">
+                <input type="date" class="form-control" id="dateOfBirth" formControlName="dateOfBirth" [max]="maxDate">
                 <div
                   *ngIf="userForm.get('dateOfBirth')?.invalid && (userForm.get('dateOfBirth')?.touched||userForm.get('dateOfBirth')?.dirty)"
                   class="text-danger">
@@ -108,7 +115,8 @@
             <div class="row">
               <div class="col-md-4 mb-3">
                 <label for="dateOfJoining">Date of Joining</label>
-                <input type="date" class="form-control" id="dateOfJoining" formControlName="dateOfJoining">
+                <input type="date" class="form-control" id="dateOfJoining" formControlName="dateOfJoining"
+                  [max]="maxDate">
                 <div
                   *ngIf="userForm.get('dateOfJoining')?.invalid && (userForm.get('dateOfJoining')?.touched||userForm.get('dateOfJoining')?.dirty)"
                   class="text-danger">
@@ -141,7 +149,8 @@
 
             <!-- Secondary Address Checkbox -->
             <div class="form-check mb-3 secondary-checkbox">
-              <input type="checkbox" class="form-check-input" id="showSecondaryAddress" (change)="toggleSecondaryAddress($event)" [checked]="hasSecondAddresses">
+              <input type="checkbox" class="form-check-input" id="showSecondaryAddress"
+                (change)="toggleSecondaryAddress($event)" [checked]="hasSecondAddresses">
               <label class="form-check-label" for="showSecondaryAddress">Add Secondary Address</label>
             </div>
 

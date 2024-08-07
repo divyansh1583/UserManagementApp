@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../services/auth.service';
 import { TokenService } from '../services/token.service';
 import { JsonPipe } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-change-password',
@@ -19,7 +20,8 @@ export class ChangePasswordComponent {
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private toastr: ToastrService,
-    private tokenService: TokenService
+    private tokenService: TokenService,
+    private router:Router
   ) {
     this.changePasswordForm = this.formBuilder.group({
       currentPassword: ['', Validators.required],
@@ -46,6 +48,7 @@ export class ChangePasswordComponent {
       this.authService.changePassword(changePasswordDto).subscribe(res=>{
         if(res.statusCode==200){
           this.toastr.success(res.message);
+          this.router.navigate(['/login']);
         }else{
           this.toastr.error(res.message);
         }

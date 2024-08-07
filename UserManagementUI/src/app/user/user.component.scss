@@ -1,27 +1,38 @@
+
+
 // .app-container {
 //   display: flex;
+//   min-height: 100vh;
 // }
 
 // .main-content {
 //   flex-grow: 1;
 //   transition: margin-left 0.3s ease;
+//   width: 100%;
 // }
 
-// .sidebar-container{
-//   width: 20%;
+// .sidebar-open .main-content {
+//   margin-left: 250px; 
 // }
-
 .app-container {
   display: flex;
   min-height: 100vh;
 }
 
-.main-content {
+.content-wrapper {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
   transition: margin-left 0.3s ease;
-  width: 100%;
+  min-width: 0; /* This allows the content to shrink below its default size */
 }
 
-.sidebar-open .main-content {
-  margin-left: 250px; // This should match the width of your sidebar
+.sidebar-open .content-wrapper {
+  margin-left: 250px; 
+}
+
+.main-content {
+  flex-grow: 1;
+  overflow-x: auto; /* Allows horizontal scrolling if content is wider than viewport */
+  min-width: 0; /* This allows the content to shrink below its default size */
 }

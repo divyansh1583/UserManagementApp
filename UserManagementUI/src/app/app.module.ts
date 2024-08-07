@@ -22,9 +22,12 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule, NgxUiLoaderRouterModule } fro
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
       closeButton:true,
+      maxOpened:1
     }),
     NgbModule,
-    NgxUiLoaderModule,
+    NgxUiLoaderModule.forRoot({
+      bgsPosition: 'center-center',
+    }),
     NgxUiLoaderRouterModule,
     NgxUiLoaderHttpModule
   ],

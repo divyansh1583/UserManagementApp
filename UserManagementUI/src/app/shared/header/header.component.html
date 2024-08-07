@@ -7,7 +7,7 @@
     
       <div class="profile-dropdown" [matMenuTriggerFor]="menu">
         <img [src]="imagePath" alt="User" class="user-image">
-        <span class="user-name">{{userName}}</span>
+        <span class="user-name d-none d-md-flex">{{userName}}</span>
       </div>
     <mat-menu #menu="matMenu">
       <button mat-menu-item (click)="changePassword()">

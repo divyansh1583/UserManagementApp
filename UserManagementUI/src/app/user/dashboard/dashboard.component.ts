@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
   paginateData: UserDto[] = [];
   sortedData: UserDto[] = [];
   page = 1;
-  pageSize = 10;
+  pageSize = 5;
   collectionSize = 0;
   sortColumn: string = '';
   sortDirection: 'asc' | 'desc' = 'asc';

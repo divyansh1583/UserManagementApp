@@ -32,8 +32,8 @@ namespace CollegeManagementAPI.Infrastructure.Implementation.Services
             {
                 new Claim(ClaimTypes.NameIdentifier, userDto.UserId.ToString()),
                 new Claim(ClaimTypes.Email,userDto.Email),
-                new Claim("name", userDto.FirstName + " " + userDto.LastName),
-                new Claim("imagePath", userDto.ImagePath),
+                //new Claim("name", userDto.FirstName + " " + userDto.LastName),
+                //new Claim("imagePath", userDto.ImagePath),
             };
             var token = new JwtSecurityToken(
                 _configuration["Jwt:Issuer"],

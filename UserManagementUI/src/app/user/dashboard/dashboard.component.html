@@ -1,86 +1,105 @@
 <div class="container-fluid">
     <div class="row mt-3">
-        <!-- Existing code for cards -->
+        <div class="col-12 col-sm-6 col-md-3 mb-3">
+            <div class="card bg-primary text-white h-100">
+                <div class="card-body d-flex flex-column flex-sm-row align-items-center">
+                    <img class="mb-2 mb-sm-0 me-sm-3" src="../../../assets/Images/IconBlue.png" alt="Active Users" width="40" height="40">
+                    <div class="card-info text-center text-sm-start">
+                        <h5 class="card-title">Active</h5>
+                        <p class="card-text">{{ activeUsers }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-12 col-sm-6 col-md-3 mb-3">
+            <div class="card bg-warning text-white h-100">
+                <div class="card-body d-flex flex-column flex-sm-row align-items-center">
+                    <img class="mb-2 mb-sm-0 me-sm-3" src="../../../assets/Images/IconYellow.png" alt="Inactive Users" width="40" height="40">
+                    <div class="card-info text-center text-sm-start">
+                        <h5 class="card-title">Inactive</h5>
+                        <p class="card-text">{{ inactiveUsers }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Add more cards here if needed -->
     </div>
 
     <div class="row mt-4">
         <div class="col-12">
-            <div class="header-wrapper">
-                <h2>User List</h2>
-                <button class="btn btn-success mb-2" (click)="downloadExcel()"><i class="bi bi-download"></i></button>
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center mb-3">
+                <h2 class="mb-2 mb-sm-0">User List</h2>
+                <button class="btn btn-success" (click)="downloadExcel()">
+                    <i class="bi bi-download"></i> Download Excel
+                </button>
             </div>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th (click)="sort('firstName')">
-                            First Name
-                            <i class="bi bi-arrow-up" *ngIf="sortColumn === 'firstName' && sortDirection === 'asc'"></i>
-                            <i class="bi bi-arrow-down" *ngIf="sortColumn === 'firstName' && sortDirection === 'desc'"></i>
-                        </th>
-                        <th (click)="sort('middleName')">
-                            Middle Name
-                            <i class="bi bi-arrow-up" *ngIf="sortColumn === 'middleName' && sortDirection === 'asc'"></i>
-                            <i class="bi bi-arrow-down" *ngIf="sortColumn === 'middleName' && sortDirection === 'desc'"></i>
-                        </th>
-                        <th (click)="sort('lastName')">
-                            Last Name
-                            <i class="bi bi-arrow-up" *ngIf="sortColumn === 'lastName' && sortDirection === 'asc'"></i>
-                            <i class="bi bi-arrow-down" *ngIf="sortColumn === 'lastName' && sortDirection === 'desc'"></i>
-                        </th>
-                        <th (click)="sort('dateOfBirth')">
-                            DOB
-                            <i class="bi bi-arrow-up" *ngIf="sortColumn === 'dateOfBirth' && sortDirection === 'asc'"></i>
-                            <i class="bi bi-arrow-down" *ngIf="sortColumn === 'dateOfBirth' && sortDirection === 'desc'"></i>
-                        </th>
-                        <th (click)="sort('email')">
-                            Email
-                            <i class="bi bi-arrow-up" *ngIf="sortColumn === 'email' && sortDirection === 'asc'"></i>
-                            <i class="bi bi-arrow-down" *ngIf="sortColumn === 'email' && sortDirection === 'desc'"></i>
-                        </th>
-                        <th (click)="sort('phone')">
-                            Contact No
-                            <i class="bi bi-arrow-up" *ngIf="sortColumn === 'phone' && sortDirection === 'asc'"></i>
-                            <i class="bi bi-arrow-down" *ngIf="sortColumn === 'phone' && sortDirection === 'desc'"></i>
-                        </th>
-                        <th (click)="sort('state')">
-                            State
-                            <i class="bi bi-arrow-up" *ngIf="sortColumn === 'state' && sortDirection === 'asc'"></i>
-                            <i class="bi bi-arrow-down" *ngIf="sortColumn === 'state' && sortDirection === 'desc'"></i>
-                        </th>
-                        <th (click)="sort('city')">
-                            City
-                            <i class="bi bi-arrow-up" *ngIf="sortColumn === 'city' && sortDirection === 'asc'"></i>
-                            <i class="bi bi-arrow-down" *ngIf="sortColumn === 'city' && sortDirection === 'desc'"></i>
-                        </th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let user of paginateData">
-                        <td>{{ user.firstName }}</td>
-                        <td>{{ user.middleName || 'N/A' }}</td>
-                        <td>{{ user.lastName }}</td>
-                        <td>{{ user.dateOfBirth | date:'dd/MM/yyyy' }}</td>
-                        <td>{{ user.email }}</td>
-                        <td>{{ user.phone }}</td>
-                        <td>{{ user.addresses && user.addresses.length > 0 ? getStateName(user.addresses[0].stateId) :
-                            'N/A' }}</td>
-                        <td>{{ user.addresses && user.addresses.length > 0 ? getCityName(user.addresses[0].cityId) :
-                            'N/A' }}</td>
-                        <td>
-                            <button class="btn btn-sm btn-outline-primary me-2" (click)="editUser(user.userId!)">
-                                <i class="bi bi-pencil"></i>
-
-                            </button>
-                            <button class="btn btn-sm btn-outline-danger" (click)="deleteUser(user.userId!)">
-                                <i class="bi bi-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <ngb-pagination class="d-flex justify-content-end" [collectionSize]="collectionSize" [(page)]="page"
-                [pageSize]="pageSize" (pageChange)="getPaginatedData()"></ngb-pagination>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th (click)="sort('firstName')">
+                                First Name
+                                <i class="bi" [ngClass]="{'bi-arrow-up': sortColumn === 'firstName' && sortDirection === 'asc', 'bi-arrow-down': sortColumn === 'firstName' && sortDirection === 'desc'}"></i>
+                            </th>
+                            <th (click)="sort('middleName')">
+                                Middle Name
+                                <i class="bi" [ngClass]="{'bi-arrow-up': sortColumn === 'middleName' && sortDirection === 'asc', 'bi-arrow-down': sortColumn === 'middleName' && sortDirection === 'desc'}"></i>
+                            </th>
+                            <th (click)="sort('lastName')">
+                                Last Name
+                                <i class="bi" [ngClass]="{'bi-arrow-up': sortColumn === 'lastName' && sortDirection === 'asc', 'bi-arrow-down': sortColumn === 'lastName' && sortDirection === 'desc'}"></i>
+                            </th>
+                            <th (click)="sort('dateOfBirth')">
+                                DOB
+                                <i class="bi" [ngClass]="{'bi-arrow-up': sortColumn === 'dateOfBirth' && sortDirection === 'asc', 'bi-arrow-down': sortColumn === 'dateOfBirth' && sortDirection === 'desc'}"></i>
+                            </th>
+                            <th (click)="sort('email')">
+                                Email
+                                <i class="bi" [ngClass]="{'bi-arrow-up': sortColumn === 'email' && sortDirection === 'asc', 'bi-arrow-down': sortColumn === 'email' && sortDirection === 'desc'}"></i>
+                            </th>
+                            <th (click)="sort('phone')">
+                                Contact No
+                                <i class="bi" [ngClass]="{'bi-arrow-up': sortColumn === 'phone' && sortDirection === 'asc', 'bi-arrow-down': sortColumn === 'phone' && sortDirection === 'desc'}"></i>
+                            </th>
+                            <th (click)="sort('state')">
+                                State
+                                <i class="bi" [ngClass]="{'bi-arrow-up': sortColumn === 'state' && sortDirection === 'asc', 'bi-arrow-down': sortColumn === 'state' && sortDirection === 'desc'}"></i>
+                            </th>
+                            <th (click)="sort('city')">
+                                City
+                                <i class="bi" [ngClass]="{'bi-arrow-up': sortColumn === 'city' && sortDirection === 'asc', 'bi-arrow-down': sortColumn === 'city' && sortDirection === 'desc'}"></i>
+                            </th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of paginateData">
+                            <td>{{ user.firstName }}</td>
+                            <td>{{ user.middleName || 'N/A' }}</td>
+                            <td>{{ user.lastName }}</td>
+                            <td>{{ user.dateOfBirth | date:'dd/MM/yyyy' }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.phone }}</td>
+                            <td>{{ user.addresses && user.addresses.length > 0 ? getStateName(user.addresses[0].stateId) : 'N/A' }}</td>
+                            <td>{{ user.addresses && user.addresses.length > 0 ? getCityName(user.addresses[0].cityId) : 'N/A' }}</td>
+                            <td>
+                                <button class="btn btn-sm btn-outline-primary me-2" (click)="editUser(user.userId!)">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" (click)="deleteUser(user.userId!)">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="d-flex justify-content-center justify-content-sm-end mt-3">
+                <ngb-pagination [collectionSize]="collectionSize" [(page)]="page"
+                    [pageSize]="pageSize" (pageChange)="getPaginatedData()"></ngb-pagination>
+            </div>
         </div>
     </div>
 </div>
@@ -88,12 +107,10 @@
 <ng-template #deleteDialog let-modal>
     <div class="modal-header">
         <h4 class="modal-title">Confirm Delete</h4>
-        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
-            <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
     </div>
     <div class="modal-body">
-        Are you sure you want to delete this course?
+        <p>Are you sure you want to delete this user?</p>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Cancel</button>

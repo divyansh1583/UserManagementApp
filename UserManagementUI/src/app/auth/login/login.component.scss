@@ -1,17 +1,17 @@
 .login-form-container {
-  width: 100%
+width: 100%;
 }
 
 .card-wrapper {
-  width: 100%;
+
   border-color: white;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 
-
 .logo {
-
+  font-size: 34px;
+  font-weight: 500;
   margin-bottom: 40px;
 }
 
@@ -21,9 +21,9 @@
 }
 
 
-.password-input-group {
-  position: relative;
-}
+  .password-input-group {
+    position: relative;
+  }
 
 .password-toggle {
   position: absolute;

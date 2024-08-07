@@ -6,7 +6,6 @@ import { ToastrService } from 'ngx-toastr';
 import { Router, ActivatedRoute } from '@angular/router';
 import { cities, countries, states } from 'src/app/shared/data/location-data';
 import { TokenService } from 'src/app/auth/services/token.service';
-import { MatCheckboxChange } from '@angular/material/checkbox';
 import { CustomValidators } from 'src/app/shared/custom-validators/custom-validators';
 
 @Component({
@@ -25,7 +24,9 @@ export class AddUserComponent implements OnInit {
   isUpdateMode: boolean = false;
   userId: number | null = null;
   hasSecondAddresses: boolean = false;
-
+  maxDate: string;
+  isImageUploaded: boolean=false;
+  imageError: any;
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
@@ -33,7 +34,10 @@ export class AddUserComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private tokenService: TokenService
-  ) { }
+  ) {
+
+    this.maxDate = new Date().toISOString().split('T')[0];
+  }
 
   ngOnInit(): void {
     this.route.params.subscribe({
@@ -54,8 +58,8 @@ export class AddUserComponent implements OnInit {
   initForm() {
     this.userForm = this.fb.group({
       firstName: [null, [Validators.required, Validators.maxLength(50), CustomValidators.noWhitespace]],
-      middleName: [null, [Validators.required, Validators.maxLength(50),CustomValidators.noWhitespace]],
-      lastName: [null, [Validators.maxLength(50),CustomValidators.noWhitespace]],
+      middleName: [null, [Validators.required, Validators.maxLength(50), CustomValidators.noWhitespace]],
+      lastName: [null, [Validators.maxLength(50), CustomValidators.noWhitespace]],
       gender: [null, Validators.required],
       dateOfBirth: [null, Validators.required],
       dateOfJoining: [null, Validators.required],
@@ -81,7 +85,7 @@ export class AddUserComponent implements OnInit {
   }
   createAddressFormGroup(addressTypeId: number, address?: any): FormGroup {
     return this.fb.group({
-      address: [address ? address.address : null, [Validators.required,CustomValidators.noWhitespace]],
+      address: [address ? address.address : null, [Validators.required, CustomValidators.noWhitespace]],
       cityId: [address ? address.cityId : null, Validators.required],
       stateId: [address ? address.stateId : null, Validators.required],
       countryId: [address ? address.countryId : null, Validators.required],
@@ -111,7 +115,7 @@ export class AddUserComponent implements OnInit {
             user.addresses.forEach((address: any) => {
               this.addressesFormArray.push(this.createAddressFormGroup(address.addressTypeId, address));
             });
-            this.hasSecondAddresses  = this.addressesFormArray.length > 1;
+            this.hasSecondAddresses = this.addressesFormArray.length > 1;
           } else {
             this.toastr.error('Error loading user data');
           }
@@ -131,7 +135,6 @@ export class AddUserComponent implements OnInit {
   onSubmit() {
     if (this.userForm.invalid) {
       this.userForm.markAllAsTouched();
-      this.toastr.warning('Please fill all the required fields correctly');
       return;
     }
     if (this.isUpdateMode) {
@@ -160,13 +163,12 @@ export class AddUserComponent implements OnInit {
             }
           },
           error: (error) => {
-            this.toastr.error(error.message);
+
             console.error('Error uploading image:', error);
             reject(error);
           }
         });
       } else {
-
         resolve(null);
       }
     });
@@ -195,7 +197,7 @@ export class AddUserComponent implements OnInit {
       });
     }
     else {
-      this.toastr.error('Faliled to upload Image! Please choose again.')
+      this.isImageUploaded = false;
     }
   }
 

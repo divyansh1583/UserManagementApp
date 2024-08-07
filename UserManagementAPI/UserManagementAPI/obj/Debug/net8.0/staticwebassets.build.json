@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0n3g5fZiAWlmbQR8Z6UpcpYHlgyGOf0ousSapwJXtlA=",
+  "Hash": "eQ9OI01T+1QauVpFq+XH+u2uVrfd2jP/DcYGdHj6+6I=",
   "Source": "UserManagementAPI",
   "BasePath": "_content/UserManagementAPI",
   "Mode": "Default",
@@ -148,6 +148,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\26f3d66b-b702-4288-977d-99b8b0e34f48_Asset 1 1.png"
+    },
+    {
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\26f59755-cd79-4bb4-a75f-a18ab7b96039_4f3d039cd568a92.png",
+      "SourceId": "UserManagementAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "BasePath": "_content/UserManagementAPI",
+      "RelativePath": "uploads/26f59755-cd79-4bb4-a75f-a18ab7b96039_4f3d039cd568a92.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\26f59755-cd79-4bb4-a75f-a18ab7b96039_4f3d039cd568a92.png"
     },
     {
       "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\278f0bfd-b77f-471e-879c-07fc3c67130d_Asset 1 1.png",
@@ -302,6 +321,25 @@
       "OriginalItemSpec": "wwwroot\\uploads\\4d6609dc-13d0-4148-9251-494a847ce9e2_trash.png"
     },
     {
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\530bf31a-2914-4323-b2ee-ceb95c995139_739ed3cfc1d08c6.png",
+      "SourceId": "UserManagementAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "BasePath": "_content/UserManagementAPI",
+      "RelativePath": "uploads/530bf31a-2914-4323-b2ee-ceb95c995139_739ed3cfc1d08c6.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\530bf31a-2914-4323-b2ee-ceb95c995139_739ed3cfc1d08c6.png"
+    },
+    {
       "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\564f7c26-db90-43c2-b2ec-cf2b97278e6f_WhatsApp Image 2024-07-28 at 4.11.37 AM.jpeg",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
@@ -319,6 +357,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\564f7c26-db90-43c2-b2ec-cf2b97278e6f_WhatsApp Image 2024-07-28 at 4.11.37 AM.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\5b2e89b7-7895-4e28-943f-9f4b6bfe3bb8_739ed3cfc1d08c6.png",
+      "SourceId": "UserManagementAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "BasePath": "_content/UserManagementAPI",
+      "RelativePath": "uploads/5b2e89b7-7895-4e28-943f-9f4b6bfe3bb8_739ed3cfc1d08c6.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\5b2e89b7-7895-4e28-943f-9f4b6bfe3bb8_739ed3cfc1d08c6.png"
     },
     {
       "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\69aa0c48-5390-4679-8e68-75743bc3ec1c_ImageUpload_icon.png",
@@ -397,6 +454,25 @@
       "OriginalItemSpec": "wwwroot\\uploads\\82ded7cf-b8e8-4df9-a31a-b40ea0409012_Asset 1 1.png"
     },
     {
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\8b35e397-b8b8-484a-b44d-cd835bbbce6f_849b4636370404c.png",
+      "SourceId": "UserManagementAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "BasePath": "_content/UserManagementAPI",
+      "RelativePath": "uploads/8b35e397-b8b8-484a-b44d-cd835bbbce6f_849b4636370404c.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\8b35e397-b8b8-484a-b44d-cd835bbbce6f_849b4636370404c.png"
+    },
+    {
       "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\8c2d1b5d-6c55-4d35-b833-ea4e50d3a0b8_artremix.png",
       "SourceId": "UserManagementAPI",
       "SourceType": "Discovered",
@@ -452,6 +528,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\996672d9-3362-4be9-9089-cde91e41e2a6_Asset 1 1.png"
+    },
+    {
+      "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\9a1e8f56-a60c-4e95-9446-4d8daaa44c2f_13e07bd455dcf46.png",
+      "SourceId": "UserManagementAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "BasePath": "_content/UserManagementAPI",
+      "RelativePath": "uploads/9a1e8f56-a60c-4e95-9446-4d8daaa44c2f_13e07bd455dcf46.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\9a1e8f56-a60c-4e95-9446-4d8daaa44c2f_13e07bd455dcf46.png"
     },
     {
       "Identity": "C:\\Users\\divyansh.chauhan\\Desktop\\DC\\Angular+.NET+MSSQL\\UserManagementApp\\UserManagementAPI\\UserManagementAPI\\wwwroot\\uploads\\9c4e9bf0-2de5-4f81-bba5-7feff1b0df9c_Vector.png",
