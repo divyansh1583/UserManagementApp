@@ -35,8 +35,8 @@ namespace UserManagementAPI.Domain.Common_Models
                         </div>
                     </body>
                     </html>";
-        }       
-        
+        }
+
         public static string ActivateUserEmailBody(string email, string emailToken)
         {
             string encodedToken = HttpUtility.UrlEncode(emailToken);
@@ -52,7 +52,7 @@ namespace UserManagementAPI.Domain.Common_Models
                                     <p>You're receiving this e-mail because you requested to activate your account.</p>
                                     <p>Please tap the button below to activate.</p>
                                     <a href=""http://localhost:4200/activate?email={email}&code={encodedToken}"" target=""_blank"" style=""background:   
-                     #9d6ef; color:white; border-radius: 4px; display:block;margin:0 auto;width:50%;text-align:center;text-decoration:none"">Reset</a>
+                     #9d6ef; color:white; border-radius: 4px; display:block;margin:0 auto;width:50%;text-align:center;text-decoration:none"">Activatet</a>
                                     <p>Kind Regards, <br><br>   
                     
                                     Divyansh Chauhan<br>

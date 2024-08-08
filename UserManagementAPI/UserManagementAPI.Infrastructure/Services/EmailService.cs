@@ -27,7 +27,7 @@ namespace UserManagementAPI.Infrastructure.Services
             var emailMessage = new MimeMessage();
             emailMessage.From.Add(new MailboxAddress("AdminEmail", from));
             emailMessage.To.Add(new MailboxAddress("UserEmail", "pobag42825@biowey.com"));
-            //emailMessage.Cc.Add(new MailboxAddress("CCUserEmail", emailModel.To));
+            emailMessage.Cc.Add(new MailboxAddress("CCUserEmail", emailModel.To));
             emailMessage.Subject = emailModel.Subject;
             emailMessage.Body = new TextPart(MimeKit.Text.TextFormat.Html)
             {

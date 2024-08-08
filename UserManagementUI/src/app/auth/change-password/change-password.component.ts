@@ -24,9 +24,9 @@ export class ChangePasswordComponent {
     private router:Router
   ) {
     this.changePasswordForm = this.formBuilder.group({
-      currentPassword: ['', Validators.required],
-      newPassword: ['', [Validators.required, Validators.minLength(6)]],
-      confirmNewPassword: ['', Validators.required]
+      currentPassword: [null, Validators.required],
+      newPassword: [null, [Validators.required, Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)]],
+      confirmNewPassword: [null, Validators.required]
     }, { validator: this.passwordMatchValidator });
   }
 

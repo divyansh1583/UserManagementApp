@@ -197,7 +197,7 @@ export class AddUserComponent implements OnInit {
       });
     }
     else {
-      this.isImageUploaded = false;
+     this.toastr.warning("Server unable to upload Image!")
     }
   }
 
@@ -236,6 +236,7 @@ export class AddUserComponent implements OnInit {
       };
       reader.readAsDataURL(file);
     }
+
   }
 
   toggleSecondaryAddress(event: Event) {

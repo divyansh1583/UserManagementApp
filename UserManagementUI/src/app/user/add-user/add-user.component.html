@@ -26,7 +26,7 @@
                 <h6 *ngIf="!imagePreview">Upload user image here</h6>
                 <button type="button" class="btn btn-sm btn-primary mt-2" (click)="fileInput.click()">Browse</button>
               </div>
-              <div *ngIf="isImageUploaded && userForm.touched" class="text-danger">
+              <div *ngIf="imagePreview==null && userForm.touched" class="text-danger">
                 <small>* Image file is required</small>
               </div>
             </div>

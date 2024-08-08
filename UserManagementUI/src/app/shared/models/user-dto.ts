@@ -12,6 +12,7 @@ export interface UserDto {
     alternatePhone?: string;
     imagePath?: string;
     password: string;
+    createdDate:Date,
     isActive: boolean;
     addresses?: AddressDto[];
   }

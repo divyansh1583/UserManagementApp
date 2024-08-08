@@ -47,6 +47,9 @@ export class DashboardComponent implements OnInit {
       res => {
         if (res.statusCode === 200) {
           this.userData = res.data;
+          // Sort users by creation date, most recent first
+          this.userData.sort((a, b) => new Date(b.createdDate).getTime() - new Date(a.createdDate).getTime());
+          
           this.collectionSize = this.userData.length;
           this.activeUsers = this.userData.filter(user => user.isActive).length;
           this.inactiveUsers = this.userData.filter(user => !user.isActive).length;
@@ -65,7 +68,24 @@ export class DashboardComponent implements OnInit {
   }
 
   downloadExcel() {
-    this.excelDownloadService.downloadExcel(this.userData, 'users');
+    const columnsToExport = [
+      { header: 'First Name', key: 'firstName' },
+      { header: 'Middle Name', key: 'middleName' },
+      { header: 'Last Name', key: 'lastName' },
+      { header: 'DOB', key: 'dateOfBirth' },
+      { header: 'Email', key: 'email' },
+      { header: 'Contact No', key: 'phone' },
+      { header: 'State', key: 'state' },
+      { header: 'City', key: 'city' }
+    ];
+  
+    const dataToExport = this.paginateData.map(user => ({
+      ...user,
+      state: user.addresses && user.addresses.length > 0 ? this.getStateName(user.addresses[0].stateId) : 'N/A',
+      city: user.addresses && user.addresses.length > 0 ? this.getCityName(user.addresses[0].cityId) : 'N/A'
+    }));
+  
+    this.excelDownloadService.downloadExcel(dataToExport, 'users', columnsToExport);
   }
 
   editUser(userId: number) {
